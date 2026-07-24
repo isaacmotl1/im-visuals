@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Isaac Motl is an editorial photographer creating considered images of landscape, sport, wildlife, portraiture, and aviation." />
+    <title>Isaac Motl — Photographer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Skip link makes keyboard navigation faster. -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- Site navigation -->
+    <header class="site-header" id="top">
+      <div class="nav-shell">
+<a class="wordmark" href="index.html" aria-label="IM Visuals home">IM <span>Visuals</span></a>        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+       <nav class="main-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="websites.html">Web Design</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      
+<!-- Contact Hero -->
+<section class="hero" style="min-height:75vh;" aria-labelledby="contact-title">
+
+    <div class="hero-content container reveal">
+
+        <p class="eyebrow">Contact</p>
+
+        <h1 id="contact-title">
+            Let's make<br>
+            something worth<br>
+            remembering.
+        </h1>
+
+        <p class="hero-copy">
+            Whether you're interested in photography, prints, a website, or a full
+            business package, use the form below and I'll get back to you.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Contact Form -->
+<section class="section contact-section" aria-labelledby="contact-form-title">
+
+    <div class="container contact-layout">
+
+        <div class="contact-copy reveal">
+
+            <p class="eyebrow">Start Here</p>
+
+            <h2 id="contact-form-title">
+                Tell me what you're looking for.
+            </h2>
+
+            <p>
+                Fill out the form with a few details about your project, session,
+                website, print request, or general question.
+            </p>
+
+            <a class="contact-email" href="mailto:studio@imvisuals.com">
+                studio@imvisuals.com
+            </a>
+
+        </div>
+
+        <form class="contact-form reveal"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field">
+
+            <input type="hidden" name="form-name" value="contact" />
+
+            <p class="hidden">
+                <label>
+                    Don't fill this out:
+                    <input name="bot-field" />
+                </label>
+            </p>
+
+            <div class="form-row">
+
+                <label>
+                    Name
+                    <input required
+                           name="name"
+                           type="text"
+                           autocomplete="name" />
+                </label>
+
+                <label>
+                    Email
+                    <input required
+                           name="email"
+                           type="email"
+                           autocomplete="email" />
+                </label>
+
+            </div>
+
+            <div class="form-row">
+
+                <label>
+                    Phone <span>(optional)</span>
+                    <input name="phone"
+                           type="tel"
+                           autocomplete="tel" />
+                </label>
+
+                <label>
+                    What are you interested in?
+                    <select required name="reason">
+                        <option value="" selected disabled>Select one</option>
+                        <option>Photography Session</option>
+                        <option>Sports Photography</option>
+                        <option>Portrait Session</option>
+                        <option>Print Purchase</option>
+                        <option>Website Design</option>
+                        <option>Website + Photography Package</option>
+                        <option>General Question</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+
+            </div>
+
+            <label>
+                Project Details
+                <textarea required
+                          name="message"
+                          rows="6"
+                          placeholder="Tell me what you're looking for, when you need it, and any details that would help me understand the project."></textarea>
+            </label>
+
+            <button class="button button--dark" type="submit">
+                Send Inquiry
+                <span aria-hidden="true">↗</span>
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- Services Quick View -->
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow">What You Can Contact Me For</p>
+
+            <h2>
+                Photography, websites, prints, and business content.
+            </h2>
+
+        </div>
+
+        <div class="web-services">
+
+            <div class="service-card reveal">
+                <h3>Photo Sessions</h3>
+                <p>
+                    Portraits, sports, automotive, aviation, wildlife, or creative
+                    sessions built around your idea.
+                </p>
+            </div>
+
+            <div class="service-card reveal">
+                <h3>Print Requests</h3>
+                <p>
+                    Ask about purchasing a photo as a print, wall piece, or custom
+                    personal order.
+                </p>
+            </div>
+
+            <div class="service-card reveal">
+                <h3>Website Design</h3>
+                <p>
+                    Professional websites for businesses that need a cleaner, more
+                    trustworthy online presence.
+                </p>
+            </div>
+
+            <div class="service-card reveal">
+                <h3>Business Packages</h3>
+                <p>
+                    Website design, SEO, automation, CRM setup, and custom
+                    photography combined into one package.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Final CTA -->
+<section class="section about-preview">
+
+    <div class="container about-preview__grid">
+
+        <div class="about-preview__content reveal">
+
+            <p class="eyebrow">Ready When You Are</p>
+
+            <h2>
+                Reach out with the idea. I'll help shape the next step.
+            </h2>
+
+            <p>
+                You don't need to have everything figured out before contacting
+                me. Send the basics, and I'll help narrow down what makes the
+                most sense for your project.
+            </p>
+
+        </div>
+
+        <figure class="about-preview__image reveal">
+
+            <img src="images/contact/contact-preview.jpg"
+                 alt="Camera and laptop workspace">
+
+        </figure>
+
+    </div>
+
+</section>
+    
+
+ 
+    
+   
+
+    <!-- Footer -->
+    <footer class="site-footer"><div class="container footer-content"><a class="wordmark" href="#top">Isaac <span>Motl</span></a><p>© <span id="year"></span> Isaac Motl. All images copyright their respective placeholder sources.</p><a href="#top" class="text-link">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+
+    <!-- Full-screen portfolio lightbox -->
+    <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+      <button class="lightbox__close" type="button" aria-label="Close image viewer">×</button>
+      <button class="lightbox__arrow lightbox__arrow--previous" type="button" aria-label="Previous image">←</button>
+      <figure class="lightbox__figure"><img id="lightbox-image" src="" alt="" /><figcaption id="lightbox-caption"></figcaption></figure>
+      <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Next image">→</button>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

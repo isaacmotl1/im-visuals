@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Isaac Motl is an editorial photographer creating considered images of landscape, sport, wildlife, portraiture, and aviation." />
+    <title>Isaac Motl — Photographer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Skip link makes keyboard navigation faster. -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- Site navigation -->
+    <header class="site-header" id="top">
+      <div class="nav-shell">
+<a class="wordmark" href="index.html" aria-label="IM Visuals home">IM <span>Visuals</span></a>        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+        <nav class="main-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="websites.html">Web Design</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Portfolio Hero -->
+<section class="hero" style="min-height:75vh;" aria-labelledby="portfolio-title">
+    <div class="hero-content container reveal">
+        <p class="eyebrow">Photography Portfolio</p>
+
+        <h1 id="portfolio-title">
+            Every image<br>tells a story.
+        </h1>
+
+        <p class="hero-copy">
+            From wildlife encounters and fast-paced sports to portraits,
+            aviation, and automotive photography, each collection captures a
+            different perspective of the world.
+        </p>
+    </div>
+
+    <p class="hero-credit">
+        IM Visuals • Photography
+    </p>
+</section>
+
+<!-- Portfolio Categories -->
+<section class="section category-section" aria-labelledby="category-title">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow">Explore</p>
+
+            <h2 id="category-title">
+                Browse the collection.
+            </h2>
+
+        </div>
+
+        <div class="category-grid">
+
+            <a class="category-card" href="portfolio/wildlife.html">
+                <img src="images/categories/wildlife.jpg" alt="Wildlife">
+                <span>Wildlife</span>
+            </a>
+
+            <a class="category-card" href="portfolio/cars.html">
+                <img src="images/categories/cars.jpg" alt="Cars">
+                <span>Cars</span>
+            </a>
+
+            <a class="category-card" href="portfolio/sports.html">
+                <img src="images/categories/sports.jpg" alt="Sports">
+                <span>Sports</span>
+            </a>
+
+            <a class="category-card" href="portfolio/portraits.html">
+                <img src="images/categories/portraits.jpg" alt="Portraits">
+                <span>Portraits</span>
+            </a>
+
+            <a class="category-card" href="portfolio/aviation.html">
+                <img src="images/categories/aviation.jpg" alt="Aviation">
+                <span>Aviation</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Philosophy -->
+<section class="section about-preview">
+
+    <div class="container about-preview__grid">
+
+        <figure class="about-preview__image reveal">
+
+            <img src="images/portfolio/portfolio-about.jpeg"
+                 alt="Isaac photographing outdoors">
+
+        </figure>
+
+        <div class="about-preview__content reveal">
+
+            <p class="eyebrow">
+                Behind the Lens
+            </p>
+
+            <h2>
+                Creating images that feel authentic.
+            </h2>
+
+            <p>
+                Photography is more than documenting a moment, it's about
+                telling a story about every person, place, or thing I shoot.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact CTA -->
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow">
+                Let's Work Together
+            </p>
+
+            <h2>
+                Looking for photography?
+            </h2>
+
+            <a class="button button--dark"
+               href="contact.html">
+
+                Book a Session
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+    
+
+ 
+    
+   
+
+    <!-- Footer -->
+    <footer class="site-footer"><div class="container footer-content"><a class="wordmark" href="#top">Isaac <span>Motl</span></a><p>© <span id="year"></span> Isaac Motl. All images copyright their respective placeholder sources.</p><a href="#top" class="text-link">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+
+    <!-- Full-screen portfolio lightbox -->
+    <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+      <button class="lightbox__close" type="button" aria-label="Close image viewer">×</button>
+      <button class="lightbox__arrow lightbox__arrow--previous" type="button" aria-label="Previous image">←</button>
+      <figure class="lightbox__figure"><img id="lightbox-image" src="" alt="" /><figcaption id="lightbox-caption"></figcaption></figure>
+      <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Next image">→</button>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
