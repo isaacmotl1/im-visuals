@@ -79,80 +79,73 @@
         </div>
 
         <form class="contact-form reveal"
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field">
+      action="https://formspree.io/f/xbdnplvj"
+      method="POST">
 
-            <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="_subject" value="New inquiry from IM Visuals">
 
-            <p class="hidden">
-                <label>
-                    Don't fill this out:
-                    <input name="bot-field" />
-                </label>
-            </p>
+  <div class="form-row">
 
-            <div class="form-row">
+    <label>
+      Name
+      <input required
+             name="name"
+             type="text"
+             autocomplete="name">
+    </label>
 
-                <label>
-                    Name
-                    <input required
-                           name="name"
-                           type="text"
-                           autocomplete="name" />
-                </label>
+    <label>
+      Email
+      <input required
+             name="email"
+             type="email"
+             autocomplete="email">
+    </label>
 
-                <label>
-                    Email
-                    <input required
-                           name="email"
-                           type="email"
-                           autocomplete="email" />
-                </label>
+  </div>
 
-            </div>
+  <div class="form-row">
 
-            <div class="form-row">
+    <label>
+      Phone <span>(optional)</span>
+      <input name="phone"
+             type="tel"
+             autocomplete="tel">
+    </label>
 
-                <label>
-                    Phone <span>(optional)</span>
-                    <input name="phone"
-                           type="tel"
-                           autocomplete="tel" />
-                </label>
+    <label>
+      What are you interested in?
+      <select required name="reason">
+        <option value="" selected disabled>Select one</option>
+        <option>Photo Session</option>
+        <option>Print Purchase</option>
+        <option>Automotive Photography</option>
+        <option>Aviation Photography</option>
+        <option>Sports Photography</option>
+        <option>Wildlife Photography</option>
+        <option>Portrait Session</option>
+        <option>Website Design</option>
+        <option>General Question</option>
+        <option>Other</option>
+      </select>
+    </label>
 
-                <label>
-                    What are you interested in?
-                    <select required name="reason">
-                        <option value="" selected disabled>Select one</option>
-                        <option>Photography Session</option>
-                        <option>Sports Photography</option>
-                        <option>Portrait Session</option>
-                        <option>Print Purchase</option>
-                        <option>Website Design</option>
-                        <option>Website + Photography Package</option>
-                        <option>General Question</option>
-                        <option>Other</option>
-                    </select>
-                </label>
+  </div>
 
-            </div>
+  <label>
+    Message
+    <textarea required
+              name="message"
+              rows="6"
+              placeholder="Tell me what you're looking for, when you need it, and any details that would help."></textarea>
+  </label>
 
-            <label>
-                Project Details
-                <textarea required
-                          name="message"
-                          rows="6"
-                          placeholder="Tell me what you're looking for, when you need it, and any details that would help me understand the project."></textarea>
-            </label>
+  <button class="button button--dark" type="submit">
+    Send Inquiry
+    <span aria-hidden="true">↗</span>
+  </button>
 
-            <button class="button button--dark" type="submit">
-                Send Inquiry
-                <span aria-hidden="true">↗</span>
-            </button>
-
-        </form>
+</form>
 
     </div>
 
