@@ -664,4 +664,96 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   .portfolio-panel__link {
     transition: none;
   }
+}/* ==================================================
+   HORIZONTAL HOMEPAGE PORTFOLIO SCROLLER
+================================================== */
+
+.portfolio-showcase {
+  position: relative;
+  width: 100%;
+  height: 500vh;
+  background: #080a0c;
+}
+
+.portfolio-showcase__sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.portfolio-showcase__track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  will-change: transform;
+}
+
+.portfolio-panel {
+  position: relative !important;
+  flex: 0 0 100vw !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100svh !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  overflow: hidden !important;
+  isolation: isolate;
+  background: #080a0c;
+}
+
+.portfolio-panel__image {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.portfolio-panel__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none;
+}
+
+.portfolio-panel__content {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+}
+
+/* Mobile uses a cleaner vertical layout */
+
+@media (max-width: 800px) {
+  .portfolio-showcase {
+    height: auto;
+  }
+
+  .portfolio-showcase__sticky {
+    position: relative;
+    top: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .portfolio-showcase__track {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+  }
+
+  .portfolio-panel {
+    width: 100% !important;
+    height: 82vh !important;
+    height: 82svh !important;
+  }
 }

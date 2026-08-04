@@ -333,3 +333,52 @@ function initializeSite() {
 }
 
 initializeSite();
+/* ==================================================
+   Homepage horizontal portfolio scrolling
+================================================== */
+
+function initializePortfolioScroller() {
+  const showcase = document.querySelector(".portfolio-showcase");
+  const track = document.querySelector(".portfolio-showcase__track");
+
+  if (!showcase || !track) {
+    return;
+  }
+
+  const mobileQuery = window.matchMedia("(max-width: 800px)");
+
+  function updatePortfolioScroll() {
+    if (mobileQuery.matches) {
+      track.style.transform = "none";
+      return;
+    }
+
+    const showcaseRect = showcase.getBoundingClientRect();
+    const scrollDistance = showcase.offsetHeight - window.innerHeight;
+
+    if (scrollDistance <= 0) {
+      return;
+    }
+
+    let progress = -showcaseRect.top / scrollDistance;
+
+    progress = Math.max(0, Math.min(1, progress));
+
+    const maximumMovement = track.scrollWidth - window.innerWidth;
+    const movement = progress * maximumMovement;
+
+    track.style.transform = `translate3d(${-movement}px, 0, 0)`;
+  }
+
+  window.addEventListener("scroll", updatePortfolioScroll, {
+    passive: true
+  });
+
+  window.addEventListener("resize", updatePortfolioScroll);
+
+  mobileQuery.addEventListener?.("change", updatePortfolioScroll);
+
+  updatePortfolioScroll();
+}
+
+initializePortfolioScroller();
