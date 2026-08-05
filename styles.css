@@ -749,3 +749,171 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     transition: none;
   }
 }
+/* ==================================================
+   HOMEPAGE ABOUT PORTRAIT
+================================================== */
+
+.about-preview--person {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  background:
+    radial-gradient(
+      circle at 12% 50%,
+      rgba(102, 124, 138, 0.1),
+      transparent 38%
+    ),
+    var(--bg);
+}
+
+.about-preview--person .about-preview__grid {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.about-portrait-card {
+  position: relative;
+  max-width: 520px;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.015)
+    );
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: rotate(-1.2deg);
+  transition:
+    transform 0.5s cubic-bezier(.2, .7, .2, 1),
+    box-shadow 0.5s ease;
+}
+
+/* Offset layer behind the portrait */
+
+.about-portrait-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: 18px -18px -18px 18px;
+  border: 1px solid rgba(102, 124, 138, 0.35);
+  border-radius: 22px;
+  background: rgba(102, 124, 138, 0.05);
+  content: "";
+}
+
+.about-portrait-card__frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.about-portrait-card__frame::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: inherit;
+  box-shadow: inset 0 -80px 90px rgba(0, 0, 0, 0.14);
+  pointer-events: none;
+  content: "";
+}
+
+.about-portrait-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+
+  /* Change the second value to reposition your face */
+  object-position: center 30%;
+
+  filter:
+    saturate(0.92)
+    contrast(1.03)
+    brightness(0.98);
+
+  transform: scale(1.01);
+  transition:
+    transform 0.7s cubic-bezier(.2, .7, .2, 1),
+    filter 0.5s ease;
+}
+
+.about-portrait-card figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 5px 3px;
+  color: var(--muted);
+  font-size: 0.67rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-portrait-card figcaption span:first-child {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-portrait-card:hover {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow:
+    0 42px 95px rgba(0, 0, 0, 0.46),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.about-portrait-card:hover img {
+  transform: scale(1.035);
+  filter:
+    saturate(1)
+    contrast(1.02)
+    brightness(1);
+}
+
+/* Small decorative line beside the About label */
+
+.about-preview--person .about-preview__content .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.about-preview--person .about-preview__content .eyebrow::before {
+  width: 34px;
+  height: 1px;
+  background: var(--champagne);
+  content: "";
+}
+
+@media (max-width: 700px) {
+  .about-preview--person .about-preview__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-portrait-card {
+    width: calc(100% - 16px);
+    max-width: 470px;
+    margin: 0 auto 18px;
+    transform: rotate(-0.7deg);
+  }
+
+  .about-portrait-card::before {
+    inset: 12px -12px -12px 12px;
+  }
+
+  .about-portrait-card figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-portrait-card,
+  .about-portrait-card img {
+    transition: none;
+  }
+}
