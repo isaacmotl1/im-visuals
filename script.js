@@ -333,52 +333,96 @@ function initializeSite() {
 }
 
 initializeSite();
+
 /* ==================================================
-   Homepage horizontal portfolio scrolling
+   Cinematic homepage portfolio experience
 ================================================== */
+function initializePortfolioExperience() {
+  const experience = document.querySelector(".portfolio-experience");
 
-function initializePortfolioScroller() {
-  const showcase = document.querySelector(".portfolio-showcase");
-  const track = document.querySelector(".portfolio-showcase__track");
-
-  if (!showcase || !track) {
+  if (!experience) {
     return;
   }
 
-  const mobileQuery = window.matchMedia("(max-width: 800px)");
+  const steps = [...experience.querySelectorAll("[data-portfolio-step]")];
+  const media = [...experience.querySelectorAll("[data-portfolio-media]")];
+  const copies = [...experience.querySelectorAll("[data-portfolio-copy]")];
+  const buttons = [...experience.querySelectorAll("[data-portfolio-jump]")];
+  const current = experience.querySelector("#portfolio-current");
+  let activeIndex = -1;
+  let ticking = false;
 
-  function updatePortfolioScroll() {
-    if (mobileQuery.matches) {
-      track.style.transform = "none";
+  function setActive(index) {
+    if (index === activeIndex || index < 0 || index >= steps.length) {
       return;
     }
 
-    const showcaseRect = showcase.getBoundingClientRect();
-    const scrollDistance = showcase.offsetHeight - window.innerHeight;
+    activeIndex = index;
 
-    if (scrollDistance <= 0) {
-      return;
+    media.forEach((item, itemIndex) => {
+      item.classList.toggle("is-active", itemIndex === index);
+    });
+
+    copies.forEach((item, itemIndex) => {
+      item.classList.toggle("is-active", itemIndex === index);
+    });
+
+    buttons.forEach((button, buttonIndex) => {
+      const selected = buttonIndex === index;
+      button.classList.toggle("is-active", selected);
+      button.setAttribute("aria-current", selected ? "true" : "false");
+    });
+
+    if (current) {
+      current.textContent = String(index + 1).padStart(2, "0");
     }
-
-    let progress = -showcaseRect.top / scrollDistance;
-
-    progress = Math.max(0, Math.min(1, progress));
-
-    const maximumMovement = track.scrollWidth - window.innerWidth;
-    const movement = progress * maximumMovement;
-
-    track.style.transform = `translate3d(${-movement}px, 0, 0)`;
   }
 
-  window.addEventListener("scroll", updatePortfolioScroll, {
-    passive: true
+  function updateFromScroll() {
+    const focusLine = window.innerHeight * 0.55;
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    steps.forEach((step, index) => {
+      const rect = step.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const distance = Math.abs(center - focusLine);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    setActive(closestIndex);
+    ticking = false;
+  }
+
+  function requestUpdate() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateFromScroll);
+      ticking = true;
+    }
+  }
+
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      const step = steps[index];
+      const rect = step.getBoundingClientRect();
+      const target = window.scrollY + rect.top - (window.innerHeight - rect.height) / 2;
+
+      window.scrollTo({
+        top: target,
+        behavior: "smooth"
+      });
+    });
   });
 
-  window.addEventListener("resize", updatePortfolioScroll);
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 
-  mobileQuery.addEventListener?.("change", updatePortfolioScroll);
-
-  updatePortfolioScroll();
+  setActive(0);
+  requestUpdate();
 }
 
-initializePortfolioScroller();
+initializePortfolioExperience();

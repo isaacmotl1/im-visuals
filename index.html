@@ -43,196 +43,90 @@
         </div>
         <p class="hero-credit">Wisconsin, United States · 2026</p>
       </section>
+      <!-- Cinematic Portfolio Experience -->
+      <section class="portfolio-experience" id="portfolio" aria-label="Photography portfolio">
+        <div class="portfolio-experience__stage">
+          <div class="portfolio-experience__media" aria-hidden="true">
+            <figure class="portfolio-experience__image is-active" data-portfolio-media="0">
+              <img src="images/featured/aviation.jpg" alt="" />
+            </figure>
+            <figure class="portfolio-experience__image" data-portfolio-media="1">
+              <img src="images/featured/cars.jpg" alt="" loading="lazy" />
+            </figure>
+            <figure class="portfolio-experience__image" data-portfolio-media="2">
+              <img src="images/featured/portraits.jpg" alt="" loading="lazy" />
+            </figure>
+            <figure class="portfolio-experience__image" data-portfolio-media="3">
+              <img src="images/featured/sports.jpg" alt="" loading="lazy" />
+            </figure>
+            <figure class="portfolio-experience__image" data-portfolio-media="4">
+              <img src="images/featured/wildlife.jpg" alt="" loading="lazy" />
+            </figure>
+          </div>
 
-      <!-- Full-screen Portfolio Showcase -->
-<section class="portfolio-showcase" id="portfolio" aria-label="Photography portfolio">
+          <div class="portfolio-experience__shade"></div>
 
-  <div class="portfolio-showcase__sticky">
-    <div class="portfolio-showcase__track">
+          <div class="portfolio-experience__ui">
+            <div class="portfolio-experience__topline">
+              <p class="eyebrow">Selected portfolio</p>
+              <p class="portfolio-experience__counter" aria-live="polite">
+                <span id="portfolio-current">01</span><span>/05</span>
+              </p>
+            </div>
 
-  <!-- Aviation -->
-  <article class="portfolio-panel" id="home-aviation">
+            <div class="portfolio-experience__copy">
+              <article class="portfolio-experience__chapter is-active" data-portfolio-copy="0">
+                <h2>Aviation</h2>
+                <p>Aircraft, airshows, movement, and atmosphere captured in flight.</p>
+                <a href="portfolio/aviation.html">View collection <span aria-hidden="true">↗</span></a>
+              </article>
 
-    <img
-      class="portfolio-panel__image"
-      src="images/featured/aviation.jpg"
-      alt="Aviation photography by Isaac Motl"
-    >
+              <article class="portfolio-experience__chapter" data-portfolio-copy="1">
+                <h2>Cars</h2>
+                <p>Automotive details, reflections, motion, and machines with character.</p>
+                <a href="portfolio/cars.html">View collection <span aria-hidden="true">↗</span></a>
+              </article>
 
-    <div class="portfolio-panel__overlay"></div>
+              <article class="portfolio-experience__chapter" data-portfolio-copy="2">
+                <h2>Portraits</h2>
+                <p>Natural light, honest expression, and clean editorial portraiture.</p>
+                <a href="portfolio/portraits.html">View collection <span aria-hidden="true">↗</span></a>
+              </article>
 
-    <div class="container portfolio-panel__content reveal">
+              <article class="portfolio-experience__chapter" data-portfolio-copy="3">
+                <h2>Sports</h2>
+                <p>Movement, pressure, competition, and the energy surrounding every play.</p>
+                <a href="portfolio/sports.html">View collection <span aria-hidden="true">↗</span></a>
+              </article>
 
-      <div class="portfolio-panel__number">
-        <span>01</span>
-        <span>05</span>
-      </div>
+              <article class="portfolio-experience__chapter" data-portfolio-copy="4">
+                <h2>Wildlife</h2>
+                <p>Patient observations of movement, stillness, and the natural world.</p>
+                <a href="portfolio/wildlife.html">View collection <span aria-hidden="true">↗</span></a>
+              </article>
+            </div>
 
-      <p class="eyebrow">Portfolio Collection</p>
+            <nav class="portfolio-experience__index" aria-label="Portfolio categories">
+              <button class="is-active" type="button" data-portfolio-jump="0"><span>01</span>Aviation</button>
+              <button type="button" data-portfolio-jump="1"><span>02</span>Cars</button>
+              <button type="button" data-portfolio-jump="2"><span>03</span>Portraits</button>
+              <button type="button" data-portfolio-jump="3"><span>04</span>Sports</button>
+              <button type="button" data-portfolio-jump="4"><span>05</span>Wildlife</button>
+            </nav>
+          </div>
+        </div>
 
-      <h2>Aviation</h2>
+        <div class="portfolio-experience__steps" aria-hidden="true">
+          <div class="portfolio-experience__step" data-portfolio-step="0"></div>
+          <div class="portfolio-experience__step" data-portfolio-step="1"></div>
+          <div class="portfolio-experience__step" data-portfolio-step="2"></div>
+          <div class="portfolio-experience__step" data-portfolio-step="3"></div>
+          <div class="portfolio-experience__step" data-portfolio-step="4"></div>
+        </div>
+      </section>
 
-      <p class="portfolio-panel__description">
-        Aircraft, airshows, movement, and atmosphere captured in flight.
-      </p>
 
-      <a class="portfolio-panel__link" href="portfolio/aviation.html">
-        View Aviation
-        <span aria-hidden="true">↗</span>
-      </a>
-
-    </div>
-
-  </article>
-
-  <!-- Cars -->
-  <article class="portfolio-panel" id="home-cars">
-
-    <img
-      class="portfolio-panel__image"
-      src="images/featured/cars.jpg"
-      alt="Automotive photography by Isaac Motl"
-      loading="lazy"
-    >
-
-    <div class="portfolio-panel__overlay"></div>
-
-    <div class="container portfolio-panel__content reveal">
-
-      <div class="portfolio-panel__number">
-        <span>02</span>
-        <span>05</span>
-      </div>
-
-      <p class="eyebrow">Portfolio Collection</p>
-
-      <h2>Cars</h2>
-
-      <p class="portfolio-panel__description">
-        Automotive details, reflections, motion, and machines with character.
-      </p>
-
-      <a class="portfolio-panel__link" href="portfolio/cars.html">
-        View Cars
-        <span aria-hidden="true">↗</span>
-      </a>
-
-    </div>
-
-  </article>
-
-  <!-- Portraits -->
-  <article class="portfolio-panel" id="home-portraits">
-
-    <img
-      class="portfolio-panel__image"
-      src="images/featured/portraits.jpg"
-      alt="Portrait photography by Isaac Motl"
-      loading="lazy"
-    >
-
-    <div class="portfolio-panel__overlay"></div>
-
-    <div class="container portfolio-panel__content reveal">
-
-      <div class="portfolio-panel__number">
-        <span>03</span>
-        <span>05</span>
-      </div>
-
-      <p class="eyebrow">Portfolio Collection</p>
-
-      <h2>Portraits</h2>
-
-      <p class="portfolio-panel__description">
-        Natural light, honest expression, and clean editorial portraiture.
-      </p>
-
-      <a class="portfolio-panel__link" href="portfolio/portraits.html">
-        View Portraits
-        <span aria-hidden="true">↗</span>
-      </a>
-
-    </div>
-
-  </article>
-
-  <!-- Sports -->
-  <article class="portfolio-panel" id="home-sports">
-
-    <img
-      class="portfolio-panel__image"
-      src="images/featured/sports.jpg"
-      alt="Sports photography by Isaac Motl"
-      loading="lazy"
-    >
-
-    <div class="portfolio-panel__overlay"></div>
-
-    <div class="container portfolio-panel__content reveal">
-
-      <div class="portfolio-panel__number">
-        <span>04</span>
-        <span>05</span>
-      </div>
-
-      <p class="eyebrow">Portfolio Collection</p>
-
-      <h2>Sports</h2>
-
-      <p class="portfolio-panel__description">
-        Movement, pressure, competition, and the energy surrounding every play.
-      </p>
-
-      <a class="portfolio-panel__link" href="portfolio/sports.html">
-        View Sports
-        <span aria-hidden="true">↗</span>
-      </a>
-
-    </div>
-
-  </article>
-
-  <!-- Wildlife -->
-  <article class="portfolio-panel" id="home-wildlife">
-
-    <img
-      class="portfolio-panel__image"
-      src="images/featured/wildlife.jpg"
-      alt="Wildlife photography by Isaac Motl"
-      loading="lazy"
-    >
-
-    <div class="portfolio-panel__overlay"></div>
-
-    <div class="container portfolio-panel__content reveal">
-
-      <div class="portfolio-panel__number">
-        <span>05</span>
-        <span>05</span>
-      </div>
-
-      <p class="eyebrow">Portfolio Collection</p>
-
-      <h2>Wildlife</h2>
-
-      <p class="portfolio-panel__description">
-        Patient observations of movement, stillness, and the natural world.
-      </p>
-
-      <a class="portfolio-panel__link" href="portfolio/wildlife.html">
-        View Wildlife
-        <span aria-hidden="true">↗</span>
-      </a>
-
-    </div>
-
-  </article>
-</div>
-</div>
-</section>
-
-<!-- Web Design Preview -->
+      <!-- Web Design Preview -->
 <section class="section about-preview" aria-labelledby="web-design-title">
   <div class="container about-preview__grid">
 
