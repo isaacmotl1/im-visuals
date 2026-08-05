@@ -917,3 +917,16 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     transition: none;
   }
 }
+/* Physical frame around About photo */
+.about-preview--person .about-preview__image {
+  padding: 10px;
+  border: 3px solid #f4f6f8;
+  background: #0b0d10;
+  border-radius: 4px;
+}
+
+.about-preview--person .about-preview__image img {
+  display: block;
+  width: 100%;
+  border-radius: 0;
+}
