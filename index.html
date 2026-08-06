@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=euphoric-1" />
+    <link rel="stylesheet" href="styles.css?v=editorial-about-1" />
   </head>
   <body>
     <!-- Skip link makes keyboard navigation faster. -->
@@ -186,41 +186,73 @@
     </div>
   </div>
 </section>
+    <!-- Editorial About Chapter -->
+    <section class="about-editorial" id="about-preview" aria-labelledby="about-preview-title">
+      <div class="about-editorial__ghost" aria-hidden="true">
+        <span class="about-editorial__ghost-word about-editorial__ghost-word--isaac">Isaac</span>
+        <span class="about-editorial__ghost-word about-editorial__ghost-word--motl">Motl</span>
+      </div>
 
+      <div class="container about-editorial__layout">
+        <figure class="about-editorial__portrait">
+          <div class="about-editorial__portrait-frame">
+            <img
+              src="images/about/isaac1.jpeg"
+              alt="Portrait of photographer and web designer Isaac Motl"
+              loading="lazy"
+            />
+          </div>
 
-      <!-- About preview -->
-      <section class="section about-preview about-preview--person" aria-labelledby="about-preview-title">
-        <div class="container about-preview__grid">
-          <figure class="about-preview__image about-portrait-card reveal">
+          <figcaption>
+            <span>Portrait / 2026</span>
+            <span>Wisconsin, USA</span>
+          </figcaption>
+        </figure>
 
-  <div class="about-portrait-card__frame">
-    <img
-      src="images/about/isaac1.jpeg"
-      alt="Portrait of photographer and web designer Isaac Motl"
-      loading="lazy"
-    />
-  </div>
+        <div class="about-editorial__content">
+          <p class="eyebrow">About / Wisconsin</p>
 
-  <figcaption>
-    <span>Isaac Motl</span>
-    <span>Photographer · Web Designer</span>
-  </figcaption>
+          <h2 id="about-preview-title" class="about-editorial__statement">
+            I create work that feels
+            <span>considered, honest,</span>
+            and built to last beyond the moment.
+          </h2>
 
-</figure>
-          <div class="about-preview__content reveal">
-            <p class="eyebrow">The photographer</p>
-            <h2 id="about-preview-title">Images with a sense of arrival.</h2>
-            <p>For Isaac Motl, the camera is a way to slow down. From storm systems over the high desert to an athlete's final quiet moment before competition, his work follows the details that stay with you.</p>
-            <a class="text-link" href="about.html">More about Isaac <span aria-hidden="true">→</span></a>
+          <p class="about-editorial__copy">
+            I’m Isaac Motl, a photographer and web designer based in Wisconsin.
+            Photography taught me to notice the small details that shape how something
+            feels. I carry that same attention into every website I design — creating
+            work that is clear, intentional, and personal.
+          </p>
+
+          <a class="text-link about-editorial__link" href="about.html">
+            More about Isaac <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="about-editorial__rail" aria-label="About details">
+          <div>
+            <span>Disciplines</span>
+            <strong>Photography<br />Web Design</strong>
+          </div>
+
+          <div>
+            <span>Based in</span>
+            <strong>Wisconsin<br />United States</strong>
+          </div>
+
+          <div>
+            <span>Focus</span>
+            <strong>Visual storytelling<br />Digital experiences</strong>
+          </div>
+
+          <div>
+            <span>Available for</span>
+            <strong>Selected projects<br />Creative collaborations</strong>
           </div>
         </div>
-      </section>
-
-    
-
- 
-    
-   
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="site-footer"><div class="container footer-content"><a class="wordmark" href="#top">Isaac <span>Motl</span></a><p>© <span id="year"></span> Isaac Motl. All images copyright their respective placeholder sources.</p><a href="#top" class="text-link">Back to top <span aria-hidden="true">↑</span></a></div></footer>
@@ -233,7 +265,7 @@
       <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Next image">→</button>
     </dialog>
 
-    <script src="script.js?v=euphoric-1"></script>
+    <script src="script.js?v=editorial-about-1"></script>
 
     <script>
       (() => {
@@ -299,6 +331,71 @@
         updateTransition();
       })();
     </script>
+
+    <script>
+      (() => {
+        const section = document.querySelector(".about-editorial");
+        if (!section) return;
+
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const mobile = window.matchMedia("(max-width: 760px)");
+        let ticking = false;
+
+        const clamp = (value, min = 0, max = 1) =>
+          Math.min(max, Math.max(min, value));
+
+        const smoothstep = (start, end, value) => {
+          const amount = clamp((value - start) / (end - start));
+          return amount * amount * (3 - 2 * amount);
+        };
+
+        function setFinalState() {
+          section.style.setProperty("--about-progress", "0.55");
+          section.style.setProperty("--about-reveal", "1");
+          section.style.setProperty("--about-rail", "1");
+          section.style.setProperty("--about-portrait-y", "0px");
+          section.style.setProperty("--about-copy-y", "0px");
+          section.style.setProperty("--about-isaac-x", "4vw");
+          section.style.setProperty("--about-motl-x", "-4vw");
+        }
+
+        function updateAbout() {
+          ticking = false;
+
+          if (reducedMotion.matches || mobile.matches) {
+            setFinalState();
+            return;
+          }
+
+          const rect = section.getBoundingClientRect();
+          const viewport = window.innerHeight;
+          const progress = clamp((viewport - rect.top) / (rect.height + viewport));
+          const reveal = smoothstep(0.08, 0.34, progress);
+          const rail = smoothstep(0.34, 0.62, progress);
+
+          section.style.setProperty("--about-progress", progress.toFixed(4));
+          section.style.setProperty("--about-reveal", reveal.toFixed(4));
+          section.style.setProperty("--about-rail", rail.toFixed(4));
+          section.style.setProperty("--about-portrait-y", `${56 - progress * 104}px`);
+          section.style.setProperty("--about-copy-y", `${72 - reveal * 72}px`);
+          section.style.setProperty("--about-isaac-x", `${-10 + progress * 20}vw`);
+          section.style.setProperty("--about-motl-x", `${10 - progress * 20}vw`);
+        }
+
+        function requestUpdate() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(updateAbout);
+        }
+
+        window.addEventListener("scroll", requestUpdate, { passive: true });
+        window.addEventListener("resize", requestUpdate);
+        reducedMotion.addEventListener?.("change", requestUpdate);
+        mobile.addEventListener?.("change", requestUpdate);
+        updateAbout();
+      })();
+    </script>
+
     <a href="contact.html" class="floating-contact">
     Contact
 </a>
