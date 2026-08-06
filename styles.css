@@ -1499,3 +1499,39 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 }
 
+/* ==================================================
+   ABOUT GHOST TEXT — STOP ISAAC / MOTL FROM CLIPPING
+================================================== */
+
+.about-editorial__ghost-word {
+  font-size: clamp(8rem, 18vw, 19rem);
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+}
+
+.about-editorial__ghost-word--isaac {
+  top: 8vh;
+  left: 12vw;
+}
+
+.about-editorial__ghost-word--motl {
+  right: 12vw;
+  bottom: 8vh;
+}
+
+@media (max-width: 760px) {
+  .about-editorial__ghost-word {
+    font-size: clamp(6.5rem, 30vw, 10rem);
+    line-height: 0.88;
+  }
+
+  .about-editorial__ghost-word--isaac {
+    top: 60px;
+    left: 4vw;
+  }
+
+  .about-editorial__ghost-word--motl {
+    right: 4vw;
+    bottom: 120px;
+  }
+}
