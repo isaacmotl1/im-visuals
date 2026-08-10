@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=editorial-about-2" />
+    <link rel="stylesheet" href="styles.css?v=photo-showcase-1" />
   </head>
   <body>
     <!-- Skip link makes keyboard navigation faster. -->
@@ -43,85 +43,114 @@
         </div>
         <p class="hero-credit">Wisconsin, United States · 2026</p>
       </section>
-      <!-- Cinematic Portfolio Experience -->
-      <section class="portfolio-experience" id="portfolio" aria-label="Photography portfolio">
-        <div class="portfolio-experience__stage">
-          <div class="portfolio-experience__media" aria-hidden="true">
-            <figure class="portfolio-experience__image is-active" data-portfolio-media="0">
-              <img src="images/featured/aviation.jpg" alt="" />
-            </figure>
-            <figure class="portfolio-experience__image" data-portfolio-media="1">
-              <img src="images/featured/cars.jpg" alt="" loading="lazy" />
-            </figure>
-            <figure class="portfolio-experience__image" data-portfolio-media="2">
-              <img src="images/featured/portraits.jpg" alt="" loading="lazy" />
-            </figure>
-            <figure class="portfolio-experience__image" data-portfolio-media="3">
-              <img src="images/featured/sports.jpg" alt="" loading="lazy" />
-            </figure>
-            <figure class="portfolio-experience__image" data-portfolio-media="4">
-              <img src="images/featured/wildlife.jpg" alt="" loading="lazy" />
-            </figure>
-          </div>
+      <!-- Editorial Auto-Shuffling Photography Showcase -->
+      <section class="photo-showcase" id="portfolio" aria-labelledby="photo-showcase-title">
+        <p class="photo-showcase__ghost" aria-hidden="true">Photography</p>
 
-          <div class="portfolio-experience__shade"></div>
+        <div class="container photo-showcase__shell">
+          <div class="photo-showcase__intro">
+            <p class="eyebrow">Selected Portfolio</p>
 
-          <div class="portfolio-experience__ui">
-            <div class="portfolio-experience__topline">
-              <p class="eyebrow">Selected portfolio</p>
-              <p class="portfolio-experience__counter" aria-live="polite">
-                <span id="portfolio-current">01</span><span>/05</span>
+            <h2 id="photo-showcase-title">
+              A collection of moments, shaped by light and intention.
+            </h2>
+
+            <p class="photo-showcase__copy">
+              Explore a curated selection of my work across aviation, automotive,
+              portraits, sports, and wildlife.
+            </p>
+
+            <a class="text-link photo-showcase__all" href="portfolio.html">
+              View all work <span aria-hidden="true">↗</span>
+            </a>
+
+            <div class="photo-showcase__status" aria-live="polite">
+              <p class="photo-showcase__counter">
+                <span data-photo-current>01</span>
+                <span>/ 05</span>
+              </p>
+
+              <div class="photo-showcase__progress" aria-hidden="true">
+                <span></span>
+              </div>
+
+              <p class="photo-showcase__shuffle">
+                <span aria-hidden="true">↻</span>
+                Auto shuffle
               </p>
             </div>
+          </div>
 
-            <div class="portfolio-experience__copy">
-              <article class="portfolio-experience__chapter is-active" data-portfolio-copy="0">
-                <h2>Aviation</h2>
-                <p>Aircraft, airshows, movement, and atmosphere captured in flight.</p>
-                <a href="portfolio/aviation.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
+          <div class="photo-showcase__viewer">
+            <div class="photo-showcase__media">
+              <a
+                class="photo-showcase__slide is-active"
+                data-photo-slide="0"
+                data-photo-category="Aviation"
+                href="portfolio/aviation.html"
+                aria-label="View aviation photography"
+              >
+                <img src="images/featured/aviation.jpg" alt="Aviation photography by Isaac Motl" />
+              </a>
 
-              <article class="portfolio-experience__chapter" data-portfolio-copy="1">
-                <h2>Cars</h2>
-                <p>Automotive details, reflections, motion, and machines with character.</p>
-                <a href="portfolio/cars.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
+              <a
+                class="photo-showcase__slide"
+                data-photo-slide="1"
+                data-photo-category="Automotive"
+                href="portfolio/cars.html"
+                aria-label="View automotive photography"
+              >
+                <img src="images/featured/cars.jpg" alt="Automotive photography by Isaac Motl" loading="lazy" />
+              </a>
 
-              <article class="portfolio-experience__chapter" data-portfolio-copy="2">
-                <h2>Portraits</h2>
-                <p>Natural light, honest expression, and clean editorial portraiture.</p>
-                <a href="portfolio/portraits.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
+              <a
+                class="photo-showcase__slide"
+                data-photo-slide="2"
+                data-photo-category="Portraits"
+                href="portfolio/portraits.html"
+                aria-label="View portrait photography"
+              >
+                <img src="images/featured/portraits.jpg" alt="Portrait photography by Isaac Motl" loading="lazy" />
+              </a>
 
-              <article class="portfolio-experience__chapter" data-portfolio-copy="3">
-                <h2>Sports</h2>
-                <p>Movement, pressure, competition, and the energy surrounding every play.</p>
-                <a href="portfolio/sports.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
+              <a
+                class="photo-showcase__slide"
+                data-photo-slide="3"
+                data-photo-category="Sports"
+                href="portfolio/sports.html"
+                aria-label="View sports photography"
+              >
+                <img src="images/featured/sports.jpg" alt="Sports photography by Isaac Motl" loading="lazy" />
+              </a>
 
-              <article class="portfolio-experience__chapter" data-portfolio-copy="4">
-                <h2>Wildlife</h2>
-                <p>Patient observations of movement, stillness, and the natural world.</p>
-                <a href="portfolio/wildlife.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
+              <a
+                class="photo-showcase__slide"
+                data-photo-slide="4"
+                data-photo-category="Wildlife"
+                href="portfolio/wildlife.html"
+                aria-label="View wildlife photography"
+              >
+                <img src="images/featured/wildlife.jpg" alt="Wildlife photography by Isaac Motl" loading="lazy" />
+              </a>
+
+              <p class="photo-showcase__category" data-photo-category-label>Aviation</p>
             </div>
 
-            <nav class="portfolio-experience__index" aria-label="Portfolio categories">
-              <button class="is-active" type="button" data-portfolio-jump="0"><span>01</span>Aviation</button>
-              <button type="button" data-portfolio-jump="1"><span>02</span>Cars</button>
-              <button type="button" data-portfolio-jump="2"><span>03</span>Portraits</button>
-              <button type="button" data-portfolio-jump="3"><span>04</span>Sports</button>
-              <button type="button" data-portfolio-jump="4"><span>05</span>Wildlife</button>
-            </nav>
-          </div>
-        </div>
+            <div class="photo-showcase__controls">
+              <div class="photo-showcase__dots" role="group" aria-label="Choose featured photograph">
+                <button class="is-active" type="button" data-photo-dot="0" aria-label="Show Aviation" aria-pressed="true"></button>
+                <button type="button" data-photo-dot="1" aria-label="Show Automotive" aria-pressed="false"></button>
+                <button type="button" data-photo-dot="2" aria-label="Show Portraits" aria-pressed="false"></button>
+                <button type="button" data-photo-dot="3" aria-label="Show Sports" aria-pressed="false"></button>
+                <button type="button" data-photo-dot="4" aria-label="Show Wildlife" aria-pressed="false"></button>
+              </div>
 
-        <div class="portfolio-experience__steps" aria-hidden="true">
-          <div class="portfolio-experience__step" data-portfolio-step="0"></div>
-          <div class="portfolio-experience__step" data-portfolio-step="1"></div>
-          <div class="portfolio-experience__step" data-portfolio-step="2"></div>
-          <div class="portfolio-experience__step" data-portfolio-step="3"></div>
-          <div class="portfolio-experience__step" data-portfolio-step="4"></div>
+              <div class="photo-showcase__arrows">
+                <button type="button" data-photo-prev aria-label="Previous photograph">←</button>
+                <button type="button" data-photo-next aria-label="Next photograph">→</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -265,7 +294,7 @@
       <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Next image">→</button>
     </dialog>
 
-    <script src="script.js?v=editorial-about-1"></script>
+    <script src="script.js?v=photo-showcase-1"></script>
 
     <script>
       (() => {
