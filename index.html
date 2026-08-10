@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=editorial-about-2" />
+    <link rel="stylesheet" href="styles.css?v=photo-text-static-web-1" />
   </head>
   <body>
     <!-- Skip link makes keyboard navigation faster. -->
@@ -46,6 +46,7 @@
       <!-- Cinematic Portfolio Experience -->
       <section class="portfolio-experience" id="portfolio" aria-label="Photography portfolio">
         <div class="portfolio-experience__stage">
+          <p class="portfolio-experience__ghost" aria-hidden="true">Photography</p>
           <div class="portfolio-experience__media" aria-hidden="true">
             <figure class="portfolio-experience__image is-active" data-portfolio-media="0">
               <img src="images/featured/aviation.jpg" alt="" />
@@ -265,74 +266,9 @@
       <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Next image">→</button>
     </dialog>
 
-    <script src="script.js?v=editorial-about-1"></script>
+    <script src="script.js?v=photo-text-static-web-1"></script>
 
-    <script>
-      (() => {
-        const section = document.querySelector(".transition-chapter");
-        if (!section) return;
-
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const mobile = window.matchMedia("(max-width: 760px)");
-        let ticking = false;
-
-        const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-        const smoothstep = (start, end, value) => {
-          const amount = clamp((value - start) / (end - start));
-          return amount * amount * (3 - 2 * amount);
-        };
-
-        function setFinalState() {
-          section.style.setProperty("--transition-progress", "1");
-          section.style.setProperty("--transition-intro", "1");
-          section.style.setProperty("--transition-mockup", "1");
-          section.style.setProperty("--transition-exit", "1");
-          section.style.setProperty("--intro-y", "0px");
-          section.style.setProperty("--mockup-y", "0px");
-          section.style.setProperty("--ghost-top-x", "8vw");
-          section.style.setProperty("--ghost-bottom-x", "-8vw");
-        }
-
-        function updateTransition() {
-          ticking = false;
-
-          if (reducedMotion.matches || mobile.matches) {
-            setFinalState();
-            return;
-          }
-
-          const rect = section.getBoundingClientRect();
-          const distance = section.offsetHeight - window.innerHeight;
-          const progress = distance > 0 ? clamp(-rect.top / distance) : 1;
-          const intro = smoothstep(0.08, 0.36, progress);
-          const mockup = smoothstep(0.34, 0.72, progress);
-          const exit = 1 - smoothstep(0.88, 1, progress);
-
-          section.style.setProperty("--transition-progress", progress.toFixed(4));
-          section.style.setProperty("--transition-intro", intro.toFixed(4));
-          section.style.setProperty("--transition-mockup", mockup.toFixed(4));
-          section.style.setProperty("--transition-exit", exit.toFixed(4));
-          section.style.setProperty("--intro-y", `${(1 - intro) * 72}px`);
-          section.style.setProperty("--mockup-y", `${(1 - mockup) * 120}px`);
-          section.style.setProperty("--ghost-top-x", `${-18 + progress * 34}vw`);
-          section.style.setProperty("--ghost-bottom-x", `${18 - progress * 34}vw`);
-        }
-
-        function requestUpdate() {
-          if (ticking) return;
-          ticking = true;
-          requestAnimationFrame(updateTransition);
-        }
-
-        window.addEventListener("scroll", requestUpdate, { passive: true });
-        window.addEventListener("resize", requestUpdate);
-        reducedMotion.addEventListener?.("change", requestUpdate);
-        mobile.addEventListener?.("change", requestUpdate);
-        updateTransition();
-      })();
-    </script>
-
-    <script>
+<script>
       (() => {
         const section = document.querySelector(".about-editorial");
         if (!section) return;

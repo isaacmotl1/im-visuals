@@ -1535,3 +1535,146 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     bottom: 120px;
   }
 }
+
+/* ==================================================
+   HOMEPAGE POLISH — PHOTOGRAPHY TITLE + STATIC WEB DESIGN
+   Added to keep the current portfolio layout while removing
+   the scroll-driven Web Design reveal.
+================================================== */
+
+/* Large outlined PHOTOGRAPHY word over the cinematic portfolio.
+   It sits behind the portfolio UI but above the image/shade. */
+.portfolio-experience__ghost {
+  position: absolute;
+  z-index: 2;
+  top: clamp(42px, 7vh, 86px);
+  left: 50%;
+  width: max-content;
+  margin: 0;
+  color: transparent;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(6.5rem, 11vw, 12rem);
+  font-weight: 500;
+  line-height: .82;
+  letter-spacing: -.08em;
+  text-transform: uppercase;
+  opacity: .52;
+  -webkit-text-stroke: 1px rgba(220, 232, 240, .14);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.015),
+      rgba(145,178,199,.16),
+      rgba(255,255,255,.015)
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  mix-blend-mode: screen;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Keep the actual portfolio controls/content above the large word. */
+.portfolio-experience__ui {
+  z-index: 3;
+}
+
+/* Web Design transition is now fully visible immediately.
+   No 300vh pinned reveal and no scroll-controlled opacity/transform. */
+.transition-chapter {
+  --transition-progress: .55;
+  --transition-intro: 1;
+  --transition-mockup: 1;
+  --transition-exit: 1;
+  --intro-y: 0px;
+  --mockup-y: 0px;
+  --ghost-top-x: 0vw;
+  --ghost-bottom-x: 0vw;
+
+  height: auto;
+  min-height: 100svh;
+  padding: clamp(145px, 14vw, 220px) 0;
+}
+
+.transition-chapter__sticky {
+  position: relative;
+  top: auto;
+  height: auto;
+  min-height: min(900px, 100svh);
+  overflow: hidden;
+  padding: clamp(34px, 4vw, 64px) 0;
+}
+
+.transition-chapter__ambient {
+  opacity: .48;
+  transform: rotate(2deg) scale(1.04);
+  transition: none;
+  will-change: auto;
+}
+
+.transition-chapter__content {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+.web-mockup {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+.web-mockup::before {
+  opacity: .78;
+}
+
+.transition-chapter__ghost {
+  opacity: .34;
+  transition: none;
+  will-change: auto;
+}
+
+.transition-chapter__ghost--top {
+  transform: translate3d(0, 0, 0);
+}
+
+.transition-chapter__ghost--bottom {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Nothing in this section needs to animate as the page scrolls. */
+.transition-chapter__content,
+.web-mockup,
+.transition-chapter__ambient,
+.transition-chapter__ghost {
+  animation: none;
+}
+
+@media (max-width: 800px) {
+  .portfolio-experience__ghost {
+    top: 42px;
+    font-size: clamp(4.5rem, 16vw, 7.25rem);
+    opacity: .42;
+  }
+}
+
+@media (max-width: 760px) {
+  .transition-chapter {
+    min-height: 0;
+    padding: 125px 0 115px;
+  }
+
+  .transition-chapter__sticky {
+    min-height: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 460px) {
+  .portfolio-experience__ghost {
+    top: 34px;
+    font-size: clamp(3.8rem, 15vw, 5.2rem);
+  }
+}
+
