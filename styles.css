@@ -1673,3 +1673,64 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     bottom: 120px;
   }
 }
+
+
+/* ==================================================
+   PHOTO SHOWCASE V2 — WIDER LAYOUT + HERO TEXT FIX
+================================================== */
+
+/* The homepage hero is already visible on load, so do not depend on
+   the scroll-reveal observer for its main text. */
+.hero .hero-content {
+  opacity: 1;
+  transform: none;
+}
+
+/* Break the photography showcase out of the standard 1280px container.
+   This matches the wider cinematic footprint used elsewhere on the homepage. */
+.photo-showcase__shell.container {
+  width: min(calc(100% - 48px), 1600px);
+  max-width: none;
+  margin-inline: auto;
+  grid-template-columns: minmax(340px, .72fr) minmax(0, 2.08fr);
+  min-height: 0;
+}
+
+.photo-showcase__viewer {
+  min-width: 0;
+}
+
+/* Keep the featured photograph cinematic instead of tall/squeezed. */
+.photo-showcase__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+}
+
+@media (max-width: 1200px) and (min-width: 801px) {
+  .photo-showcase__shell.container {
+    width: min(calc(100% - 40px), 1450px);
+    grid-template-columns: minmax(300px, .8fr) minmax(0, 1.75fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .photo-showcase__shell.container {
+    width: min(calc(100% - 28px), 760px);
+    grid-template-columns: 1fr;
+  }
+
+  .photo-showcase__media {
+    aspect-ratio: 16 / 11;
+  }
+}
+
+@media (max-width: 520px) {
+  .photo-showcase__shell.container {
+    width: calc(100% - 20px);
+  }
+
+  .photo-showcase__media {
+    aspect-ratio: 4 / 5;
+  }
+}
