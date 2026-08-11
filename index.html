@@ -35,7 +35,7 @@
     <main id="main-content">
       <!-- Full-screen home hero -->
       <section class="hero" aria-label="Jet in the blue sky.">
-        <div class="hero-content container reveal">
+        <div class="hero-content container">
           <p class="eyebrow">Independent photographer · Wisconsin</p>
           <h1>Light, in its<br />quietest form.</h1>
           <p class="hero-copy">A considered study of place, motion, and the people who move through both.</p>
@@ -43,6 +43,14 @@
         </div>
         <p class="hero-credit">Wisconsin, United States · 2026</p>
       </section>
+             
+
+      <!-- Hero to Photography transition -->
+      <section class="photography-bridge" aria-hidden="true">
+        <p class="photography-bridge__word">Photography</p>
+      </section>
+
+      <!-- Cinematic Portfolio Experience -->
       <!-- Cinematic Portfolio Experience -->
       <section class="portfolio-experience" id="portfolio" aria-label="Photography portfolio">
         <div class="portfolio-experience__stage">
@@ -265,136 +273,9 @@
       <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Next image">→</button>
     </dialog>
 
-    <script src="script.js?v=editorial-about-1"></script>
+    <script src="script.js?v=static-sections-1"></script>
 
-    <script>
-      (() => {
-        const section = document.querySelector(".transition-chapter");
-        if (!section) return;
-
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const mobile = window.matchMedia("(max-width: 760px)");
-        let ticking = false;
-
-        const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-        const smoothstep = (start, end, value) => {
-          const amount = clamp((value - start) / (end - start));
-          return amount * amount * (3 - 2 * amount);
-        };
-
-        function setFinalState() {
-          section.style.setProperty("--transition-progress", "1");
-          section.style.setProperty("--transition-intro", "1");
-          section.style.setProperty("--transition-mockup", "1");
-          section.style.setProperty("--transition-exit", "1");
-          section.style.setProperty("--intro-y", "0px");
-          section.style.setProperty("--mockup-y", "0px");
-          section.style.setProperty("--ghost-top-x", "8vw");
-          section.style.setProperty("--ghost-bottom-x", "-8vw");
-        }
-
-        function updateTransition() {
-          ticking = false;
-
-          if (reducedMotion.matches || mobile.matches) {
-            setFinalState();
-            return;
-          }
-
-          const rect = section.getBoundingClientRect();
-          const distance = section.offsetHeight - window.innerHeight;
-          const progress = distance > 0 ? clamp(-rect.top / distance) : 1;
-          const intro = smoothstep(0.08, 0.36, progress);
-          const mockup = smoothstep(0.34, 0.72, progress);
-          const exit = 1 - smoothstep(0.88, 1, progress);
-
-          section.style.setProperty("--transition-progress", progress.toFixed(4));
-          section.style.setProperty("--transition-intro", intro.toFixed(4));
-          section.style.setProperty("--transition-mockup", mockup.toFixed(4));
-          section.style.setProperty("--transition-exit", exit.toFixed(4));
-          section.style.setProperty("--intro-y", `${(1 - intro) * 72}px`);
-          section.style.setProperty("--mockup-y", `${(1 - mockup) * 120}px`);
-          section.style.setProperty("--ghost-top-x", `${-18 + progress * 34}vw`);
-          section.style.setProperty("--ghost-bottom-x", `${18 - progress * 34}vw`);
-        }
-
-        function requestUpdate() {
-          if (ticking) return;
-          ticking = true;
-          requestAnimationFrame(updateTransition);
-        }
-
-        window.addEventListener("scroll", requestUpdate, { passive: true });
-        window.addEventListener("resize", requestUpdate);
-        reducedMotion.addEventListener?.("change", requestUpdate);
-        mobile.addEventListener?.("change", requestUpdate);
-        updateTransition();
-      })();
-    </script>
-
-    <script>
-      (() => {
-        const section = document.querySelector(".about-editorial");
-        if (!section) return;
-
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const mobile = window.matchMedia("(max-width: 760px)");
-        let ticking = false;
-
-        const clamp = (value, min = 0, max = 1) =>
-          Math.min(max, Math.max(min, value));
-
-        const smoothstep = (start, end, value) => {
-          const amount = clamp((value - start) / (end - start));
-          return amount * amount * (3 - 2 * amount);
-        };
-
-        function setFinalState() {
-          section.style.setProperty("--about-progress", "0.55");
-          section.style.setProperty("--about-reveal", "1");
-          section.style.setProperty("--about-rail", "1");
-          section.style.setProperty("--about-portrait-y", "0px");
-          section.style.setProperty("--about-copy-y", "0px");
-          section.style.setProperty("--about-isaac-x", "4vw");
-          section.style.setProperty("--about-motl-x", "-4vw");
-        }
-
-        function updateAbout() {
-          ticking = false;
-
-          if (reducedMotion.matches || mobile.matches) {
-            setFinalState();
-            return;
-          }
-
-          const rect = section.getBoundingClientRect();
-          const viewport = window.innerHeight;
-          const progress = clamp((viewport - rect.top) / (rect.height + viewport));
-          const reveal = smoothstep(0.08, 0.34, progress);
-          const rail = smoothstep(0.34, 0.62, progress);
-
-          section.style.setProperty("--about-progress", progress.toFixed(4));
-          section.style.setProperty("--about-reveal", reveal.toFixed(4));
-          section.style.setProperty("--about-rail", rail.toFixed(4));
-          section.style.setProperty("--about-portrait-y", `${56 - progress * 104}px`);
-          section.style.setProperty("--about-copy-y", `${72 - reveal * 72}px`);
-          section.style.setProperty("--about-isaac-x", `${-10 + progress * 20}vw`);
-          section.style.setProperty("--about-motl-x", `${10 - progress * 20}vw`);
-        }
-
-        function requestUpdate() {
-          if (ticking) return;
-          ticking = true;
-          requestAnimationFrame(updateAbout);
-        }
-
-        window.addEventListener("scroll", requestUpdate, { passive: true });
-        window.addEventListener("resize", requestUpdate);
-        reducedMotion.addEventListener?.("change", requestUpdate);
-        mobile.addEventListener?.("change", requestUpdate);
-        updateAbout();
-      })();
-    </script>
+    
 
     <a href="contact.html" class="floating-contact">
     Contact

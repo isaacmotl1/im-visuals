@@ -1535,3 +1535,391 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     bottom: 120px;
   }
 }
+/* ==================================================
+   HOMEPAGE STATIC EDITORIAL SECTIONS
+   HERO FADE + PHOTOGRAPHY + WEB + ABOUT
+================================================== */
+
+
+/* ==================================================
+   1. HERO — ALWAYS VISIBLE + SEAMLESS BOTTOM FADE
+================================================== */
+
+.hero {
+  position: relative;
+}
+
+/* Fade the actual hero photograph into the site's exact
+   background color: #0B0D10 */
+.hero::after {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+
+  height: clamp(220px, 32vh, 400px);
+
+  background: linear-gradient(
+    180deg,
+    rgba(11, 13, 16, 0) 0%,
+    rgba(11, 13, 16, 0.08) 15%,
+    rgba(11, 13, 16, 0.28) 35%,
+    rgba(11, 13, 16, 0.68) 64%,
+    rgba(11, 13, 16, 0.94) 84%,
+    #0B0D10 100%
+  );
+
+  pointer-events: none;
+  content: "";
+}
+
+/* Keep hero text above the fade. */
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.hero-credit {
+  z-index: 2;
+}
+
+
+/* ==================================================
+   2. PHOTOGRAPHY — SPACE BETWEEN HERO + PORTFOLIO
+================================================== */
+
+.photography-bridge {
+  position: relative;
+
+  display: grid;
+  min-height: clamp(330px, 46vh, 520px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 52%,
+      rgba(102, 124, 138, 0.09),
+      transparent 37%
+    ),
+    #0B0D10;
+
+  place-items: center;
+}
+
+/* Giant outlined PHOTOGRAPHY word.
+   It is permanently here — no scroll animation. */
+.photography-bridge__word {
+  position: relative;
+
+  width: max-content;
+  max-width: 96vw;
+
+  margin: 0;
+
+  color: transparent;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(6rem, 14vw, 15.5rem);
+  font-weight: 500;
+  line-height: 0.86;
+  letter-spacing: -0.075em;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  opacity: 0.52;
+
+  -webkit-text-stroke: 1px rgba(210, 224, 234, 0.14);
+
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.01),
+    rgba(133,165,186,0.16),
+    rgba(255,255,255,0.01)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  transform: none !important;
+  transition: none !important;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Let the portfolio start immediately after the
+   Photography title chapter. */
+.photography-bridge + .portfolio-experience {
+  padding-top: 0;
+}
+
+
+/* ==================================================
+   3. BEYOND PHOTOGRAPHY — COMPLETELY STATIC
+================================================== */
+
+.transition-chapter {
+  --transition-progress: 1;
+  --transition-intro: 1;
+  --transition-mockup: 1;
+  --transition-exit: 1;
+
+  --intro-y: 0px;
+  --mockup-y: 0px;
+
+  --ghost-top-x: 0vw;
+  --ghost-bottom-x: 0vw;
+
+  position: relative;
+
+  /* Removes the old 300vh scroll animation. */
+  height: auto !important;
+  min-height: 100svh;
+
+  padding: clamp(150px, 15vw, 220px) 0;
+
+  overflow: hidden;
+
+  background: #0B0D10;
+}
+
+/* No more sticky animated chapter. */
+.transition-chapter__sticky {
+  position: relative !important;
+  top: auto !important;
+
+  display: grid;
+
+  width: 100%;
+  height: auto !important;
+  min-height: min(780px, 84svh);
+
+  overflow: hidden;
+
+  place-items: center;
+}
+
+/* Keep the subtle background glow,
+   but it no longer changes while scrolling. */
+.transition-chapter__ambient {
+  opacity: 0.42 !important;
+
+  transform: rotate(3deg) scale(1.06) !important;
+
+  transition: none !important;
+}
+
+
+/* ==================================================
+   STATIC BEYOND / PHOTOGRAPHY BACKGROUND WORDS
+================================================== */
+
+.transition-chapter__ghost {
+  color: transparent;
+
+  font-size: clamp(6.5rem, 15vw, 16rem);
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+
+  opacity: 0.42 !important;
+
+  -webkit-text-stroke: 1px rgba(213, 226, 235, 0.15);
+
+  transform: none !important;
+  transition: none !important;
+
+  pointer-events: none;
+}
+
+/* BEYOND permanently sits upper-left. */
+.transition-chapter__ghost--top {
+  top: 6vh !important;
+  left: 5vw !important;
+  right: auto !important;
+
+  transform: none !important;
+}
+
+/* PHOTOGRAPHY permanently sits lower-right. */
+.transition-chapter__ghost--bottom {
+  right: 5vw !important;
+  bottom: 5vh !important;
+  left: auto !important;
+
+  transform: none !important;
+}
+
+
+/* ==================================================
+   WEB DESIGN CONTENT — ALREADY THERE
+================================================== */
+
+.transition-chapter__content {
+  opacity: 1 !important;
+
+  transform: none !important;
+  transition: none !important;
+}
+
+.web-mockup {
+  opacity: 1 !important;
+
+  transform: none !important;
+
+  transition: none !important;
+}
+
+/* Keep the cool 3D browser itself. */
+.web-mockup__browser {
+  opacity: 1;
+}
+
+/* Keep a little glow underneath it. */
+.web-mockup::before {
+  opacity: 0.72 !important;
+}
+
+/* No reason to say "continue" now that this isn't
+   a giant animated scroll chapter. */
+.transition-chapter__scroll-cue {
+  display: none !important;
+}
+
+
+/* ==================================================
+   4. ABOUT — ISAAC / MOTL ALWAYS PRESENT
+================================================== */
+
+.about-editorial {
+  --about-progress: 0.55;
+  --about-reveal: 1;
+  --about-rail: 1;
+
+  --about-portrait-y: 0px;
+  --about-copy-y: 0px;
+
+  --about-isaac-x: 0vw;
+  --about-motl-x: 0vw;
+}
+
+/* ISAAC / MOTL no longer move while scrolling. */
+.about-editorial__ghost-word {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Keep the entire words safely inside the screen. */
+.about-editorial__ghost-word--isaac {
+  top: 8vh !important;
+  left: 8vw !important;
+
+  transform: none !important;
+}
+
+.about-editorial__ghost-word--motl {
+  right: 8vw !important;
+  bottom: 8vh !important;
+
+  transform: none !important;
+}
+
+
+/* ==================================================
+   ABOUT CONTENT — ALREADY THERE
+================================================== */
+
+.about-editorial__content,
+.about-editorial__portrait,
+.about-editorial__rail {
+  opacity: 1 !important;
+
+  transform: none !important;
+
+  transition: none !important;
+}
+
+/* Stop the portrait parallax too. */
+.about-editorial__portrait img {
+  transform: scale(1.035) !important;
+
+  transition: none !important;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 800px) {
+
+  .photography-bridge {
+    min-height: 290px;
+  }
+
+  .photography-bridge__word {
+    font-size: clamp(4.7rem, 18vw, 8.5rem);
+  }
+
+  .transition-chapter {
+    min-height: auto;
+    padding: 130px 0;
+  }
+
+  .transition-chapter__sticky {
+    min-height: auto;
+  }
+
+  .transition-chapter__ghost {
+    font-size: clamp(5rem, 20vw, 9rem);
+  }
+
+  .transition-chapter__ghost--top {
+    top: 32px !important;
+    left: 4vw !important;
+  }
+
+  .transition-chapter__ghost--bottom {
+    right: 4vw !important;
+    bottom: 32px !important;
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 520px) {
+
+  .hero::after {
+    height: 230px;
+  }
+
+  .photography-bridge {
+    min-height: 230px;
+  }
+
+  .photography-bridge__word {
+    font-size: clamp(3.6rem, 18vw, 6rem);
+    letter-spacing: -0.065em;
+  }
+
+  .transition-chapter__ghost {
+    font-size: clamp(4.2rem, 21vw, 7rem);
+    opacity: 0.3 !important;
+  }
+
+  .about-editorial__ghost-word--isaac {
+    left: 4vw !important;
+  }
+
+  .about-editorial__ghost-word--motl {
+    right: 4vw !important;
+  }
+}
