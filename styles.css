@@ -3022,3 +3022,706 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     height: 230px !important;
   }
 }
+/* ==========================================================
+   FINAL HOMEPAGE TRANSITIONS
+   CLEAN SPATIAL FADES — NO BLACK LAYERS OVER THE TEXT
+
+   Exact website background:
+   #0B0D10
+========================================================== */
+
+
+/* ==========================================================
+   GLOBAL — REMOVE EVERY POSSIBLE SECTION SEAM
+========================================================== */
+
+.hero,
+.photography-bridge,
+.portfolio-experience,
+.transition-chapter,
+.transition-chapter__sticky,
+.about-editorial {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  outline: 0 !important;
+}
+
+.photography-bridge,
+.portfolio-experience,
+.transition-chapter,
+.about-editorial {
+  background-color: #0B0D10 !important;
+}
+
+
+/* ==========================================================
+   1. HERO -> PHOTOGRAPHY
+========================================================== */
+
+/*
+   Keep the hero fade that works.
+   Make sure the next section overlaps by 2px so there
+   can never be a 1px browser rendering seam.
+*/
+
+.hero {
+  margin-bottom: -2px !important;
+}
+
+
+/*
+   Give PHOTOGRAPHY a real chapter of its own.
+
+   TOP:
+   pure #0B0D10 so it connects perfectly to hero.
+
+   MIDDLE:
+   subtle blue-gray atmosphere.
+
+   BOTTOM:
+   returns to exact #0B0D10 before the portfolio.
+*/
+
+.photography-bridge {
+  position: relative !important;
+
+  min-height: clamp(650px, 82vh, 920px) !important;
+
+  margin-top: -2px !important;
+  margin-bottom: -2px !important;
+
+  overflow: hidden !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 50% 54%,
+      rgba(102,124,138,.14) 0%,
+      rgba(102,124,138,.07) 24%,
+      rgba(102,124,138,.025) 42%,
+      transparent 62%
+    ),
+
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+      #0B0D10 24%,
+
+      #0B0E11 34%,
+      #0C0F13 45%,
+      #0D1014 54%,
+
+      #0C0F13 65%,
+      #0B0E11 77%,
+
+      #0B0D10 89%,
+      #0B0D10 100%
+    ) !important;
+}
+
+
+.photography-bridge__word {
+  z-index: 3 !important;
+
+  opacity: .60 !important;
+
+  -webkit-text-stroke:
+    1px rgba(210,224,234,.22) !important;
+
+  transform: none !important;
+}
+
+
+/* ==========================================================
+   2. PORTFOLIO IMAGE FADE OUT
+========================================================== */
+
+/*
+   This is the equivalent of the HERO fade.
+
+   The portfolio picture itself gradually disappears
+   into #0B0D10.
+*/
+
+.portfolio-experience__stage::after {
+  position: absolute !important;
+
+  z-index: 2 !important;
+
+  right: -3px !important;
+  bottom: -3px !important;
+  left: -3px !important;
+
+  height: 74% !important;
+
+  background: linear-gradient(
+    to bottom,
+
+    rgba(11,13,16,0) 0%,
+
+    rgba(11,13,16,.005) 8%,
+    rgba(11,13,16,.015) 15%,
+    rgba(11,13,16,.035) 22%,
+    rgba(11,13,16,.065) 29%,
+    rgba(11,13,16,.11) 36%,
+    rgba(11,13,16,.17) 43%,
+    rgba(11,13,16,.25) 50%,
+    rgba(11,13,16,.35) 57%,
+    rgba(11,13,16,.46) 64%,
+    rgba(11,13,16,.58) 71%,
+    rgba(11,13,16,.70) 78%,
+    rgba(11,13,16,.81) 84%,
+    rgba(11,13,16,.89) 89%,
+    rgba(11,13,16,.95) 94%,
+    rgba(11,13,16,.985) 97%,
+
+    #0B0D10 100%
+  ) !important;
+
+  pointer-events: none !important;
+
+  content: "" !important;
+}
+
+
+/*
+   Portfolio text stays ABOVE the fade.
+*/
+
+.portfolio-experience__ui {
+  position: relative !important;
+
+  z-index: 4 !important;
+}
+
+
+/* ==========================================================
+   3. SPACE AFTER PHOTOS
+========================================================== */
+
+/*
+   Medium-large transition.
+
+   More space than you had just now,
+   but much less than the massive version from before.
+*/
+
+.portfolio-experience::after {
+  display: block !important;
+
+  width: 100% !important;
+
+  height: clamp(450px, 52vh, 650px) !important;
+
+  margin: -3px 0 0 !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 68% 80%,
+      rgba(116,145,166,.055),
+      transparent 48%
+    ),
+
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+      #0B0D10 46%,
+
+      #0B0E11 61%,
+      #0C0F13 76%,
+
+      #0B0E11 89%,
+      #0B0D10 100%
+    ) !important;
+
+  content: "" !important;
+}
+
+
+/* ==========================================================
+   4. WEB DESIGN — FADE IN
+========================================================== */
+
+/*
+   IMPORTANT:
+
+   There is NO giant black overlay anymore.
+
+   The actual Web Design SECTION starts black,
+   slowly develops its atmosphere,
+   then returns to black.
+
+   Because the fade is in the background itself,
+   BEYOND / PHOTOGRAPHY remain visible.
+*/
+
+.transition-chapter {
+  position: relative !important;
+
+  height: auto !important;
+
+  min-height: 110svh !important;
+
+  /*
+     TOP padding = Web Design fade-IN space.
+
+     BOTTOM padding = Web Design fade-OUT space.
+  */
+  padding:
+    clamp(280px, 31vh, 430px)
+    0
+    clamp(300px, 35vh, 470px) !important;
+
+  margin-top: -3px !important;
+  margin-bottom: -3px !important;
+
+  overflow: hidden !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 75% 48%,
+
+      rgba(125,156,177,.17) 0%,
+      rgba(125,156,177,.08) 24%,
+      rgba(125,156,177,.03) 42%,
+
+      transparent 60%
+    ),
+
+    radial-gradient(
+      ellipse at 27% 55%,
+
+      rgba(98,118,145,.10),
+
+      transparent 47%
+    ),
+
+    linear-gradient(
+      to bottom,
+
+      /* PURE BLACK ENTRANCE */
+
+      #0B0D10 0%,
+      #0B0D10 16%,
+
+      /* FADE IN */
+
+      #0B0E11 24%,
+      #0C0F13 34%,
+
+      /* FULL WEB ATMOSPHERE */
+
+      #0D1014 44%,
+      #0D1014 58%,
+
+      /* FADE OUT */
+
+      #0C0F13 69%,
+      #0B0E11 80%,
+
+      /* PURE BLACK EXIT */
+
+      #0B0D10 91%,
+      #0B0D10 100%
+    ) !important;
+}
+
+
+/* ==========================================================
+   REMOVE OLD WEB BLACK CURTAINS
+========================================================== */
+
+/*
+   These were covering your BEYOND / PHOTOGRAPHY words.
+
+   Completely disable them.
+*/
+
+.transition-chapter::before,
+.transition-chapter::after,
+.transition-chapter__sticky::before,
+.transition-chapter__sticky::after {
+  display: none !important;
+
+  content: none !important;
+}
+
+
+/* ==========================================================
+   WEB CONTENT POSITION
+========================================================== */
+
+.transition-chapter__sticky {
+  position: relative !important;
+
+  top: auto !important;
+
+  height: auto !important;
+
+  min-height: 760px !important;
+
+  overflow: hidden !important;
+
+  background: transparent !important;
+}
+
+
+/*
+   Everything stays permanently visible.
+*/
+
+.transition-chapter__content,
+.web-mockup {
+  position: relative !important;
+
+  z-index: 5 !important;
+
+  opacity: 1 !important;
+
+  transform: none !important;
+
+  transition: none !important;
+}
+
+
+/* ==========================================================
+   5. BEYOND / PHOTOGRAPHY WORDS
+========================================================== */
+
+/*
+   These now sit ABOVE the atmospheric background,
+   but BEHIND your actual Web Design content.
+
+   No black gradient can cover them anymore.
+*/
+
+.transition-chapter__ghost {
+  z-index: 2 !important;
+
+  opacity: .58 !important;
+
+  color: transparent !important;
+
+  -webkit-text-stroke:
+    1px rgba(213,226,235,.245) !important;
+
+  font-size:
+    clamp(7.5rem, 16vw, 17rem) !important;
+
+  line-height: .82 !important;
+
+  transform: none !important;
+
+  transition: none !important;
+}
+
+
+/*
+   Push BEYOND farther upward.
+*/
+
+.transition-chapter__ghost--top {
+  top: 3vh !important;
+
+  left: 5vw !important;
+
+  right: auto !important;
+
+  transform: none !important;
+}
+
+
+/*
+   Push PHOTOGRAPHY farther downward.
+
+   This creates a bigger visual gap between the two.
+*/
+
+.transition-chapter__ghost--bottom {
+  right: 4vw !important;
+
+  bottom: 3vh !important;
+
+  left: auto !important;
+
+  transform: none !important;
+}
+
+
+/* ==========================================================
+   6. WEB -> ABOUT TRANSITION
+========================================================== */
+
+/*
+   About starts on EXACTLY the same #0B0D10
+   that Web Design ends on.
+
+   No border.
+   No ::before curtain.
+   No slightly different shade.
+*/
+
+.about-editorial {
+  position: relative !important;
+
+  min-height: auto !important;
+
+  /*
+     This is your transition distance.
+
+     Noticeably present,
+     but nowhere near the giant gap you had before.
+  */
+
+  padding:
+    clamp(190px, 21vh, 285px)
+    0
+    clamp(90px, 10vh, 135px) !important;
+
+  margin-top: -3px !important;
+
+  overflow: hidden !important;
+
+  border: 0 !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 18% 52%,
+
+      rgba(102,124,138,.10),
+
+      transparent 38%
+    ),
+
+    radial-gradient(
+      ellipse at 78% 60%,
+
+      rgba(74,91,110,.065),
+
+      transparent 42%
+    ),
+
+    linear-gradient(
+      to bottom,
+
+      /*
+         BLACK ENTRANCE
+         matches Web Design's ending
+      */
+
+      #0B0D10 0%,
+      #0B0D10 23%,
+
+      /*
+         ABOUT ENVIRONMENT FADES IN
+      */
+
+      #0B0E11 34%,
+      #0C0F13 48%,
+
+      #0C0F13 69%,
+
+      /*
+         Fade back toward global background
+      */
+
+      #0B0E11 83%,
+
+      #0B0D10 94%,
+      #0B0D10 100%
+    ) !important;
+}
+
+
+/* ==========================================================
+   REMOVE OLD ABOUT OVERLAY / LINE
+========================================================== */
+
+/*
+   This was one source of the visible horizontal seam.
+*/
+
+.about-editorial::before {
+  display: none !important;
+
+  border: 0 !important;
+
+  background: none !important;
+
+  content: none !important;
+}
+
+
+/* ==========================================================
+   ABOUT CONTENT
+========================================================== */
+
+.about-editorial__ghost {
+  z-index: 1 !important;
+}
+
+
+.about-editorial__layout {
+  position: relative !important;
+
+  z-index: 3 !important;
+}
+
+
+.about-editorial__content,
+.about-editorial__portrait,
+.about-editorial__rail {
+  opacity: 1 !important;
+
+  transform: none !important;
+
+  transition: none !important;
+}
+
+
+/* ==========================================================
+   ABOUT BACKGROUND WORDS
+========================================================== */
+
+.about-editorial__ghost-word {
+  opacity: .56 !important;
+
+  -webkit-text-stroke:
+    1px rgba(210,224,234,.19) !important;
+
+  transform: none !important;
+}
+
+
+/* ==========================================================
+   7. HARD SEAM KILLER
+========================================================== */
+
+/*
+   In case Safari paints two sections with a fractional
+   sub-pixel difference, overlap them slightly.
+*/
+
+.photography-bridge,
+.portfolio-experience,
+.transition-chapter,
+.about-editorial {
+  box-shadow: none !important;
+}
+
+
+.portfolio-experience + .transition-chapter {
+  margin-top: -4px !important;
+}
+
+
+.transition-chapter + .about-editorial {
+  margin-top: -4px !important;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 800px) {
+
+  .photography-bridge {
+    min-height: 520px !important;
+  }
+
+
+  .portfolio-experience__stage::after {
+    height: 64% !important;
+  }
+
+
+  .portfolio-experience::after {
+    height: 360px !important;
+  }
+
+
+  .transition-chapter {
+    padding:
+      190px
+      0
+      220px !important;
+
+    min-height: auto !important;
+  }
+
+
+  .transition-chapter__sticky {
+    min-height: auto !important;
+  }
+
+
+  .transition-chapter__ghost {
+    font-size:
+      clamp(5rem, 19vw, 9rem) !important;
+  }
+
+
+  .about-editorial {
+    padding:
+      135px
+      0
+      90px !important;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 520px) {
+
+  .photography-bridge {
+    min-height: 400px !important;
+  }
+
+
+  .portfolio-experience__stage::after {
+    height: 58% !important;
+  }
+
+
+  .portfolio-experience::after {
+    height: 285px !important;
+  }
+
+
+  .transition-chapter {
+    padding:
+      145px
+      0
+      170px !important;
+  }
+
+
+  .transition-chapter__ghost {
+    opacity: .42 !important;
+
+    font-size:
+      clamp(4rem, 20vw, 7rem) !important;
+  }
+
+
+  .about-editorial {
+    padding:
+      105px
+      0
+      75px !important;
+  }
+
+
+  .about-editorial__ghost-word {
+    opacity: .40 !important;
+  }
+}
