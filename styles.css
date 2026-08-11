@@ -3575,3 +3575,395 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     opacity: 0.38 !important;
   }
 }
+/* ==========================================================
+   FINAL SEAMLESS CHAPTER FADES
+   Make Portfolio -> Web and Web -> About
+   behave like the Hero -> Photography transition
+========================================================== */
+
+
+/* ==========================================================
+   1. PORTFOLIO IMAGE -> BACKGROUND
+========================================================== */
+
+/*
+  Make the actual photograph disappear MUCH earlier
+  and more gradually.
+
+  Same principle as the hero:
+  transparent -> exact #0B0D10.
+*/
+.portfolio-experience__stage::after {
+  position: absolute !important;
+  z-index: 1 !important;
+
+  right: -3px !important;
+  bottom: -3px !important;
+  left: -3px !important;
+
+  height: 76% !important;
+
+  background: linear-gradient(
+    to bottom,
+
+    rgba(11, 13, 16, 0) 0%,
+    rgba(11, 13, 16, 0.008) 7%,
+    rgba(11, 13, 16, 0.02) 14%,
+    rgba(11, 13, 16, 0.045) 21%,
+    rgba(11, 13, 16, 0.08) 28%,
+    rgba(11, 13, 16, 0.13) 35%,
+    rgba(11, 13, 16, 0.20) 42%,
+    rgba(11, 13, 16, 0.29) 49%,
+    rgba(11, 13, 16, 0.40) 56%,
+    rgba(11, 13, 16, 0.52) 63%,
+    rgba(11, 13, 16, 0.64) 70%,
+    rgba(11, 13, 16, 0.75) 77%,
+    rgba(11, 13, 16, 0.84) 83%,
+    rgba(11, 13, 16, 0.91) 88%,
+    rgba(11, 13, 16, 0.96) 93%,
+    rgba(11, 13, 16, 0.99) 97%,
+
+    #0B0D10 100%
+  ) !important;
+
+  pointer-events: none !important;
+
+  content: "" !important;
+}
+
+
+/*
+  Keep all Photography text above the fade.
+*/
+.portfolio-experience__ui {
+  z-index: 3 !important;
+}
+
+
+/* ==========================================================
+   2. BIGGER PORTFOLIO -> WEB BREATHING SPACE
+========================================================== */
+
+/*
+  This is the blank atmospheric space AFTER
+  the final photograph.
+
+  Make it closer to the large space after the hero.
+*/
+.portfolio-experience::after {
+  width: 100% !important;
+
+  height: clamp(720px, 88vh, 1100px) !important;
+
+  margin: -3px 0 0 !important;
+
+  background:
+
+    /*
+      Very faint glow begins only around the middle.
+      Top and bottom remain EXACTLY #0B0D10.
+    */
+    radial-gradient(
+      ellipse at 65% 68%,
+      rgba(102, 124, 138, 0.055) 0%,
+      rgba(102, 124, 138, 0.025) 24%,
+      transparent 52%
+    ),
+
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+      #0B0D10 30%,
+
+      #0B0E11 45%,
+      #0C0F13 59%,
+
+      #0B0E11 75%,
+
+      #0B0D10 90%,
+      #0B0D10 100%
+    ) !important;
+
+  content: "" !important;
+}
+
+
+/* ==========================================================
+   3. WEB DESIGN ENTERS SLOWLY FROM THE SAME BLACK
+========================================================== */
+
+.transition-chapter {
+  /*
+    Give the beginning of this world more breathing room.
+  */
+  padding-top:
+    clamp(330px, 38vh, 560px) !important;
+
+  /*
+    Bigger exit space before About.
+  */
+  padding-bottom:
+    clamp(520px, 62vh, 850px) !important;
+
+  margin-top: -4px !important;
+
+  /*
+    Do NOT immediately jump into the blue-gray Web glow.
+
+    Stay #0B0D10 for the opening portion,
+    slowly enter the Web Design atmosphere,
+    then return to #0B0D10.
+  */
+  background:
+
+    radial-gradient(
+      ellipse at 76% 47%,
+      rgba(125, 156, 177, 0.16) 0%,
+      rgba(125, 156, 177, 0.07) 24%,
+      rgba(125, 156, 177, 0.025) 40%,
+      transparent 58%
+    ),
+
+    radial-gradient(
+      ellipse at 27% 55%,
+      rgba(98, 118, 145, 0.09),
+      transparent 46%
+    ),
+
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+      #0B0D10 14%,
+
+      #0B0E11 23%,
+      #0C0F13 34%,
+
+      #0D1014 47%,
+      #0D1014 59%,
+
+      #0C0F13 71%,
+      #0B0E11 81%,
+
+      #0B0D10 91%,
+      #0B0D10 100%
+    ) !important;
+}
+
+
+/* ==========================================================
+   4. WEB DESIGN -> BACKGROUND
+   HERO-STYLE LONG FADE
+========================================================== */
+
+.transition-chapter::after {
+  position: absolute !important;
+
+  z-index: 5 !important;
+
+  right: 0 !important;
+  bottom: -4px !important;
+  left: 0 !important;
+
+  /*
+    Much larger than before.
+  */
+  height: clamp(650px, 78vh, 1000px) !important;
+
+  background: linear-gradient(
+    to bottom,
+
+    rgba(11, 13, 16, 0) 0%,
+    rgba(11, 13, 16, 0.008) 7%,
+    rgba(11, 13, 16, 0.02) 14%,
+    rgba(11, 13, 16, 0.045) 21%,
+    rgba(11, 13, 16, 0.08) 28%,
+    rgba(11, 13, 16, 0.14) 36%,
+    rgba(11, 13, 16, 0.22) 44%,
+    rgba(11, 13, 16, 0.32) 52%,
+    rgba(11, 13, 16, 0.44) 60%,
+    rgba(11, 13, 16, 0.57) 68%,
+    rgba(11, 13, 16, 0.69) 75%,
+    rgba(11, 13, 16, 0.80) 82%,
+    rgba(11, 13, 16, 0.88) 87%,
+    rgba(11, 13, 16, 0.94) 92%,
+    rgba(11, 13, 16, 0.985) 97%,
+
+    #0B0D10 100%
+  ) !important;
+
+  pointer-events: none !important;
+
+  content: "" !important;
+}
+
+
+/* ==========================================================
+   5. ABOUT ENTERS FROM PURE #0B0D10
+========================================================== */
+
+.about-editorial {
+  margin-top: -4px !important;
+
+  /*
+    Keep About relatively quick,
+    but give the TOP enough room for the fade transition.
+  */
+  padding-top:
+    clamp(200px, 23vh, 320px) !important;
+
+  /*
+    Keep the END short so the visitor isn't stuck
+    in the About section.
+  */
+  padding-bottom:
+    clamp(95px, 10vh, 145px) !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 18% 50%,
+      rgba(102, 124, 138, 0.10),
+      transparent 37%
+    ),
+
+    radial-gradient(
+      ellipse at 78% 60%,
+      rgba(74, 91, 110, 0.065),
+      transparent 41%
+    ),
+
+    /*
+      Hold exact black longer at the beginning.
+
+      This is important because the Web section has
+      already faded completely to #0B0D10.
+    */
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+      #0B0D10 18%,
+
+      #0B0E11 29%,
+      #0C0F13 42%,
+
+      #0C0F13 67%,
+
+      #0B0E11 82%,
+
+      #0B0D10 94%,
+      #0B0D10 100%
+    ) !important;
+
+  border-top: 0 !important;
+}
+
+
+/* ==========================================================
+   6. ABOUT BACKGROUND TEXT
+========================================================== */
+
+/*
+  Make ISAAC / MOTL visible,
+  but still clearly background elements.
+*/
+.about-editorial__ghost-word {
+  opacity: 0.58 !important;
+
+  -webkit-text-stroke:
+    1px rgba(210, 224, 234, 0.19) !important;
+}
+
+
+/* ==========================================================
+   7. KEEP ABOUT QUICK
+========================================================== */
+
+.about-editorial__portrait {
+  margin-top:
+    clamp(25px, 3vw, 45px) !important;
+}
+
+
+.about-editorial__rail {
+  margin-top:
+    clamp(55px, 6vw, 85px) !important;
+}
+
+
+.about-editorial__copy {
+  margin:
+    27px
+    0
+    27px !important;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 800px) {
+
+  .portfolio-experience__stage::after {
+    height: 68% !important;
+  }
+
+
+  .portfolio-experience::after {
+    height: 560px !important;
+  }
+
+
+  .transition-chapter {
+    padding-top: 230px !important;
+    padding-bottom: 390px !important;
+  }
+
+
+  .transition-chapter::after {
+    height: 520px !important;
+  }
+
+
+  .about-editorial {
+    padding-top: 165px !important;
+    padding-bottom: 95px !important;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 520px) {
+
+  .portfolio-experience__stage::after {
+    height: 58% !important;
+  }
+
+
+  .portfolio-experience::after {
+    height: 430px !important;
+  }
+
+
+  .transition-chapter {
+    padding-top: 175px !important;
+    padding-bottom: 285px !important;
+  }
+
+
+  .transition-chapter::after {
+    height: 390px !important;
+  }
+
+
+  .about-editorial {
+    padding-top: 135px !important;
+    padding-bottom: 80px !important;
+  }
+}
