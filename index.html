@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=photo-text-static-web-1" />
+    <link rel="stylesheet" href="styles.css?v=hero-bridge-scroll-1" />
   </head>
   <body>
     <!-- Skip link makes keyboard navigation faster. -->
@@ -35,7 +35,7 @@
     <main id="main-content">
       <!-- Full-screen home hero -->
       <section class="hero" aria-label="Jet in the blue sky.">
-        <div class="hero-content container reveal">
+        <div class="hero-content container">
           <p class="eyebrow">Independent photographer · Wisconsin</p>
           <h1>Light, in its<br />quietest form.</h1>
           <p class="hero-copy">A considered study of place, motion, and the people who move through both.</p>
@@ -43,10 +43,16 @@
         </div>
         <p class="hero-credit">Wisconsin, United States · 2026</p>
       </section>
+
+      <!-- Photography bridge between hero and portfolio -->
+      <section class="photography-bridge" aria-hidden="true">
+        <div class="photography-bridge__fade"></div>
+        <p class="photography-bridge__word">Photography</p>
+      </section>
+
       <!-- Cinematic Portfolio Experience -->
       <section class="portfolio-experience" id="portfolio" aria-label="Photography portfolio">
         <div class="portfolio-experience__stage">
-          <p class="portfolio-experience__ghost" aria-hidden="true">Photography</p>
           <div class="portfolio-experience__media" aria-hidden="true">
             <figure class="portfolio-experience__image is-active" data-portfolio-media="0">
               <img src="images/featured/aviation.jpg" alt="" />
@@ -266,8 +272,7 @@
       <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Next image">→</button>
     </dialog>
 
-    <script src="script.js?v=photo-text-static-web-1"></script>
-
+    <script src="script.js?v=hero-bridge-scroll-1"></script>
 <script>
       (() => {
         const section = document.querySelector(".about-editorial");
