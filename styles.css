@@ -1532,1116 +1532,21 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 }
 
-/* ==================================================
-   ABOUT GHOST TEXT — STOP ISAAC / MOTL FROM CLIPPING
-================================================== */
-
-.about-editorial__ghost-word {
-  font-size: clamp(8rem, 18vw, 19rem);
-  line-height: 0.88;
-  letter-spacing: -0.075em;
-}
-
-.about-editorial__ghost-word--isaac {
-  top: 8vh;
-  left: 12vw;
-}
-
-.about-editorial__ghost-word--motl {
-  right: 12vw;
-  bottom: 8vh;
-}
-
-@media (max-width: 760px) {
-  .about-editorial__ghost-word {
-    font-size: clamp(6.5rem, 30vw, 10rem);
-    line-height: 0.88;
-  }
-
-  .about-editorial__ghost-word--isaac {
-    top: 60px;
-    left: 4vw;
-  }
-
-  .about-editorial__ghost-word--motl {
-    right: 4vw;
-    bottom: 120px;
-  }
-}
-/* ==================================================
-   HOMEPAGE STATIC EDITORIAL SECTIONS
-   HERO FADE + PHOTOGRAPHY + WEB + ABOUT
-================================================== */
-
-
-/* ==================================================
-   1. HERO — ALWAYS VISIBLE + SEAMLESS BOTTOM FADE
-================================================== */
-
-.hero {
-  position: relative;
-}
-
-/* Fade the actual hero photograph into the site's exact
-   background color: #0B0D10 */
-.hero::after {
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  bottom: -1px;
-  left: 0;
-
-  height: clamp(220px, 32vh, 400px);
-
-  background: linear-gradient(
-    180deg,
-    rgba(11, 13, 16, 0) 0%,
-    rgba(11, 13, 16, 0.08) 15%,
-    rgba(11, 13, 16, 0.28) 35%,
-    rgba(11, 13, 16, 0.68) 64%,
-    rgba(11, 13, 16, 0.94) 84%,
-    #0B0D10 100%
-  );
-
-  pointer-events: none;
-  content: "";
-}
-
-/* Keep hero text above the fade. */
-.hero-content {
-  position: relative;
-  z-index: 2;
-
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-.hero-credit {
-  z-index: 2;
-}
-
-
-/* ==================================================
-   2. PHOTOGRAPHY — SPACE BETWEEN HERO + PORTFOLIO
-================================================== */
-
-.photography-bridge {
-  position: relative;
-
-  display: grid;
-  min-height: clamp(330px, 46vh, 520px);
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 52%,
-      rgba(102, 124, 138, 0.09),
-      transparent 37%
-    ),
-    #0B0D10;
-
-  place-items: center;
-}
-
-/* Giant outlined PHOTOGRAPHY word.
-   It is permanently here — no scroll animation. */
-.photography-bridge__word {
-  position: relative;
-
-  width: max-content;
-  max-width: 96vw;
-
-  margin: 0;
-
-  color: transparent;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(6rem, 14vw, 15.5rem);
-  font-weight: 500;
-  line-height: 0.86;
-  letter-spacing: -0.075em;
-
-  text-align: center;
-  text-transform: uppercase;
-
-  opacity: 0.52;
-
-  -webkit-text-stroke: 1px rgba(210, 224, 234, 0.14);
-
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0.01),
-    rgba(133,165,186,0.16),
-    rgba(255,255,255,0.01)
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  transform: none !important;
-  transition: none !important;
-
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Let the portfolio start immediately after the
-   Photography title chapter. */
-.photography-bridge + .portfolio-experience {
-  padding-top: 0;
-}
-
-
-/* ==================================================
-   3. BEYOND PHOTOGRAPHY — COMPLETELY STATIC
-================================================== */
-
-.transition-chapter {
-  --transition-progress: 1;
-  --transition-intro: 1;
-  --transition-mockup: 1;
-  --transition-exit: 1;
-
-  --intro-y: 0px;
-  --mockup-y: 0px;
-
-  --ghost-top-x: 0vw;
-  --ghost-bottom-x: 0vw;
-
-  position: relative;
-
-  /* Removes the old 300vh scroll animation. */
-  height: auto !important;
-  min-height: 100svh;
-
-  padding: clamp(150px, 15vw, 220px) 0;
-
-  overflow: hidden;
-
-  background: #0B0D10;
-}
-
-/* No more sticky animated chapter. */
-.transition-chapter__sticky {
-  position: relative !important;
-  top: auto !important;
-
-  display: grid;
-
-  width: 100%;
-  height: auto !important;
-  min-height: min(780px, 84svh);
-
-  overflow: hidden;
-
-  place-items: center;
-}
-
-/* Keep the subtle background glow,
-   but it no longer changes while scrolling. */
-.transition-chapter__ambient {
-  opacity: 0.42 !important;
-
-  transform: rotate(3deg) scale(1.06) !important;
-
-  transition: none !important;
-}
-
-
-/* ==================================================
-   STATIC BEYOND / PHOTOGRAPHY BACKGROUND WORDS
-================================================== */
-
-.transition-chapter__ghost {
-  color: transparent;
-
-  font-size: clamp(6.5rem, 15vw, 16rem);
-  line-height: 0.82;
-  letter-spacing: -0.075em;
-
-  opacity: 0.42 !important;
-
-  -webkit-text-stroke: 1px rgba(213, 226, 235, 0.15);
-
-  transform: none !important;
-  transition: none !important;
-
-  pointer-events: none;
-}
-
-/* BEYOND permanently sits upper-left. */
-.transition-chapter__ghost--top {
-  top: 6vh !important;
-  left: 5vw !important;
-  right: auto !important;
-
-  transform: none !important;
-}
-
-/* PHOTOGRAPHY permanently sits lower-right. */
-.transition-chapter__ghost--bottom {
-  right: 5vw !important;
-  bottom: 5vh !important;
-  left: auto !important;
-
-  transform: none !important;
-}
-
-
-/* ==================================================
-   WEB DESIGN CONTENT — ALREADY THERE
-================================================== */
-
-.transition-chapter__content {
-  opacity: 1 !important;
-
-  transform: none !important;
-  transition: none !important;
-}
-
-.web-mockup {
-  opacity: 1 !important;
-
-  transform: none !important;
-
-  transition: none !important;
-}
-
-/* Keep the cool 3D browser itself. */
-.web-mockup__browser {
-  opacity: 1;
-}
-
-/* Keep a little glow underneath it. */
-.web-mockup::before {
-  opacity: 0.72 !important;
-}
-
-/* No reason to say "continue" now that this isn't
-   a giant animated scroll chapter. */
-.transition-chapter__scroll-cue {
-  display: none !important;
-}
-
-
-/* ==================================================
-   4. ABOUT — ISAAC / MOTL ALWAYS PRESENT
-================================================== */
-
-.about-editorial {
-  --about-progress: 0.55;
-  --about-reveal: 1;
-  --about-rail: 1;
-
-  --about-portrait-y: 0px;
-  --about-copy-y: 0px;
-
-  --about-isaac-x: 0vw;
-  --about-motl-x: 0vw;
-}
-
-/* ISAAC / MOTL no longer move while scrolling. */
-.about-editorial__ghost-word {
-  transform: none !important;
-  transition: none !important;
-}
-
-/* Keep the entire words safely inside the screen. */
-.about-editorial__ghost-word--isaac {
-  top: 8vh !important;
-  left: 8vw !important;
-
-  transform: none !important;
-}
-
-.about-editorial__ghost-word--motl {
-  right: 8vw !important;
-  bottom: 8vh !important;
-
-  transform: none !important;
-}
-
-
-/* ==================================================
-   ABOUT CONTENT — ALREADY THERE
-================================================== */
-
-.about-editorial__content,
-.about-editorial__portrait,
-.about-editorial__rail {
-  opacity: 1 !important;
-
-  transform: none !important;
-
-  transition: none !important;
-}
-
-/* Stop the portrait parallax too. */
-.about-editorial__portrait img {
-  transform: scale(1.035) !important;
-
-  transition: none !important;
-}
-
-
-/* ==================================================
-   TABLET
-================================================== */
-
-@media (max-width: 800px) {
-
-  .photography-bridge {
-    min-height: 290px;
-  }
-
-  .photography-bridge__word {
-    font-size: clamp(4.7rem, 18vw, 8.5rem);
-  }
-
-  .transition-chapter {
-    min-height: auto;
-    padding: 130px 0;
-  }
-
-  .transition-chapter__sticky {
-    min-height: auto;
-  }
-
-  .transition-chapter__ghost {
-    font-size: clamp(5rem, 20vw, 9rem);
-  }
-
-  .transition-chapter__ghost--top {
-    top: 32px !important;
-    left: 4vw !important;
-  }
-
-  .transition-chapter__ghost--bottom {
-    right: 4vw !important;
-    bottom: 32px !important;
-  }
-}
-
-
-/* ==================================================
-   MOBILE
-================================================== */
-
-@media (max-width: 520px) {
-
-  .hero::after {
-    height: 230px;
-  }
-
-  .photography-bridge {
-    min-height: 230px;
-  }
-
-  .photography-bridge__word {
-    font-size: clamp(3.6rem, 18vw, 6rem);
-    letter-spacing: -0.065em;
-  }
-
-  .transition-chapter__ghost {
-    font-size: clamp(4.2rem, 21vw, 7rem);
-    opacity: 0.3 !important;
-  }
-
-  .about-editorial__ghost-word--isaac {
-    left: 4vw !important;
-  }
-
-  .about-editorial__ghost-word--motl {
-    right: 4vw !important;
-  }
-}
 /* ==========================================================
-   IMMERSIVE WORLD TRANSITIONS — FINAL OVERRIDES
-   Built for current homepage structure
-
-   Exact site background:
-   #0B0D10
+   CLEAN HOMEPAGE FINAL
+   One consolidated homepage override block only
+   Exact site background: #0B0D10
 ========================================================== */
 
 
 /* ==========================================================
-   GLOBAL CHAPTER CONNECTION
-========================================================== */
-
-.hero,
-.photography-bridge,
-.portfolio-experience,
-.transition-chapter,
-.about-editorial {
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-}
-
-/*
-  Every section physically begins/ends with the SAME exact
-  site background so there cannot be a color seam.
-*/
-.photography-bridge,
-.portfolio-experience,
-.transition-chapter,
-.about-editorial {
-  background-color: #0B0D10;
-}
-
-
-/* ==========================================================
-   1. HERO IMAGE -> PHOTOGRAPHY WORLD
+   HERO — KEEP THE FADE THAT WORKED
 ========================================================== */
 
 .hero {
   position: relative;
   overflow: hidden;
-
-  /* overlap by a couple pixels to prevent subpixel lines */
-  margin-bottom: -3px;
-}
-
-
-/*
-  Much longer hero fade.
-  It starts while you're still clearly looking at the photo,
-  then very slowly disappears into the site background.
-*/
-.hero::after {
-  position: absolute;
-  z-index: 1;
-
-  right: 0;
-  bottom: -3px;
-  left: 0;
-
-  height: clamp(420px, 58vh, 720px);
-
-  background: linear-gradient(
-    to bottom,
-
-    rgba(11, 13, 16, 0) 0%,
-    rgba(11, 13, 16, 0.015) 8%,
-    rgba(11, 13, 16, 0.04) 16%,
-    rgba(11, 13, 16, 0.09) 25%,
-    rgba(11, 13, 16, 0.18) 34%,
-    rgba(11, 13, 16, 0.31) 44%,
-    rgba(11, 13, 16, 0.46) 54%,
-    rgba(11, 13, 16, 0.62) 64%,
-    rgba(11, 13, 16, 0.76) 73%,
-    rgba(11, 13, 16, 0.87) 81%,
-    rgba(11, 13, 16, 0.94) 88%,
-    rgba(11, 13, 16, 0.985) 95%,
-
-    #0B0D10 100%
-  );
-
-  pointer-events: none;
-  content: "";
-}
-
-
-/* Hero content stays perfectly visible above the fade. */
-.hero-content,
-.hero-credit {
-  position: relative;
-  z-index: 2;
-}
-
-
-/* ==========================================================
-   2. PHOTOGRAPHY WORLD
-========================================================== */
-
-.photography-bridge {
-  position: relative;
-
-  display: grid;
-
-  /*
-    THIS creates the bigger cinematic pause you asked for.
-  */
-  min-height: clamp(620px, 78vh, 940px);
-
-  margin-top: -3px;
-
-  overflow: hidden;
-
-  place-items: center;
-
-  /*
-    Notice:
-    TOP = #0B0D10
-    BOTTOM = #0B0D10
-
-    Only the middle develops the blue atmospheric glow.
-    That means no visible seam.
-  */
-  background:
-
-    radial-gradient(
-      ellipse at 50% 51%,
-      rgba(102, 124, 138, 0.13) 0%,
-      rgba(102, 124, 138, 0.075) 20%,
-      rgba(102, 124, 138, 0.025) 39%,
-      transparent 60%
-    ),
-
-    radial-gradient(
-      ellipse at 50% 52%,
-      rgba(143, 163, 176, 0.035),
-      transparent 48%
-    ),
-
-    linear-gradient(
-      to bottom,
-
-      #0B0D10 0%,
-      #0B0D10 13%,
-
-      #0B0E11 24%,
-      #0C0F13 39%,
-      #0D1014 52%,
-      #0C0F13 66%,
-      #0B0E11 80%,
-
-      #0B0D10 91%,
-      #0B0D10 100%
-    ) !important;
-}
-
-
-/*
-  Large PHOTOGRAPHY word stays permanently in place.
-*/
-.photography-bridge__word {
-  position: relative;
-  z-index: 1;
-
-  width: max-content;
-  max-width: 96vw;
-
-  margin: 0;
-
-  color: transparent;
-
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(6.5rem, 14vw, 15rem);
-  font-weight: 500;
-
-  line-height: 0.86;
-  letter-spacing: -0.075em;
-
-  text-align: center;
-  text-transform: uppercase;
-
-  opacity: 0.46;
-
-  -webkit-text-stroke:
-    1px rgba(210, 224, 234, 0.135);
-
-  background: linear-gradient(
-    90deg,
-
-    rgba(255,255,255,0.005),
-
-    rgba(125,153,171,0.10) 28%,
-
-    rgba(154,181,198,0.18) 50%,
-
-    rgba(125,153,171,0.10) 72%,
-
-    rgba(255,255,255,0.005)
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  transform: none !important;
-  transition: none !important;
-
-  pointer-events: none;
-  user-select: none;
-}
-
-
-/* Seam killer between bridge and portfolio. */
-.photography-bridge + .portfolio-experience {
-  margin-top: -3px;
-  padding-top: 0 !important;
-}
-
-
-/* ==========================================================
-   3. PORTFOLIO IMAGE WORLD
-========================================================== */
-
-.portfolio-experience {
-  position: relative;
-
-  background: #0B0D10 !important;
-}
-
-
-/*
-  Let the actual portfolio image disappear downward
-  instead of ending sharply like a rectangular card.
-*/
-.portfolio-experience__stage::after {
-  position: absolute;
-  z-index: 1;
-
-  right: 0;
-  bottom: -2px;
-  left: 0;
-
-  height: 46%;
-
-  background: linear-gradient(
-    to bottom,
-
-    rgba(11, 13, 16, 0) 0%,
-    rgba(11, 13, 16, 0.025) 15%,
-    rgba(11, 13, 16, 0.10) 28%,
-    rgba(11, 13, 16, 0.29) 44%,
-    rgba(11, 13, 16, 0.57) 62%,
-    rgba(11, 13, 16, 0.82) 78%,
-    rgba(11, 13, 16, 0.96) 91%,
-    #0B0D10 100%
-  );
-
-  pointer-events: none;
-
-  content: "";
-}
-
-
-/*
-  Your UI already has z-index 2,
-  so it remains above the new image fade.
-*/
-.portfolio-experience__ui {
-  z-index: 2;
-}
-
-
-/*
-  This is your gap AFTER the final photography image.
-
-  The old CSS only gave this area a relatively short fade.
-  We make it much deeper.
-*/
-.portfolio-experience::after {
-  width: 100% !important;
-
-  height: clamp(480px, 58vh, 800px) !important;
-
-  margin: -3px 0 0 !important;
-
-  background:
-
-    radial-gradient(
-      ellipse at 50% 18%,
-      rgba(102, 124, 138, 0.04),
-      transparent 46%
-    ),
-
-    linear-gradient(
-      to bottom,
-
-      #0B0D10 0%,
-      #0B0D10 22%,
-
-      #0B0E11 42%,
-
-      #0C0F13 58%,
-
-      #0B0E11 76%,
-
-      #0B0D10 91%,
-      #0B0D10 100%
-    ) !important;
-
-  content: "";
-}
-
-
-/* ==========================================================
-   4. BEYOND PHOTOGRAPHY WORLD
-========================================================== */
-
-.transition-chapter {
-  --transition-progress: 1;
-  --transition-intro: 1;
-  --transition-mockup: 1;
-  --transition-exit: 1;
-
-  --intro-y: 0px;
-  --mockup-y: 0px;
-
-  --ghost-top-x: 0vw;
-  --ghost-bottom-x: 0vw;
-
-  position: relative;
-
-  height: auto !important;
-
-  /*
-    Make this feel like a full environment,
-    not just a normal website section.
-  */
-  min-height: 115svh;
-
-  padding:
-    clamp(240px, 25vh, 390px)
-    0
-    clamp(330px, 38vh, 560px);
-
-  margin-top: -3px;
-
-  overflow: hidden;
-
-  border: 0 !important;
-
-  /*
-    Again:
-    #0B0D10 at BOTH edges.
-  */
-  background:
-
-    radial-gradient(
-      ellipse at 74% 43%,
-      rgba(125, 156, 177, 0.15),
-      rgba(125, 156, 177, 0.055) 26%,
-      transparent 48%
-    ),
-
-    radial-gradient(
-      ellipse at 25% 58%,
-      rgba(98, 118, 145, 0.09),
-      transparent 43%
-    ),
-
-    linear-gradient(
-      to bottom,
-
-      #0B0D10 0%,
-      #0B0D10 9%,
-
-      #0B0E11 19%,
-
-      #0C0F13 32%,
-
-      #0D1014 49%,
-
-      #0D1014 60%,
-
-      #0C0F13 74%,
-
-      #0B0E11 86%,
-
-      #0B0D10 94%,
-      #0B0D10 100%
-    ) !important;
-}
-
-
-/*
-  Completely remove the old sticky/300vh behavior.
-*/
-.transition-chapter__sticky {
-  position: relative !important;
-
-  top: auto !important;
-
-  width: 100%;
-
-  height: auto !important;
-
-  min-height: min(780px, 84svh);
-
-  overflow: hidden;
-
-  background: transparent !important;
-
-  place-items: center;
-}
-
-
-/*
-  Fixed environmental glow.
-  No scroll calculations.
-*/
-.transition-chapter__ambient {
-  opacity: 0.34 !important;
-
-  transform:
-    rotate(3deg)
-    scale(1.07) !important;
-
-  transition: none !important;
-}
-
-
-/* ==========================================================
-   STATIC BEYOND / PHOTOGRAPHY
-========================================================== */
-
-.transition-chapter__ghost {
-  color: transparent;
-
-  font-size: clamp(7rem, 15vw, 16rem);
-
-  line-height: 0.84;
-
-  letter-spacing: -0.075em;
-
-  opacity: 0.31 !important;
-
-  -webkit-text-stroke:
-    1px rgba(213, 226, 235, 0.135);
-
-  transform: none !important;
-  transition: none !important;
-
-  pointer-events: none;
-}
-
-
-/* BEYOND */
-.transition-chapter__ghost--top {
-  top: 5vh !important;
-
-  left: 6vw !important;
-  right: auto !important;
-
-  transform: none !important;
-}
-
-
-/* PHOTOGRAPHY */
-.transition-chapter__ghost--bottom {
-  right: 5vw !important;
-
-  bottom: 5vh !important;
-
-  left: auto !important;
-
-  transform: none !important;
-}
-
-
-/* ==========================================================
-   WEB CONTENT IS ALREADY PRESENT
-========================================================== */
-
-.transition-chapter__content {
-  opacity: 1 !important;
-
-  transform: none !important;
-
-  transition: none !important;
-}
-
-
-.web-mockup {
-  opacity: 1 !important;
-
-  transform: none !important;
-
-  transition: none !important;
-}
-
-
-.web-mockup::before {
-  opacity: 0.62 !important;
-}
-
-
-/*
-  Keep the browser itself 3D.
-  Only remove the scroll entrance.
-*/
-.web-mockup__browser {
-  opacity: 1;
-}
-
-
-.transition-chapter__scroll-cue {
-  display: none !important;
-}
-
-
-/* ==========================================================
-   5. WEB DESIGN -> ABOUT WORLD
-========================================================== */
-
-/*
-  The About section currently had its own border/background
-  rules earlier in the stylesheet.
-
-  Kill that boundary completely.
-*/
-.about-editorial {
-  --about-progress: 0.55;
-  --about-reveal: 1;
-  --about-rail: 1;
-
-  --about-portrait-y: 0px;
-  --about-copy-y: 0px;
-
-  --about-isaac-x: 0vw;
-  --about-motl-x: 0vw;
-
-  position: relative;
-
-  /*
-    Big cinematic breathing room entering About.
-  */
-  padding-top:
-    clamp(320px, 34vh, 520px) !important;
-
-  margin-top: -3px;
-
-  border-top: 0 !important;
-
-  background:
-
-    radial-gradient(
-      ellipse at 18% 48%,
-      rgba(102, 124, 138, 0.115),
-      transparent 35%
-    ),
-
-    radial-gradient(
-      ellipse at 78% 58%,
-      rgba(74, 91, 110, 0.075),
-      transparent 38%
-    ),
-
-    linear-gradient(
-      to bottom,
-
-      #0B0D10 0%,
-      #0B0D10 12%,
-
-      #0B0E11 24%,
-
-      #0C0F13 38%,
-
-      #0C0F13 67%,
-
-      #0B0E11 83%,
-
-      #0B0D10 94%,
-      #0B0D10 100%
-    ) !important;
-}
-
-
-/*
-  Your old About ::before had another slight layer.
-  Keep it atmospheric but never use it as a border.
-*/
-.about-editorial::before {
-  border: 0 !important;
-
-  background: linear-gradient(
-    90deg,
-
-    transparent 0%,
-
-    rgba(255,255,255,0.008) 30%,
-
-    rgba(129,155,172,0.018) 50%,
-
-    rgba(255,255,255,0.008) 70%,
-
-    transparent 100%
-  ) !important;
-}
-
-
-/* ==========================================================
-   STATIC ISAAC / MOTL
-========================================================== */
-
-.about-editorial__ghost-word {
-  transform: none !important;
-
-  transition: none !important;
-}
-
-
-.about-editorial__ghost-word--isaac {
-  top: 8vh !important;
-
-  left: 8vw !important;
-
-  transform: none !important;
-}
-
-
-.about-editorial__ghost-word--motl {
-  right: 8vw !important;
-
-  bottom: 8vh !important;
-
-  transform: none !important;
-}
-
-
-/* ==========================================================
-   ABOUT CONTENT ALREADY PRESENT
-========================================================== */
-
-.about-editorial__content,
-.about-editorial__portrait,
-.about-editorial__rail {
-  opacity: 1 !important;
-
-  transform: none !important;
-
-  transition: none !important;
-}
-
-
-.about-editorial__portrait img {
-  transform: scale(1.035) !important;
-
-  transition: none !important;
-}
-
-
-/* ==========================================================
-   REMOVE ANY REMAINING HARD LINES
-========================================================== */
-
-.photography-bridge,
-.portfolio-experience,
-.transition-chapter,
-.about-editorial,
-.transition-chapter__sticky {
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-}
-
-
-/* ==========================================================
-   TABLET
-========================================================== */
-
-@media (max-width: 800px) {
-
-  /* ==================================================
-   HERO IMAGE -> EXACT SITE BACKGROUND
-================================================== */
-
-.hero {
-  position: relative;
-  overflow: hidden;
+  margin-bottom: -2px;
   background-color: #0B0D10;
 }
 
@@ -2650,16 +1555,12 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   z-index: 1;
   inset: auto 0 -2px 0;
 
-  /*
-    Large fade area so the photo disappears very gradually.
-  */
   height: 65vh;
   min-height: 500px;
   max-height: 780px;
 
   background: linear-gradient(
     to bottom,
-
     rgba(11, 13, 16, 0) 0%,
     rgba(11, 13, 16, 0.01) 8%,
     rgba(11, 13, 16, 0.025) 15%,
@@ -2674,7 +1575,6 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     rgba(11, 13, 16, 0.89) 83%,
     rgba(11, 13, 16, 0.95) 89%,
     rgba(11, 13, 16, 0.985) 95%,
-
     #0B0D10 100%
   );
 
@@ -2682,208 +1582,36 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   content: "";
 }
 
-.hero-content,
-.hero-credit {
+.hero-content {
   position: relative;
   z-index: 2;
+  opacity: 1 !important;
+  transform: none !important;
 }
-
-
-  .photography-bridge {
-    min-height: 520px;
-  }
-
-
-  .photography-bridge__word {
-    font-size: clamp(
-      4.8rem,
-      17vw,
-      8.4rem
-    );
-  }
-
-
-  .portfolio-experience::after {
-    height: 400px !important;
-  }
-
-
-  .transition-chapter {
-    min-height: auto;
-
-    padding:
-      190px
-      0
-      270px;
-  }
-
-
-  .transition-chapter__sticky {
-    min-height: auto;
-  }
-
-
-  .transition-chapter__ghost {
-    font-size: clamp(
-      5rem,
-      19vw,
-      9rem
-    );
-  }
-
-
-  .transition-chapter__ghost--top {
-    top: 38px !important;
-    left: 4vw !important;
-  }
-
-
-  .transition-chapter__ghost--bottom {
-    right: 4vw !important;
-    bottom: 38px !important;
-  }
-
-
-  .about-editorial {
-    padding-top: 230px !important;
-  }
-}
-
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media (max-width: 520px) {
-
-  .hero::after {
-    height: 330px;
-  }
-
-
-  .photography-bridge {
-    min-height: 410px;
-  }
-
-
-  .photography-bridge__word {
-    font-size: clamp(
-      3.6rem,
-      17vw,
-      6rem
-    );
-
-    letter-spacing: -0.06em;
-  }
-
-
-  .portfolio-experience__stage::after {
-    height: 38%;
-  }
-
-
-  .portfolio-experience::after {
-    height: 320px !important;
-  }
-
-
-  .transition-chapter {
-    padding:
-      155px
-      0
-      220px;
-  }
-
-
-  .transition-chapter__ghost {
-    font-size: clamp(
-      4rem,
-      20vw,
-      7rem
-    );
-
-    opacity: 0.25 !important;
-  }
-
-
-  .about-editorial {
-    padding-top: 185px !important;
-  }
-
-
-  .about-editorial__ghost-word--isaac {
-    left: 4vw !important;
-  }
-
-
-  .about-editorial__ghost-word--motl {
-    right: 4vw !important;
-  }
-}
-.portfolio-experience__stage {
-  border-bottom-color: transparent !important;
-}
-
-.portfolio-experience__stage::after {
-  position: absolute;
-  z-index: 1;
-
-  right: 0;
-  bottom: -2px;
-  left: 0;
-
-  height: 42%;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(11,13,16,0) 0%,
-    rgba(11,13,16,.03) 18%,
-    rgba(11,13,16,.12) 34%,
-    rgba(11,13,16,.31) 50%,
-    rgba(11,13,16,.57) 66%,
-    rgba(11,13,16,.79) 79%,
-    rgba(11,13,16,.93) 90%,
-    #0B0D10 100%
-  );
-
-  pointer-events: none;
-  content: "";
-}
-/* ==========================================================
-   FINAL HOMEPAGE WORLD BLENDING
-   HERO CREDIT + PORTFOLIO + WEB DESIGN + SHORTER ABOUT
-
-   Exact site background:
-   #0B0D10
-========================================================== */
-
-
-/* ==========================================================
-   1. FIX HERO CREDIT POSITION
-========================================================== */
 
 .hero-credit {
   position: absolute !important;
-
+  z-index: 4 !important;
   right: 40px !important;
   bottom: 30px !important;
-
-  z-index: 4 !important;
-
   margin: 0 !important;
-
   color: rgba(244, 246, 248, 0.72);
-
   transform: none !important;
 }
 
 
 /* ==========================================================
-   2. MAKE PHOTOGRAPHY BACKGROUND WORD MORE VISIBLE
+   HERO -> PHOTOGRAPHY WORLD
 ========================================================== */
 
 .photography-bridge {
+  position: relative;
+  display: grid;
   min-height: clamp(650px, 80vh, 950px);
+  margin-top: -2px;
+  overflow: hidden;
+  place-items: center;
+  border: 0 !important;
 
   background:
     radial-gradient(
@@ -2892,143 +1620,152 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
       rgba(102, 124, 138, 0.055) 28%,
       transparent 58%
     ),
-
     linear-gradient(
       to bottom,
-
       #0B0D10 0%,
-      #0B0D10 12%,
-
-      #0B0E11 26%,
-      #0C0F13 40%,
-      #0D1014 52%,
+      #0B0D10 14%,
+      #0B0E11 28%,
+      #0C0F13 42%,
+      #0D1014 53%,
       #0C0F13 67%,
       #0B0E11 82%,
-
       #0B0D10 93%,
       #0B0D10 100%
-    ) !important;
+    );
 }
 
-
 .photography-bridge__word {
-  opacity: 0.62 !important;
-
-  -webkit-text-stroke:
-    1px rgba(210, 224, 234, 0.21) !important;
-
+  position: relative;
+  z-index: 1;
+  width: max-content;
+  max-width: 96vw;
+  margin: 0;
+  color: transparent;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(6.5rem, 14vw, 15rem);
+  font-weight: 500;
+  line-height: 0.86;
+  letter-spacing: -0.075em;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.62;
+  -webkit-text-stroke: 1px rgba(210, 224, 234, 0.21);
   background: linear-gradient(
     90deg,
-
     rgba(255,255,255,0.01),
-
     rgba(133,165,186,0.18) 28%,
-
     rgba(174,198,214,0.27) 50%,
-
     rgba(133,165,186,0.18) 72%,
-
     rgba(255,255,255,0.01)
-  ) !important;
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  transform: none !important;
+  transition: none !important;
+  pointer-events: none;
+  user-select: none;
+}
 
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
+.photography-bridge + .portfolio-experience {
+  margin-top: -2px;
+  padding-top: 0 !important;
 }
 
 
 /* ==========================================================
-   3. PORTFOLIO IMAGE -> DARK WORLD
-
-   Same idea as the hero:
-   image slowly disappears into #0B0D10.
+   PORTFOLIO — HERO-LIKE IMAGE FADE
 ========================================================== */
 
 .portfolio-experience {
   background: #0B0D10 !important;
 }
 
+/* Keep side readability, but let the dedicated bottom fade do the heavy work. */
+.portfolio-experience__shade {
+  z-index: 1;
+  pointer-events: none;
 
-/*
-  Fade directly over the bottom portion
-  of the currently visible portfolio photograph.
-*/
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11,13,16,.91) 0%,
+      rgba(11,13,16,.62) 31%,
+      rgba(11,13,16,.22) 58%,
+      rgba(11,13,16,0) 82%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(11,13,16,.12) 0%,
+      rgba(11,13,16,0) 34%,
+      rgba(11,13,16,0) 100%
+    ) !important;
+}
+
+.portfolio-experience__stage {
+  border-bottom-color: transparent !important;
+}
+
+/* Same visual idea as the hero: photograph dissolves into exact site black. */
 .portfolio-experience__stage::after {
   position: absolute;
-
   z-index: 1;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
 
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-
-  height: 58%;
+  height: 72%;
 
   background: linear-gradient(
     to bottom,
-
     rgba(11, 13, 16, 0) 0%,
-    rgba(11, 13, 16, 0.01) 9%,
-    rgba(11, 13, 16, 0.035) 18%,
+    rgba(11, 13, 16, 0.008) 7%,
+    rgba(11, 13, 16, 0.02) 14%,
+    rgba(11, 13, 16, 0.045) 21%,
     rgba(11, 13, 16, 0.08) 28%,
-    rgba(11, 13, 16, 0.16) 38%,
-    rgba(11, 13, 16, 0.28) 48%,
-    rgba(11, 13, 16, 0.43) 58%,
-    rgba(11, 13, 16, 0.59) 68%,
-    rgba(11, 13, 16, 0.74) 77%,
-    rgba(11, 13, 16, 0.86) 85%,
-    rgba(11, 13, 16, 0.94) 91%,
-    rgba(11, 13, 16, 0.985) 96%,
-
+    rgba(11, 13, 16, 0.13) 35%,
+    rgba(11, 13, 16, 0.20) 42%,
+    rgba(11, 13, 16, 0.29) 49%,
+    rgba(11, 13, 16, 0.40) 56%,
+    rgba(11, 13, 16, 0.52) 63%,
+    rgba(11, 13, 16, 0.64) 70%,
+    rgba(11, 13, 16, 0.75) 77%,
+    rgba(11, 13, 16, 0.84) 83%,
+    rgba(11, 13, 16, 0.91) 88%,
+    rgba(11, 13, 16, 0.96) 93%,
+    rgba(11, 13, 16, 0.99) 97%,
     #0B0D10 100%
   );
 
   pointer-events: none;
-
   content: "";
 }
 
-
-/*
-  Keep portfolio text above the image fade.
-*/
 .portfolio-experience__ui {
   position: relative;
   z-index: 3 !important;
 }
 
-
-/*
-  Large decompression area AFTER the photography experience.
-
-  This gives the viewer time to leave Photography
-  before arriving in Web Design.
-*/
+/* Real breathing room after the final photography frame. */
 .portfolio-experience::after {
+  grid-column: 1;
   width: 100% !important;
-
-  height: clamp(550px, 70vh, 900px) !important;
-
+  height: clamp(760px, 90vh, 1120px) !important;
   margin: -3px 0 0 !important;
 
   background:
-
     radial-gradient(
-      ellipse at 50% 28%,
-      rgba(102, 124, 138, 0.045),
-      transparent 48%
+      ellipse at 58% 58%,
+      rgba(102, 124, 138, 0.05),
+      transparent 46%
     ),
-
     linear-gradient(
       to bottom,
-
       #0B0D10 0%,
-      #0B0D10 24%,
-
-      #0B0E11 41%,
-      #0C0F13 54%,
-      #0B0E11 69%,
-
-      #0B0D10 84%,
+      #0B0D10 32%,
+      #0B0E11 48%,
+      #0C0F13 60%,
+      #0B0E11 74%,
+      #0B0D10 89%,
       #0B0D10 100%
     ) !important;
 
@@ -3037,380 +1774,270 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
 
 
 /* ==========================================================
-   4. BEYOND PHOTOGRAPHY — BIGGER NEW-WORLD FEEL
+   BEYOND PHOTOGRAPHY — STATIC, MORE SEPARATED, MORE VISIBLE
 ========================================================== */
 
 .transition-chapter {
+  --transition-progress: 1;
+  --transition-intro: 1;
+  --transition-mockup: 1;
+  --transition-exit: 1;
+  --intro-y: 0px;
+  --mockup-y: 0px;
+  --ghost-top-x: 0vw;
+  --ghost-bottom-x: 0vw;
+
   position: relative;
-
   height: auto !important;
-
-  /*
-    Taller than before so BEYOND and PHOTOGRAPHY
-    have significantly more distance between them.
-  */
   min-height: 125svh !important;
 
   padding:
-    clamp(260px, 28vh, 430px)
+    clamp(340px, 38vh, 560px)
     0
-    clamp(380px, 44vh, 650px) !important;
+    clamp(560px, 66vh, 880px) !important;
 
   margin-top: -3px;
-
   overflow: hidden;
-
+  isolation: isolate;
   border: 0 !important;
 
   background:
-
     radial-gradient(
-      ellipse at 76% 42%,
+      ellipse at 76% 45%,
       rgba(125, 156, 177, 0.16),
-      rgba(125, 156, 177, 0.055) 27%,
-      transparent 49%
+      rgba(125, 156, 177, 0.06) 28%,
+      transparent 50%
     ),
-
     radial-gradient(
-      ellipse at 26% 59%,
-      rgba(98, 118, 145, 0.10),
-      transparent 45%
+      ellipse at 25% 58%,
+      rgba(98, 118, 145, 0.09),
+      transparent 46%
     ),
-
     linear-gradient(
       to bottom,
-
       #0B0D10 0%,
-      #0B0D10 8%,
-
-      #0B0E11 17%,
-      #0C0F13 30%,
-      #0D1014 45%,
-
-      #0D1014 61%,
-
-      #0C0F13 75%,
-      #0B0E11 87%,
-
-      #0B0D10 95%,
+      #0B0D10 14%,
+      #0B0E11 24%,
+      #0C0F13 36%,
+      #0D1014 49%,
+      #0D1014 60%,
+      #0C0F13 72%,
+      #0B0E11 82%,
+      #0B0D10 92%,
       #0B0D10 100%
     ) !important;
 }
 
-
-/*
-  No sticky/scroll-driven entrance.
-  Everything is already there.
-*/
 .transition-chapter__sticky {
   position: relative !important;
-
   top: auto !important;
-
+  display: grid;
   width: 100%;
-
   height: auto !important;
   min-height: 850px !important;
-
   overflow: hidden;
-
-  background: transparent !important;
-
   place-items: center;
+  background: transparent !important;
 }
-
-
-/* ==========================================================
-   MORE VISIBLE + MORE SEPARATED
-   BEYOND / PHOTOGRAPHY
-========================================================== */
-
-.transition-chapter__ghost {
-  opacity: 0.48 !important;
-
-  color: transparent !important;
-
-  -webkit-text-stroke:
-    1px rgba(213, 226, 235, 0.21) !important;
-
-  font-size: clamp(7.5rem, 16vw, 17rem);
-
-  line-height: 0.82;
-
-  letter-spacing: -0.075em;
-
-  transform: none !important;
-
-  transition: none !important;
-}
-
-
-/*
-  Move BEYOND higher.
-*/
-.transition-chapter__ghost--top {
-  top: 3vh !important;
-
-  left: 5vw !important;
-
-  right: auto !important;
-
-  transform: none !important;
-}
-
-
-/*
-  Move PHOTOGRAPHY lower.
-
-  This creates much more physical separation
-  between the two words.
-*/
-.transition-chapter__ghost--bottom {
-  right: 4vw !important;
-
-  bottom: 2vh !important;
-
-  left: auto !important;
-
-  transform: none !important;
-}
-
-
-/*
-  Main content and mockup are simply present.
-*/
-.transition-chapter__content,
-.web-mockup {
-  opacity: 1 !important;
-
-  transform: none !important;
-
-  transition: none !important;
-}
-
 
 .transition-chapter__ambient {
   opacity: 0.38 !important;
-
-  transform:
-    rotate(3deg)
-    scale(1.07) !important;
-
+  transform: rotate(3deg) scale(1.07) !important;
   transition: none !important;
 }
 
+.transition-chapter__ghost {
+  color: transparent !important;
+  font-size: clamp(7.5rem, 16vw, 17rem);
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+  opacity: 0.52 !important;
+  -webkit-text-stroke: 1px rgba(213, 226, 235, 0.23) !important;
+  transform: none !important;
+  transition: none !important;
+  pointer-events: none;
+}
+
+.transition-chapter__ghost--top {
+  top: 2vh !important;
+  left: 5vw !important;
+  right: auto !important;
+  transform: none !important;
+}
+
+.transition-chapter__ghost--bottom {
+  right: 4vw !important;
+  bottom: 1vh !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+.transition-chapter__content,
+.web-mockup {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
 
 .web-mockup::before {
   opacity: 0.67 !important;
 }
 
-
 .transition-chapter__scroll-cue {
   display: none !important;
 }
 
-
-/* ==========================================================
-   5. WEB DESIGN -> ABOUT
-   SAME LONG FADE AS HERO
-========================================================== */
-
-/*
-  Create an actual fading curtain at the bottom
-  of the Web Design world.
-*/
+/* Long hero-style fade OUT of Web Design. */
 .transition-chapter::after {
   position: absolute;
-
   z-index: 5;
-
   right: 0;
   bottom: -3px;
   left: 0;
 
-  height: clamp(430px, 52vh, 700px);
+  height: clamp(700px, 82vh, 1050px);
 
   background: linear-gradient(
     to bottom,
-
     rgba(11, 13, 16, 0) 0%,
-    rgba(11, 13, 16, 0.01) 9%,
-    rgba(11, 13, 16, 0.035) 18%,
+    rgba(11, 13, 16, 0.008) 7%,
+    rgba(11, 13, 16, 0.02) 14%,
+    rgba(11, 13, 16, 0.045) 21%,
     rgba(11, 13, 16, 0.08) 28%,
-    rgba(11, 13, 16, 0.16) 38%,
-    rgba(11, 13, 16, 0.29) 49%,
-    rgba(11, 13, 16, 0.45) 59%,
-    rgba(11, 13, 16, 0.61) 69%,
-    rgba(11, 13, 16, 0.76) 78%,
-    rgba(11, 13, 16, 0.87) 85%,
-    rgba(11, 13, 16, 0.94) 91%,
-    rgba(11, 13, 16, 0.985) 96%,
-
+    rgba(11, 13, 16, 0.14) 36%,
+    rgba(11, 13, 16, 0.22) 44%,
+    rgba(11, 13, 16, 0.32) 52%,
+    rgba(11, 13, 16, 0.44) 60%,
+    rgba(11, 13, 16, 0.57) 68%,
+    rgba(11, 13, 16, 0.69) 75%,
+    rgba(11, 13, 16, 0.80) 82%,
+    rgba(11, 13, 16, 0.88) 87%,
+    rgba(11, 13, 16, 0.94) 92%,
+    rgba(11, 13, 16, 0.985) 97%,
     #0B0D10 100%
   );
 
   pointer-events: none;
-
   content: "";
 }
 
 
 /* ==========================================================
-   6. ABOUT — SHORTER + QUICKER
+   ABOUT — SHORTER, FASTER, STILL PREMIUM
 ========================================================== */
 
 .about-editorial {
   --about-progress: 0.55;
   --about-reveal: 1;
   --about-rail: 1;
-
   --about-portrait-y: 0px;
   --about-copy-y: 0px;
-
   --about-isaac-x: 0vw;
   --about-motl-x: 0vw;
 
   position: relative;
-
-  /*
-    Dramatically reduce the giant About chapter.
-    Enough space to feel premium, but not enough
-    to slow somebody down before conversion.
-  */
   min-height: auto !important;
 
   padding:
-    clamp(150px, 16vh, 220px)
+    clamp(155px, 17vh, 230px)
     0
-    clamp(110px, 12vh, 170px) !important;
+    clamp(95px, 10vh, 145px) !important;
 
   margin-top: -3px;
-
+  overflow: hidden;
   border-top: 0 !important;
 
   background:
-
     radial-gradient(
-      ellipse at 18% 48%,
+      ellipse at 18% 50%,
       rgba(102, 124, 138, 0.10),
-      transparent 34%
+      transparent 37%
     ),
-
     radial-gradient(
-      ellipse at 78% 58%,
+      ellipse at 78% 60%,
       rgba(74, 91, 110, 0.065),
-      transparent 38%
+      transparent 41%
     ),
-
     linear-gradient(
       to bottom,
-
       #0B0D10 0%,
-      #0B0D10 10%,
-
-      #0B0E11 23%,
-
-      #0C0F13 40%,
-      #0C0F13 65%,
-
+      #0B0D10 20%,
+      #0B0E11 31%,
+      #0C0F13 44%,
+      #0C0F13 66%,
       #0B0E11 82%,
-
       #0B0D10 94%,
       #0B0D10 100%
     ) !important;
 }
 
-
-/*
-  Make ISAAC / MOTL a little easier to see.
-*/
-.about-editorial__ghost-word {
-  opacity: 0.52 !important;
-
-  -webkit-text-stroke:
-    1px rgba(210, 224, 234, 0.17) !important;
-
-  transform: none !important;
-
-  transition: none !important;
+.about-editorial::before {
+  border: 0 !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.008) 30%,
+    rgba(129,155,172,0.018) 50%,
+    rgba(255,255,255,0.008) 70%,
+    transparent 100%
+  ) !important;
 }
 
+.about-editorial__ghost-word {
+  font-size: clamp(8rem, 18vw, 19rem);
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+  opacity: 0.56 !important;
+  -webkit-text-stroke: 1px rgba(210, 224, 234, 0.19) !important;
+  transform: none !important;
+  transition: none !important;
+}
 
 .about-editorial__ghost-word--isaac {
   top: 5vh !important;
-
   left: 8vw !important;
-
   transform: none !important;
 }
-
 
 .about-editorial__ghost-word--motl {
   right: 8vw !important;
-
   bottom: 5vh !important;
-
   transform: none !important;
 }
 
-
-/*
-  Remove the extremely large spacing before your
-  information rail.
-
-  Your existing About CSS gives this a very large gap.
-*/
+.about-editorial__content,
+.about-editorial__portrait,
 .about-editorial__rail {
-  margin-top:
-    clamp(65px, 7vw, 105px) !important;
-
   opacity: 1 !important;
-
   transform: none !important;
-
   transition: none !important;
 }
-
 
 .about-editorial__portrait {
-  margin-top:
-    clamp(35px, 4vw, 65px) !important;
-
-  opacity: 1 !important;
-
-  transform: none !important;
+  margin-top: clamp(25px, 3vw, 45px) !important;
 }
-
-
-.about-editorial__content {
-  opacity: 1 !important;
-
-  transform: none !important;
-
-  transition: none !important;
-}
-
 
 .about-editorial__portrait img {
   transform: scale(1.035) !important;
-
   transition: none !important;
 }
 
+.about-editorial__statement {
+  font-size: clamp(2.8rem, 4.9vw, 5.35rem) !important;
+}
 
-/*
-  Slightly tighten the About paragraph too.
-*/
 .about-editorial__copy {
-  margin:
-    30px
-    0
-    30px !important;
+  max-width: 580px;
+  margin: 27px 0 27px !important;
+}
+
+.about-editorial__rail {
+  margin-top: clamp(55px, 6vw, 85px) !important;
 }
 
 
 /* ==========================================================
-   REMOVE ALL HARD DIVIDING LINES
+   REMOVE HARD CHAPTER SEAMS
 ========================================================== */
 
 .photography-bridge,
@@ -3428,509 +2055,60 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
 ========================================================== */
 
 @media (max-width: 800px) {
-
   .hero-credit {
     right: 20px !important;
     bottom: 18px !important;
   }
 
-
   .photography-bridge {
     min-height: 520px;
   }
 
-
-  .portfolio-experience::after {
-    height: 420px !important;
+  .photography-bridge__word {
+    font-size: clamp(4.8rem, 17vw, 8.4rem);
   }
-
-
-  .transition-chapter {
-    min-height: auto !important;
-
-    padding:
-      200px
-      0
-      280px !important;
-  }
-
-
-  .transition-chapter__sticky {
-    min-height: auto !important;
-  }
-
-
-  .transition-chapter__ghost {
-    font-size:
-      clamp(5rem, 19vw, 9rem);
-  }
-
-
-  .transition-chapter__ghost--top {
-    top: 30px !important;
-
-    left: 4vw !important;
-  }
-
-
-  .transition-chapter__ghost--bottom {
-    right: 4vw !important;
-
-    bottom: 30px !important;
-  }
-
-
-  .transition-chapter::after {
-    height: 360px;
-  }
-
-
-  .about-editorial {
-    padding:
-      120px
-      0
-      100px !important;
-  }
-
-
-  .about-editorial__rail {
-    margin-top: 70px !important;
-  }
-}
-
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media (max-width: 520px) {
-
-  .hero-credit {
-    right: 16px !important;
-    bottom: 16px !important;
-
-    max-width: calc(100% - 32px);
-
-    font-size: 0.62rem;
-
-    text-align: right;
-  }
-
-
-  .photography-bridge {
-    min-height: 400px;
-  }
-
 
   .portfolio-experience__stage::after {
-    height: 44%;
+    height: 64%;
   }
-
-
-  .portfolio-experience::after {
-    height: 300px !important;
-  }
-
-
-  .transition-chapter {
-    padding:
-      145px
-      0
-      200px !important;
-  }
-
-
-  .transition-chapter__ghost {
-    font-size:
-      clamp(4rem, 20vw, 7rem);
-
-    opacity: 0.38 !important;
-  }
-
-
-  .transition-chapter::after {
-    height: 290px;
-  }
-
-
-  .about-editorial {
-    padding:
-      105px
-      0
-      85px !important;
-  }
-
-
-  .about-editorial__rail {
-    margin-top: 55px !important;
-  }
-
-
-  .about-editorial__portrait {
-    margin-top: 55px !important;
-  }
-
-
-  .about-editorial__ghost-word {
-    opacity: 0.38 !important;
-  }
-}
-/* ==========================================================
-   FINAL SEAMLESS CHAPTER FADES
-   Make Portfolio -> Web and Web -> About
-   behave like the Hero -> Photography transition
-========================================================== */
-
-
-/* ==========================================================
-   1. PORTFOLIO IMAGE -> BACKGROUND
-========================================================== */
-
-/*
-  Make the actual photograph disappear MUCH earlier
-  and more gradually.
-
-  Same principle as the hero:
-  transparent -> exact #0B0D10.
-*/
-.portfolio-experience__stage::after {
-  position: absolute !important;
-  z-index: 1 !important;
-
-  right: -3px !important;
-  bottom: -3px !important;
-  left: -3px !important;
-
-  height: 76% !important;
-
-  background: linear-gradient(
-    to bottom,
-
-    rgba(11, 13, 16, 0) 0%,
-    rgba(11, 13, 16, 0.008) 7%,
-    rgba(11, 13, 16, 0.02) 14%,
-    rgba(11, 13, 16, 0.045) 21%,
-    rgba(11, 13, 16, 0.08) 28%,
-    rgba(11, 13, 16, 0.13) 35%,
-    rgba(11, 13, 16, 0.20) 42%,
-    rgba(11, 13, 16, 0.29) 49%,
-    rgba(11, 13, 16, 0.40) 56%,
-    rgba(11, 13, 16, 0.52) 63%,
-    rgba(11, 13, 16, 0.64) 70%,
-    rgba(11, 13, 16, 0.75) 77%,
-    rgba(11, 13, 16, 0.84) 83%,
-    rgba(11, 13, 16, 0.91) 88%,
-    rgba(11, 13, 16, 0.96) 93%,
-    rgba(11, 13, 16, 0.99) 97%,
-
-    #0B0D10 100%
-  ) !important;
-
-  pointer-events: none !important;
-
-  content: "" !important;
-}
-
-
-/*
-  Keep all Photography text above the fade.
-*/
-.portfolio-experience__ui {
-  z-index: 3 !important;
-}
-
-
-/* ==========================================================
-   2. BIGGER PORTFOLIO -> WEB BREATHING SPACE
-========================================================== */
-
-/*
-  This is the blank atmospheric space AFTER
-  the final photograph.
-
-  Make it closer to the large space after the hero.
-*/
-.portfolio-experience::after {
-  width: 100% !important;
-
-  height: clamp(720px, 88vh, 1100px) !important;
-
-  margin: -3px 0 0 !important;
-
-  background:
-
-    /*
-      Very faint glow begins only around the middle.
-      Top and bottom remain EXACTLY #0B0D10.
-    */
-    radial-gradient(
-      ellipse at 65% 68%,
-      rgba(102, 124, 138, 0.055) 0%,
-      rgba(102, 124, 138, 0.025) 24%,
-      transparent 52%
-    ),
-
-    linear-gradient(
-      to bottom,
-
-      #0B0D10 0%,
-      #0B0D10 30%,
-
-      #0B0E11 45%,
-      #0C0F13 59%,
-
-      #0B0E11 75%,
-
-      #0B0D10 90%,
-      #0B0D10 100%
-    ) !important;
-
-  content: "" !important;
-}
-
-
-/* ==========================================================
-   3. WEB DESIGN ENTERS SLOWLY FROM THE SAME BLACK
-========================================================== */
-
-.transition-chapter {
-  /*
-    Give the beginning of this world more breathing room.
-  */
-  padding-top:
-    clamp(330px, 38vh, 560px) !important;
-
-  /*
-    Bigger exit space before About.
-  */
-  padding-bottom:
-    clamp(520px, 62vh, 850px) !important;
-
-  margin-top: -4px !important;
-
-  /*
-    Do NOT immediately jump into the blue-gray Web glow.
-
-    Stay #0B0D10 for the opening portion,
-    slowly enter the Web Design atmosphere,
-    then return to #0B0D10.
-  */
-  background:
-
-    radial-gradient(
-      ellipse at 76% 47%,
-      rgba(125, 156, 177, 0.16) 0%,
-      rgba(125, 156, 177, 0.07) 24%,
-      rgba(125, 156, 177, 0.025) 40%,
-      transparent 58%
-    ),
-
-    radial-gradient(
-      ellipse at 27% 55%,
-      rgba(98, 118, 145, 0.09),
-      transparent 46%
-    ),
-
-    linear-gradient(
-      to bottom,
-
-      #0B0D10 0%,
-      #0B0D10 14%,
-
-      #0B0E11 23%,
-      #0C0F13 34%,
-
-      #0D1014 47%,
-      #0D1014 59%,
-
-      #0C0F13 71%,
-      #0B0E11 81%,
-
-      #0B0D10 91%,
-      #0B0D10 100%
-    ) !important;
-}
-
-
-/* ==========================================================
-   4. WEB DESIGN -> BACKGROUND
-   HERO-STYLE LONG FADE
-========================================================== */
-
-.transition-chapter::after {
-  position: absolute !important;
-
-  z-index: 5 !important;
-
-  right: 0 !important;
-  bottom: -4px !important;
-  left: 0 !important;
-
-  /*
-    Much larger than before.
-  */
-  height: clamp(650px, 78vh, 1000px) !important;
-
-  background: linear-gradient(
-    to bottom,
-
-    rgba(11, 13, 16, 0) 0%,
-    rgba(11, 13, 16, 0.008) 7%,
-    rgba(11, 13, 16, 0.02) 14%,
-    rgba(11, 13, 16, 0.045) 21%,
-    rgba(11, 13, 16, 0.08) 28%,
-    rgba(11, 13, 16, 0.14) 36%,
-    rgba(11, 13, 16, 0.22) 44%,
-    rgba(11, 13, 16, 0.32) 52%,
-    rgba(11, 13, 16, 0.44) 60%,
-    rgba(11, 13, 16, 0.57) 68%,
-    rgba(11, 13, 16, 0.69) 75%,
-    rgba(11, 13, 16, 0.80) 82%,
-    rgba(11, 13, 16, 0.88) 87%,
-    rgba(11, 13, 16, 0.94) 92%,
-    rgba(11, 13, 16, 0.985) 97%,
-
-    #0B0D10 100%
-  ) !important;
-
-  pointer-events: none !important;
-
-  content: "" !important;
-}
-
-
-/* ==========================================================
-   5. ABOUT ENTERS FROM PURE #0B0D10
-========================================================== */
-
-.about-editorial {
-  margin-top: -4px !important;
-
-  /*
-    Keep About relatively quick,
-    but give the TOP enough room for the fade transition.
-  */
-  padding-top:
-    clamp(200px, 23vh, 320px) !important;
-
-  /*
-    Keep the END short so the visitor isn't stuck
-    in the About section.
-  */
-  padding-bottom:
-    clamp(95px, 10vh, 145px) !important;
-
-  background:
-
-    radial-gradient(
-      ellipse at 18% 50%,
-      rgba(102, 124, 138, 0.10),
-      transparent 37%
-    ),
-
-    radial-gradient(
-      ellipse at 78% 60%,
-      rgba(74, 91, 110, 0.065),
-      transparent 41%
-    ),
-
-    /*
-      Hold exact black longer at the beginning.
-
-      This is important because the Web section has
-      already faded completely to #0B0D10.
-    */
-    linear-gradient(
-      to bottom,
-
-      #0B0D10 0%,
-      #0B0D10 18%,
-
-      #0B0E11 29%,
-      #0C0F13 42%,
-
-      #0C0F13 67%,
-
-      #0B0E11 82%,
-
-      #0B0D10 94%,
-      #0B0D10 100%
-    ) !important;
-
-  border-top: 0 !important;
-}
-
-
-/* ==========================================================
-   6. ABOUT BACKGROUND TEXT
-========================================================== */
-
-/*
-  Make ISAAC / MOTL visible,
-  but still clearly background elements.
-*/
-.about-editorial__ghost-word {
-  opacity: 0.58 !important;
-
-  -webkit-text-stroke:
-    1px rgba(210, 224, 234, 0.19) !important;
-}
-
-
-/* ==========================================================
-   7. KEEP ABOUT QUICK
-========================================================== */
-
-.about-editorial__portrait {
-  margin-top:
-    clamp(25px, 3vw, 45px) !important;
-}
-
-
-.about-editorial__rail {
-  margin-top:
-    clamp(55px, 6vw, 85px) !important;
-}
-
-
-.about-editorial__copy {
-  margin:
-    27px
-    0
-    27px !important;
-}
-
-
-/* ==========================================================
-   TABLET
-========================================================== */
-
-@media (max-width: 800px) {
-
-  .portfolio-experience__stage::after {
-    height: 68% !important;
-  }
-
 
   .portfolio-experience::after {
     height: 560px !important;
   }
 
-
   .transition-chapter {
-    padding-top: 230px !important;
-    padding-bottom: 390px !important;
+    min-height: auto !important;
+    padding: 220px 0 400px !important;
   }
 
+  .transition-chapter__sticky {
+    min-height: auto !important;
+  }
+
+  .transition-chapter__ghost {
+    font-size: clamp(5rem, 19vw, 9rem);
+  }
+
+  .transition-chapter__ghost--top {
+    top: 32px !important;
+    left: 4vw !important;
+  }
+
+  .transition-chapter__ghost--bottom {
+    right: 4vw !important;
+    bottom: 32px !important;
+  }
 
   .transition-chapter::after {
-    height: 520px !important;
+    height: 520px;
   }
 
-
   .about-editorial {
-    padding-top: 165px !important;
-    padding-bottom: 95px !important;
+    padding: 125px 0 95px !important;
+  }
+
+  .about-editorial__rail {
+    margin-top: 65px !important;
   }
 }
 
@@ -3940,30 +2118,73 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
 ========================================================== */
 
 @media (max-width: 520px) {
-
-  .portfolio-experience__stage::after {
-    height: 58% !important;
+  .hero::after {
+    height: 330px;
+    min-height: 0;
   }
 
+  .hero-credit {
+    right: 16px !important;
+    bottom: 16px !important;
+    max-width: calc(100% - 32px);
+    font-size: 0.62rem;
+    text-align: right;
+  }
+
+  .photography-bridge {
+    min-height: 400px;
+  }
+
+  .photography-bridge__word {
+    font-size: clamp(3.6rem, 17vw, 6rem);
+    letter-spacing: -0.06em;
+  }
+
+  .portfolio-experience__stage::after {
+    height: 56%;
+  }
 
   .portfolio-experience::after {
     height: 430px !important;
   }
 
-
   .transition-chapter {
-    padding-top: 175px !important;
-    padding-bottom: 285px !important;
+    padding: 165px 0 290px !important;
   }
 
+  .transition-chapter__ghost {
+    font-size: clamp(4rem, 20vw, 7rem);
+    opacity: 0.40 !important;
+  }
 
   .transition-chapter::after {
-    height: 390px !important;
+    height: 390px;
   }
 
-
   .about-editorial {
-    padding-top: 135px !important;
-    padding-bottom: 80px !important;
+    padding: 105px 0 80px !important;
+  }
+
+  .about-editorial__ghost-word {
+    font-size: clamp(6.5rem, 30vw, 10rem);
+    opacity: 0.40 !important;
+  }
+
+  .about-editorial__ghost-word--isaac {
+    top: 52px !important;
+    left: 4vw !important;
+  }
+
+  .about-editorial__ghost-word--motl {
+    right: 4vw !important;
+    bottom: 95px !important;
+  }
+
+  .about-editorial__portrait {
+    margin-top: 50px !important;
+  }
+
+  .about-editorial__rail {
+    margin-top: 50px !important;
   }
 }
