@@ -2188,3 +2188,339 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     margin-top: 50px !important;
   }
 }
+/* ==========================================================
+   FINAL FADE TUNING
+   smoother transitions + shorter Web -> About gap
+========================================================== */
+
+
+/* ==========================================================
+   1. PORTFOLIO PHOTO -> BACKGROUND
+   Make it dissolve like the hero image
+========================================================== */
+
+.portfolio-experience__stage::after {
+  position: absolute !important;
+  z-index: 1 !important;
+
+  right: -3px !important;
+  bottom: -3px !important;
+  left: -3px !important;
+
+  height: 82% !important;
+
+  background: linear-gradient(
+    to bottom,
+
+    rgba(11,13,16,0) 0%,
+    rgba(11,13,16,.005) 8%,
+    rgba(11,13,16,.015) 16%,
+    rgba(11,13,16,.035) 24%,
+    rgba(11,13,16,.07) 32%,
+    rgba(11,13,16,.12) 40%,
+    rgba(11,13,16,.19) 48%,
+    rgba(11,13,16,.28) 56%,
+    rgba(11,13,16,.39) 64%,
+    rgba(11,13,16,.52) 71%,
+    rgba(11,13,16,.65) 78%,
+    rgba(11,13,16,.77) 84%,
+    rgba(11,13,16,.87) 89%,
+    rgba(11,13,16,.94) 94%,
+    rgba(11,13,16,.985) 98%,
+
+    #0B0D10 100%
+  ) !important;
+
+  pointer-events: none !important;
+
+  content: "" !important;
+}
+
+
+/* Keep the portfolio wording above the fade */
+.portfolio-experience__ui {
+  position: relative;
+  z-index: 3 !important;
+}
+
+
+/* ==========================================================
+   2. SPACE AFTER PORTFOLIO
+   Still cinematic, but not a giant empty void
+========================================================== */
+
+.portfolio-experience::after {
+  width: 100% !important;
+
+  height: clamp(520px, 62vh, 760px) !important;
+
+  margin: -4px 0 0 !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 55% 58%,
+      rgba(102,124,138,.045),
+      transparent 48%
+    ),
+
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+      #0B0D10 34%,
+
+      #0B0E11 49%,
+      #0C0F13 61%,
+
+      #0B0E11 75%,
+
+      #0B0D10 90%,
+      #0B0D10 100%
+    ) !important;
+
+  content: "" !important;
+}
+
+
+/* ==========================================================
+   3. WEB DESIGN SECTION
+   Enter from the exact same black
+========================================================== */
+
+.transition-chapter {
+  min-height: 100svh !important;
+
+  padding-top:
+    clamp(250px, 28vh, 390px) !important;
+
+  /*
+    THIS is the major gap reduction.
+    Previous version had 500px+ down here.
+  */
+  padding-bottom:
+    clamp(210px, 23vh, 310px) !important;
+
+  margin-top: -4px !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 76% 46%,
+      rgba(125,156,177,.15),
+      rgba(125,156,177,.055) 28%,
+      transparent 50%
+    ),
+
+    radial-gradient(
+      ellipse at 27% 56%,
+      rgba(98,118,145,.085),
+      transparent 46%
+    ),
+
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+      #0B0D10 15%,
+
+      #0B0E11 25%,
+      #0C0F13 37%,
+
+      #0D1014 49%,
+      #0D1014 61%,
+
+      #0C0F13 73%,
+      #0B0E11 84%,
+
+      #0B0D10 94%,
+      #0B0D10 100%
+    ) !important;
+}
+
+
+/*
+  Reduce the internal Web section height too.
+  This is another reason the About section felt far away.
+*/
+.transition-chapter__sticky {
+  min-height: 720px !important;
+}
+
+
+/* ==========================================================
+   4. WEB DESIGN -> ABOUT
+   Same slow disappearance as hero
+========================================================== */
+
+.transition-chapter::after {
+  position: absolute !important;
+  z-index: 5 !important;
+
+  right: 0 !important;
+  bottom: -4px !important;
+  left: 0 !important;
+
+  height: clamp(430px, 50vh, 640px) !important;
+
+  background: linear-gradient(
+    to bottom,
+
+    rgba(11,13,16,0) 0%,
+    rgba(11,13,16,.005) 8%,
+    rgba(11,13,16,.015) 16%,
+    rgba(11,13,16,.035) 24%,
+    rgba(11,13,16,.07) 32%,
+    rgba(11,13,16,.12) 40%,
+    rgba(11,13,16,.19) 48%,
+    rgba(11,13,16,.28) 56%,
+    rgba(11,13,16,.39) 64%,
+    rgba(11,13,16,.52) 71%,
+    rgba(11,13,16,.65) 78%,
+    rgba(11,13,16,.77) 84%,
+    rgba(11,13,16,.87) 89%,
+    rgba(11,13,16,.94) 94%,
+    rgba(11,13,16,.985) 98%,
+
+    #0B0D10 100%
+  ) !important;
+
+  pointer-events: none !important;
+
+  content: "" !important;
+}
+
+
+/* ==========================================================
+   5. ABOUT STARTS SOONER
+========================================================== */
+
+.about-editorial {
+  margin-top: -4px !important;
+
+  /*
+    Much smaller gap entering About.
+  */
+  padding-top:
+    clamp(95px, 11vh, 150px) !important;
+
+  padding-bottom:
+    clamp(90px, 10vh, 135px) !important;
+
+  min-height: auto !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 18% 50%,
+      rgba(102,124,138,.09),
+      transparent 38%
+    ),
+
+    radial-gradient(
+      ellipse at 78% 58%,
+      rgba(74,91,110,.06),
+      transparent 42%
+    ),
+
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+      #0B0D10 20%,
+
+      #0B0E11 31%,
+      #0C0F13 45%,
+
+      #0C0F13 66%,
+
+      #0B0E11 82%,
+
+      #0B0D10 94%,
+      #0B0D10 100%
+    ) !important;
+}
+
+
+/* ==========================================================
+   6. KEEP BACKGROUND WORDS VISIBLE
+========================================================== */
+
+.transition-chapter__ghost {
+  opacity: .55 !important;
+
+  -webkit-text-stroke:
+    1px rgba(213,226,235,.24) !important;
+}
+
+
+.about-editorial__ghost-word {
+  opacity: .56 !important;
+
+  -webkit-text-stroke:
+    1px rgba(210,224,234,.19) !important;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 800px) {
+
+  .portfolio-experience__stage::after {
+    height: 70% !important;
+  }
+
+  .portfolio-experience::after {
+    height: 460px !important;
+  }
+
+  .transition-chapter {
+    padding-top: 190px !important;
+    padding-bottom: 180px !important;
+  }
+
+  .transition-chapter__sticky {
+    min-height: auto !important;
+  }
+
+  .transition-chapter::after {
+    height: 370px !important;
+  }
+
+  .about-editorial {
+    padding-top: 90px !important;
+    padding-bottom: 85px !important;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 520px) {
+
+  .portfolio-experience__stage::after {
+    height: 62% !important;
+  }
+
+  .portfolio-experience::after {
+    height: 340px !important;
+  }
+
+  .transition-chapter {
+    padding-top: 145px !important;
+    padding-bottom: 140px !important;
+  }
+
+  .transition-chapter::after {
+    height: 300px !important;
+  }
+
+  .about-editorial {
+    padding-top: 75px !important;
+    padding-bottom: 75px !important;
+  }
+}
