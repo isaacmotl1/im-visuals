@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=portfolio-directory-1" />
   </head>
   <body>
     <!-- Skip link makes keyboard navigation faster. -->
@@ -31,137 +31,300 @@
       </div>
     </header>
 
-    <main id="main-content">
-      <!-- Portfolio Hero -->
-<section class="hero" style="min-height:75vh;" aria-labelledby="portfolio-title">
-    <div class="hero-content container reveal">
-        <p class="eyebrow">Photography Portfolio</p>
+   <main id="main-content" class="portfolio-page">
 
-        <h1 id="portfolio-title">
-            Every image<br>tells a story.
-        </h1>
+  <!-- ==================================================
+       PORTFOLIO HERO
+  ================================================== -->
+  <section class="portfolio-page-hero" aria-labelledby="portfolio-title">
 
-        <p class="hero-copy">
-            From wildlife encounters and fast-paced sports to portraits,
-            aviation, and automotive photography, each collection captures a
-            different perspective of the world.
-        </p>
-    </div>
+    <div class="container portfolio-page-hero__content">
 
-    <p class="hero-credit">
-        IM Visuals • Photography
-    </p>
-</section>
+      <p class="eyebrow">
+        Photography / Selected Work
+      </p>
 
-<!-- Portfolio Categories -->
-<section class="section category-section" aria-labelledby="category-title">
+      <h1 id="portfolio-title">
+        Portfolio
+      </h1>
 
-    <div class="container">
+      <p class="portfolio-page-hero__copy">
+        Five collections exploring movement, atmosphere,
+        people, machines, and the natural world.
+      </p>
 
-        <div class="section-heading reveal">
-
-            <p class="eyebrow">Explore</p>
-
-            <h2 id="category-title">
-                Browse the collection.
-            </h2>
-
-        </div>
-
-        <div class="category-grid">
-
-            <a class="category-card" href="portfolio/wildlife.html">
-                <img src="images/categories/wildlife.jpg" alt="Wildlife">
-                <span>Wildlife</span>
-            </a>
-
-            <a class="category-card" href="portfolio/cars.html">
-                <img src="images/categories/cars.jpg" alt="Cars">
-                <span>Cars</span>
-            </a>
-
-            <a class="category-card" href="portfolio/sports.html">
-                <img src="images/categories/sports.jpg" alt="Sports">
-                <span>Sports</span>
-            </a>
-
-            <a class="category-card" href="portfolio/portraits.html">
-                <img src="images/categories/portraits.jpg" alt="Portraits">
-                <span>Portraits</span>
-            </a>
-
-            <a class="category-card" href="portfolio/aviation.html">
-                <img src="images/categories/aviation.jpg" alt="Aviation">
-                <span>Aviation</span>
-            </a>
-
-        </div>
+      <a class="text-link" href="#portfolio-collections">
+        Explore collections
+        <span aria-hidden="true">↓</span>
+      </a>
 
     </div>
 
-</section>
+  </section>
 
-<!-- Philosophy -->
-<section class="section about-preview">
 
-    <div class="container about-preview__grid">
+  <!-- ==================================================
+       SCROLLING PORTFOLIO DIRECTORY
+  ================================================== -->
+  <section
+    class="portfolio-directory"
+    id="portfolio-collections"
+    aria-label="Photography collections"
+  >
 
-        <figure class="about-preview__image reveal">
+    <!-- Huge transparent background words -->
+    <div class="portfolio-directory__ghost" aria-hidden="true">
 
-            <img src="images/portfolio/portfolio-about.jpeg"
-                 alt="Isaac photographing outdoors">
+      <span
+        class="portfolio-directory__ghost-word
+               portfolio-directory__ghost-word--one"
+      >
+        Portfolio
+      </span>
 
+      <span
+        class="portfolio-directory__ghost-word
+               portfolio-directory__ghost-word--two"
+      >
+        Selected
+      </span>
+
+      <span
+        class="portfolio-directory__ghost-word
+               portfolio-directory__ghost-word--three"
+      >
+        Photography
+      </span>
+
+    </div>
+
+
+    <div class="portfolio-directory__list">
+
+
+      <!-- 01 WILDLIFE -->
+      <a
+        class="portfolio-directory__row"
+        href="portfolio/wildlife.html"
+      >
+
+        <figure class="portfolio-directory__image">
+          <img
+            src="images/categories/wildlife.jpg"
+            alt="Wildlife photography"
+          />
         </figure>
 
-        <div class="about-preview__content reveal">
+        <div class="portfolio-directory__shade"></div>
 
-            <p class="eyebrow">
-                Behind the Lens
-            </p>
+        <div class="portfolio-directory__label">
 
-            <h2>
-                Creating images that feel authentic.
-            </h2>
+          <span class="portfolio-directory__number">
+            01
+          </span>
 
-            <p>
-                Photography is more than documenting a moment, it's about
-                telling a story about every person, place, or thing I shoot.
-            </p>
+          <h2>Wildlife</h2>
 
-        </div>
-
-    </div>
-
-</section>
-
-<!-- Contact CTA -->
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <p class="eyebrow">
-                Let's Work Together
-            </p>
-
-            <h2>
-                Looking for photography?
-            </h2>
-
-            <a class="button button--dark"
-               href="contact.html">
-
-                Book a Session
-
-            </a>
+          <span class="portfolio-directory__view">
+            View collection ↗
+          </span>
 
         </div>
 
+      </a>
+
+
+      <!-- 02 SPORTS -->
+      <a
+        class="portfolio-directory__row"
+        href="portfolio/sports.html"
+      >
+
+        <figure class="portfolio-directory__image">
+          <img
+            src="images/categories/sports.jpg"
+            alt="Sports photography"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="portfolio-directory__shade"></div>
+
+        <div class="portfolio-directory__label">
+
+          <span class="portfolio-directory__number">
+            02
+          </span>
+
+          <h2>Sports</h2>
+
+          <span class="portfolio-directory__view">
+            View collection ↗
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- 03 AVIATION -->
+      <a
+        class="portfolio-directory__row"
+        href="portfolio/aviation.html"
+      >
+
+        <figure class="portfolio-directory__image">
+          <img
+            src="images/categories/aviation.jpg"
+            alt="Aviation photography"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="portfolio-directory__shade"></div>
+
+        <div class="portfolio-directory__label">
+
+          <span class="portfolio-directory__number">
+            03
+          </span>
+
+          <h2>Aviation</h2>
+
+          <span class="portfolio-directory__view">
+            View collection ↗
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- 04 CARS -->
+      <a
+        class="portfolio-directory__row"
+        href="portfolio/cars.html"
+      >
+
+        <figure class="portfolio-directory__image">
+          <img
+            src="images/categories/cars.jpg"
+            alt="Automotive photography"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="portfolio-directory__shade"></div>
+
+        <div class="portfolio-directory__label">
+
+          <span class="portfolio-directory__number">
+            04
+          </span>
+
+          <h2>Cars</h2>
+
+          <span class="portfolio-directory__view">
+            View collection ↗
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- 05 PORTRAITS -->
+      <a
+        class="portfolio-directory__row"
+        href="portfolio/portraits.html"
+      >
+
+        <figure class="portfolio-directory__image">
+          <img
+            src="images/categories/portraits.jpg"
+            alt="Portrait photography"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="portfolio-directory__shade"></div>
+
+        <div class="portfolio-directory__label">
+
+          <span class="portfolio-directory__number">
+            05
+          </span>
+
+          <h2>Portraits</h2>
+
+          <span class="portfolio-directory__view">
+            View collection ↗
+          </span>
+
+        </div>
+
+      </a>
+
     </div>
 
-</section>
+  </section>
 
+
+  <!-- ==================================================
+       PHOTOGRAPHY INTRO
+  ================================================== -->
+  <section class="portfolio-closing">
+
+    <div class="portfolio-closing__ghost" aria-hidden="true">
+      The Work
+    </div>
+
+    <div class="container portfolio-closing__grid">
+
+      <figure class="portfolio-closing__image">
+
+        <img
+          src="images/portfolio/portfolio-about.jpeg"
+          alt="Isaac photographing outdoors"
+          loading="lazy"
+        />
+
+      </figure>
+
+
+      <div class="portfolio-closing__content">
+
+        <p class="eyebrow">
+          Behind the Lens
+        </p>
+
+        <h2>
+          More than documenting
+          <span>a moment.</span>
+        </h2>
+
+        <p>
+          Photography is about noticing what could easily be
+          missed — light, movement, expression, atmosphere,
+          and the details that make a moment worth remembering.
+          Each collection is built around that idea.
+        </p>
+
+        <a
+          class="button button--light"
+          href="contact.html"
+        >
+          Work With Me
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
     
 
  
