@@ -6015,3 +6015,31 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     transition: none !important;
   }
 }
+/* ==========================================================
+   MOBILE PORTFOLIO REELS — KEEP THEM MOVING
+========================================================== */
+
+@media (max-width: 520px) {
+
+  .portfolio-reel__track {
+    animation-name: portfolio-reel-scroll !important;
+    animation-duration: var(--reel-speed, 50s) !important;
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
+    animation-direction: var(--reel-direction, normal) !important;
+    animation-play-state: running !important;
+  }
+
+}
+
+
+/* Touchscreens should NOT use the desktop hover-pause behavior */
+@media (hover: none) and (pointer: coarse) {
+
+  .portfolio-directory__row:hover .portfolio-reel__track,
+  .portfolio-directory__row:focus .portfolio-reel__track,
+  .portfolio-directory__row:active .portfolio-reel__track {
+    animation-play-state: running !important;
+  }
+
+}
