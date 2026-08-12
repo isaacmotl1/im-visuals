@@ -4746,37 +4746,43 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 }
 /* ==================================================
-   MOBILE GHOST TEXT SIZE FIX
+   MOBILE — FIX BOTH PHOTOGRAPHY GHOST WORDS
 ================================================== */
 
 @media (max-width: 520px) {
 
-  /* Big PHOTOGRAPHY between hero and portfolio */
+  /* PHOTOGRAPHY between Hero and Portfolio */
   .photography-bridge__word {
-    font-size: clamp(2.8rem, 13vw, 4.6rem) !important;
+    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
     letter-spacing: -0.055em !important;
-    max-width: 94vw !important;
+
+    width: auto !important;
+    max-width: 90vw !important;
+
+    white-space: nowrap !important;
   }
 
-  /* BEYOND / PHOTOGRAPHY behind Web Design */
-  .transition-chapter__ghost {
-    font-size: clamp(3rem, 14vw, 5.2rem) !important;
-    line-height: .9 !important;
-    letter-spacing: -0.06em !important;
-  }
 
-  .transition-chapter__ghost--top {
-    left: 5vw !important;
-  }
-
+  /* PHOTOGRAPHY behind the Web Design section */
   .transition-chapter__ghost--bottom {
-    right: 5vw !important;
+    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+    letter-spacing: -0.055em !important;
+    line-height: .9 !important;
+
+    right: 50% !important;
+    left: auto !important;
+
+    width: max-content !important;
+    max-width: 90vw !important;
+
+    white-space: nowrap !important;
+
+    transform: translateX(50%) !important;
   }
 
-  /* ISAAC / MOTL behind About */
-  .about-editorial__ghost-word {
-    font-size: clamp(4.2rem, 21vw, 7rem) !important;
-    line-height: .9 !important;
-    letter-spacing: -0.065em !important;
+
+  /* Keep BEYOND larger — only PHOTOGRAPHY gets smaller */
+  .transition-chapter__ghost--top {
+    font-size: clamp(3rem, 15vw, 5rem) !important;
   }
 }
