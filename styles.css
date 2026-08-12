@@ -5877,18 +5877,15 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
 }
 
 @keyframes portfolio-reel-scroll {
+
   from {
     transform: translate3d(0, 0, 0);
   }
 
   to {
-    transform:
-      translate3d(
-        calc(-1 * var(--reel-shift, 1200px)),
-        0,
-        0
-      );
+    transform: translate3d(-50%, 0, 0);
   }
+
 }
 
 
