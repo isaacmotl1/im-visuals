@@ -4753,7 +4753,7 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
 
   /* PHOTOGRAPHY between Hero and Portfolio */
   .photography-bridge__word {
-    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+    font-size: clamp(2.2rem, 2vw, 3.2rem) !important;
     letter-spacing: -0.055em !important;
 
     width: auto !important;
@@ -4765,7 +4765,7 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
 
   /* PHOTOGRAPHY behind the Web Design section */
   .transition-chapter__ghost--bottom {
-    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+    font-size: clamp(2.2rem, 2vw, 3.2rem) !important;
     letter-spacing: -0.055em !important;
     line-height: .9 !important;
 
