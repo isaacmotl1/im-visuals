@@ -4571,3 +4571,177 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
       75px !important;
   }
 }
+/* ==========================================================
+   FINAL WEB DESIGN -> ABOUT TRANSITION
+   small breathing room + real fade into About
+========================================================== */
+
+
+/* ==========================================================
+   1. GIVE THE TRANSITION A LITTLE MORE SPACE
+========================================================== */
+
+.about-editorial {
+  /*
+    A little more room than you have now,
+    but NOT the giant gap from before.
+  */
+  padding-top:
+    clamp(220px, 25vh, 330px) !important;
+
+  margin-top: -6px !important;
+
+  border-top: 0 !important;
+  outline: 0 !important;
+
+  /*
+    Make sure the very first pixel of About
+    matches the exact site background.
+  */
+  background:
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+      #0B0D10 18%,
+
+      #0B0E11 30%,
+      #0B0F12 40%,
+      #0C0F13 50%,
+
+      #0C0F13 68%,
+
+      #0B0F12 79%,
+      #0B0E11 87%,
+
+      #0B0D10 95%,
+      #0B0D10 100%
+    ) !important;
+}
+
+
+/* ==========================================================
+   2. ACTUAL FADE INTO ABOUT
+========================================================== */
+
+/*
+   This is the important part.
+
+   It begins as the SAME black as the end of Web Design,
+   then slowly becomes transparent so the About atmosphere
+   appears underneath it.
+
+   This is the same visual idea as the hero fade.
+*/
+
+.about-editorial::before {
+  display: block !important;
+
+  position: absolute !important;
+
+  z-index: 0 !important;
+
+  top: -6px !important;
+  right: 0 !important;
+  left: 0 !important;
+
+  height: clamp(420px, 50vh, 620px) !important;
+
+  background: linear-gradient(
+    to bottom,
+
+    /* completely connected to Web Design */
+    #0B0D10 0%,
+    #0B0D10 12%,
+
+    rgba(11,13,16,.99) 19%,
+    rgba(11,13,16,.96) 27%,
+    rgba(11,13,16,.90) 35%,
+    rgba(11,13,16,.80) 43%,
+    rgba(11,13,16,.67) 51%,
+    rgba(11,13,16,.53) 59%,
+    rgba(11,13,16,.39) 67%,
+    rgba(11,13,16,.26) 75%,
+    rgba(11,13,16,.15) 83%,
+    rgba(11,13,16,.07) 90%,
+    rgba(11,13,16,.025) 96%,
+
+    rgba(11,13,16,0) 100%
+  ) !important;
+
+  border: 0 !important;
+
+  pointer-events: none !important;
+
+  content: "" !important;
+}
+
+
+/* ==========================================================
+   3. KEEP ISAAC / MOTL AND ABOUT CONTENT ABOVE THE FADE
+========================================================== */
+
+.about-editorial__ghost {
+  position: absolute !important;
+
+  z-index: 1 !important;
+}
+
+
+.about-editorial__layout {
+  position: relative !important;
+
+  z-index: 3 !important;
+}
+
+
+/* ==========================================================
+   4. KILL THE LAST POSSIBLE 1PX LINE
+========================================================== */
+
+.transition-chapter {
+  margin-bottom: -6px !important;
+
+  border-bottom: 0 !important;
+}
+
+
+.transition-chapter + .about-editorial {
+  margin-top: -6px !important;
+
+  border-top: 0 !important;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 800px) {
+
+  .about-editorial {
+    padding-top: 165px !important;
+  }
+
+
+  .about-editorial::before {
+    height: 380px !important;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 520px) {
+
+  .about-editorial {
+    padding-top: 125px !important;
+  }
+
+
+  .about-editorial::before {
+    height: 290px !important;
+  }
+}
