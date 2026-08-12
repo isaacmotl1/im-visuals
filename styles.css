@@ -4095,3 +4095,479 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     opacity: .40 !important;
   }
 }
+/* ==========================================================
+   TRUE SEAMLESS WEB TRANSITIONS
+   fixes:
+   Portfolio -> Web Design
+   Web Design -> About
+
+   Exact site black: #0B0D10
+========================================================== */
+
+
+/* ==========================================================
+   1. PORTFOLIO -> WEB
+   END ON TRUE BLACK
+========================================================== */
+
+/*
+   Remove the radial glow from the transition gap.
+   That radial glow was tinting the bottom edge and
+   preventing it from matching the Web section.
+*/
+.portfolio-experience::after {
+  display: block !important;
+
+  width: 100% !important;
+
+  height: clamp(500px, 56vh, 700px) !important;
+
+  margin: -5px 0 0 !important;
+
+  background: linear-gradient(
+    to bottom,
+
+    /* portfolio has already faded into black */
+    #0B0D10 0%,
+    #0B0D10 34%,
+
+    /* almost invisible atmospheric transition */
+    #0B0E11 48%,
+    #0C0F13 61%,
+
+    /* return completely to site black */
+    #0B0E11 74%,
+    #0B0D10 88%,
+    #0B0D10 100%
+  ) !important;
+
+  content: "" !important;
+}
+
+
+/* ==========================================================
+   2. WEB DESIGN SECTION
+   EXACT BLACK AT BOTH EDGES
+========================================================== */
+
+/*
+   IMPORTANT:
+   no radial gradients directly on this element.
+
+   That guarantees:
+   top pixel = #0B0D10
+   bottom pixel = #0B0D10
+*/
+.transition-chapter {
+  position: relative !important;
+
+  min-height: 112svh !important;
+
+  padding:
+    clamp(300px, 34vh, 450px)
+    0
+    clamp(320px, 37vh, 500px) !important;
+
+  margin-top: -5px !important;
+  margin-bottom: -5px !important;
+
+  overflow: hidden !important;
+
+  background: linear-gradient(
+    to bottom,
+
+    /* TRUE BLACK ENTRANCE */
+    #0B0D10 0%,
+    #0B0D10 15%,
+
+    /* very gradual fade INTO web atmosphere */
+    #0B0D10 18%,
+    #0B0E11 23%,
+    #0B0F12 28%,
+    #0C0F13 34%,
+    #0C1014 40%,
+
+    /* center of web environment */
+    #0D1014 47%,
+    #0D1014 57%,
+
+    /* gradually fade OUT */
+    #0C1014 64%,
+    #0C0F13 70%,
+    #0B0F12 76%,
+    #0B0E11 82%,
+    #0B0D10 87%,
+
+    /* TRUE BLACK EXIT */
+    #0B0D10 91%,
+    #0B0D10 100%
+  ) !important;
+
+  border: 0 !important;
+}
+
+
+/* ==========================================================
+   3. WEB ATMOSPHERIC GLOW
+   ONLY EXISTS IN THE MIDDLE
+========================================================== */
+
+/*
+   We still keep the blue-gray atmosphere,
+   but now it lives on the ambient layer.
+
+   The mask forces it to disappear COMPLETELY
+   before reaching either section boundary.
+*/
+.transition-chapter__ambient {
+  position: absolute !important;
+
+  z-index: 0 !important;
+
+  inset: -15% !important;
+
+  opacity: .55 !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 76% 47%,
+      rgba(125,156,177,.19) 0%,
+      rgba(125,156,177,.08) 26%,
+      rgba(125,156,177,.025) 43%,
+      transparent 61%
+    ),
+
+    radial-gradient(
+      ellipse at 27% 57%,
+      rgba(98,118,145,.11),
+      transparent 48%
+    ) !important;
+
+  /*
+     THIS is what prevents the glow from producing
+     another horizontal boundary.
+  */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+
+    transparent 0%,
+    transparent 10%,
+
+    rgba(0,0,0,.2) 17%,
+    rgba(0,0,0,.55) 25%,
+    black 35%,
+
+    black 68%,
+
+    rgba(0,0,0,.55) 78%,
+    rgba(0,0,0,.2) 86%,
+
+    transparent 93%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+
+    transparent 0%,
+    transparent 10%,
+
+    rgba(0,0,0,.2) 17%,
+    rgba(0,0,0,.55) 25%,
+    black 35%,
+
+    black 68%,
+
+    rgba(0,0,0,.55) 78%,
+    rgba(0,0,0,.2) 86%,
+
+    transparent 93%,
+    transparent 100%
+  );
+
+  filter: blur(70px) !important;
+
+  transform: none !important;
+
+  pointer-events: none !important;
+}
+
+
+/* ==========================================================
+   4. KEEP WEB CONTENT ABOVE ATMOSPHERE
+========================================================== */
+
+.transition-chapter__ghost {
+  z-index: 2 !important;
+}
+
+
+.transition-chapter__stage {
+  position: relative !important;
+
+  z-index: 4 !important;
+}
+
+
+.transition-chapter__content,
+.web-mockup {
+  position: relative !important;
+
+  z-index: 5 !important;
+
+  opacity: 1 !important;
+
+  transform: none !important;
+}
+
+
+/* ==========================================================
+   5. REMOVE OLD WEB PSEUDO FADES
+========================================================== */
+
+.transition-chapter::before,
+.transition-chapter::after,
+.transition-chapter__sticky::before,
+.transition-chapter__sticky::after {
+  display: none !important;
+
+  content: none !important;
+
+  background: none !important;
+
+  border: 0 !important;
+}
+
+
+/* ==========================================================
+   6. WEB -> ABOUT
+   ABOUT MUST BEGIN ON EXACT BLACK
+========================================================== */
+
+.about-editorial {
+  position: relative !important;
+
+  margin-top: -5px !important;
+
+  /*
+     enough transition distance without another huge gap
+  */
+  padding:
+    clamp(185px, 20vh, 270px)
+    0
+    clamp(90px, 10vh, 135px) !important;
+
+  min-height: auto !important;
+
+  overflow: hidden !important;
+
+  border: 0 !important;
+
+  /*
+     Again: NO radial gradients here.
+
+     This section physically begins as exactly #0B0D10.
+  */
+  background: linear-gradient(
+    to bottom,
+
+    /* matches Web exit exactly */
+    #0B0D10 0%,
+    #0B0D10 18%,
+
+    /* very slowly enter About */
+    #0B0E11 26%,
+    #0B0F12 34%,
+    #0C0F13 43%,
+
+    #0C0F13 65%,
+
+    #0B0F12 76%,
+    #0B0E11 84%,
+
+    #0B0D10 93%,
+    #0B0D10 100%
+  ) !important;
+}
+
+
+/* ==========================================================
+   7. ABOUT ATMOSPHERIC GLOW
+   FADE IT IN AWAY FROM THE EDGE
+========================================================== */
+
+/*
+   Your ::before used to cause problems.
+   Now we use it correctly:
+   only as a soft internal atmosphere.
+*/
+.about-editorial::before {
+  display: block !important;
+
+  position: absolute !important;
+
+  z-index: 0 !important;
+
+  inset: -10% !important;
+
+  background:
+
+    radial-gradient(
+      ellipse at 18% 52%,
+      rgba(102,124,138,.12),
+      transparent 40%
+    ),
+
+    radial-gradient(
+      ellipse at 78% 60%,
+      rgba(74,91,110,.08),
+      transparent 44%
+    ) !important;
+
+  /*
+     Keep the glow completely invisible at the
+     beginning of About.
+
+     It gradually appears once you're already
+     inside the section.
+  */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+
+    transparent 0%,
+    transparent 12%,
+
+    rgba(0,0,0,.15) 20%,
+    rgba(0,0,0,.45) 29%,
+
+    black 40%,
+    black 76%,
+
+    rgba(0,0,0,.5) 84%,
+    transparent 96%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+
+    transparent 0%,
+    transparent 12%,
+
+    rgba(0,0,0,.15) 20%,
+    rgba(0,0,0,.45) 29%,
+
+    black 40%,
+    black 76%,
+
+    rgba(0,0,0,.5) 84%,
+    transparent 96%,
+    transparent 100%
+  );
+
+  pointer-events: none !important;
+
+  content: "" !important;
+}
+
+
+/* ==========================================================
+   8. KEEP ABOUT CONTENT ABOVE THE GLOW
+========================================================== */
+
+.about-editorial__ghost {
+  position: absolute !important;
+
+  z-index: 1 !important;
+}
+
+
+.about-editorial__layout {
+  position: relative !important;
+
+  z-index: 3 !important;
+}
+
+
+/* ==========================================================
+   9. REMOVE ANY REMAINING HARD DIVIDERS
+========================================================== */
+
+.portfolio-experience,
+.transition-chapter,
+.transition-chapter__sticky,
+.about-editorial {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+
+  outline: 0 !important;
+}
+
+
+.portfolio-experience + .transition-chapter {
+  margin-top: -5px !important;
+}
+
+
+.transition-chapter + .about-editorial {
+  margin-top: -5px !important;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 800px) {
+
+  .portfolio-experience::after {
+    height: 380px !important;
+  }
+
+
+  .transition-chapter {
+    min-height: auto !important;
+
+    padding:
+      210px
+      0
+      230px !important;
+  }
+
+
+  .about-editorial {
+    padding:
+      140px
+      0
+      90px !important;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 520px) {
+
+  .portfolio-experience::after {
+    height: 290px !important;
+  }
+
+
+  .transition-chapter {
+    padding:
+      155px
+      0
+      175px !important;
+  }
+
+
+  .about-editorial {
+    padding:
+      110px
+      0
+      75px !important;
+  }
+}
