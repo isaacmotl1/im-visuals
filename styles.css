@@ -5668,3 +5668,266 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 
 }
+/* ==========================================================
+   PORTFOLIO DIRECTORY — MULTI PHOTO PREVIEWS
+========================================================== */
+
+.portfolio-directory__collage {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(0, .85fr);
+
+  grid-template-rows:
+    1fr
+    1fr;
+
+  gap: 5px;
+
+  overflow: hidden;
+}
+
+
+/* remove old figure spacing */
+
+.portfolio-directory__photo {
+  position: relative;
+
+  min-width: 0;
+  min-height: 0;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  background: #11151a;
+}
+
+
+/* big image on the left */
+
+.portfolio-directory__photo--main {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+
+/* top-right */
+
+.portfolio-directory__photo--top {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+
+/* bottom-right */
+
+.portfolio-directory__photo--bottom {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+
+/* photos */
+
+.portfolio-directory__photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(.82)
+    brightness(.78)
+    contrast(1.03);
+
+  transform: scale(1.01);
+
+  transition:
+    transform .85s cubic-bezier(.2,.7,.2,1),
+    filter .6s ease;
+}
+
+
+/* ==========================================================
+   GIVE EACH IMAGE A SLIGHTLY DIFFERENT CROP
+========================================================== */
+
+.portfolio-directory__photo--main img {
+  object-position: center;
+}
+
+
+.portfolio-directory__photo--top img {
+  object-position: center 38%;
+}
+
+
+.portfolio-directory__photo--bottom img {
+  object-position: center 60%;
+}
+
+
+/* ==========================================================
+   KEEP EXISTING DARK CINEMATIC OVERLAY
+========================================================== */
+
+.portfolio-directory__shade {
+  z-index: 2 !important;
+
+  background:
+
+    /* darker edges */
+    linear-gradient(
+      90deg,
+
+      rgba(11,13,16,.38) 0%,
+
+      rgba(11,13,16,.08) 32%,
+
+      rgba(11,13,16,.08) 68%,
+
+      rgba(11,13,16,.38) 100%
+    ),
+
+    /* darker top/bottom */
+    linear-gradient(
+      180deg,
+
+      rgba(11,13,16,.18) 0%,
+
+      rgba(11,13,16,0) 32%,
+
+      rgba(11,13,16,0) 65%,
+
+      rgba(11,13,16,.42) 100%
+    );
+}
+
+
+/* label stays over all three photos */
+
+.portfolio-directory__label {
+  z-index: 4 !important;
+}
+
+
+/* ==========================================================
+   HOVER — ALL 3 PHOTOS RESPOND
+========================================================== */
+
+.portfolio-directory__row:hover
+.portfolio-directory__photo img,
+
+.portfolio-directory__row:focus-visible
+.portfolio-directory__photo img {
+  filter:
+    saturate(.94)
+    brightness(.91)
+    contrast(1.02);
+}
+
+
+/* each photo moves slightly differently */
+
+.portfolio-directory__row:hover
+.portfolio-directory__photo--main img {
+  transform: scale(1.045);
+}
+
+
+.portfolio-directory__row:hover
+.portfolio-directory__photo--top img {
+  transform: scale(1.06);
+}
+
+
+.portfolio-directory__row:hover
+.portfolio-directory__photo--bottom img {
+  transform: scale(1.055);
+}
+
+
+/* ==========================================================
+   OPTIONAL SUBTLE DIVIDERS
+========================================================== */
+
+.portfolio-directory__photo--top,
+.portfolio-directory__photo--bottom {
+  border-left:
+    1px solid rgba(255,255,255,.045);
+}
+
+
+.portfolio-directory__photo--bottom {
+  border-top:
+    1px solid rgba(255,255,255,.045);
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 520px) {
+
+  /*
+     On phones, use one large image on top
+     and two smaller images underneath.
+  */
+
+  .portfolio-directory__collage {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    grid-template-rows:
+      1.45fr
+      .75fr;
+
+    gap: 3px;
+  }
+
+
+  .portfolio-directory__photo--main {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+
+  .portfolio-directory__photo--top {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+
+  .portfolio-directory__photo--bottom {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+
+  .portfolio-directory__photo--top,
+  .portfolio-directory__photo--bottom {
+    border-left: 0;
+  }
+
+
+  .portfolio-directory__photo--bottom {
+    border-top: 0;
+  }
+
+
+  .portfolio-directory__photo img {
+    filter:
+      saturate(.82)
+      brightness(.74)
+      contrast(1.03);
+  }
+
+}
