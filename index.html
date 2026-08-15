@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-   <link rel="stylesheet" href="styles.css?v=home-reels-1" />
+   <link rel="stylesheet" href="styles.css?v=home-single-reel-1" />
   </head>
   <body>
     <!-- Skip link makes keyboard navigation faster. -->
@@ -60,15 +60,15 @@
           <div>
             <p class="eyebrow">Selected Portfolio</p>
             <h2 id="home-portfolio-title">
-              Five collections.<br />
-              One quick look.
+              Selected work,<br />
+              always in motion.
             </h2>
           </div>
 
           <div class="home-portfolio-reels__intro">
             <p>
-              A fast-moving preview of aviation, automotive, portrait,
-              sports, and wildlife work. Open any collection to see the full set.
+              A quick look across aviation, automotive, portraits,
+              sports, and wildlife — without slowing down the page.
             </p>
 
             <a class="text-link" href="portfolio.html">
@@ -79,376 +79,129 @@
         </div>
 
         <div class="home-portfolio-reels__list">
-      <a
-        class="home-portfolio-reels__row"
-        href="portfolio/aviation.html"
-        style="--reel-speed:54s; --reel-direction:normal;"
-      >
-        <div class="portfolio-reel" aria-hidden="true">
-          <div class="portfolio-reel__track">
-            <div class="portfolio-reel__group">
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/aviation/aviation-01.jpg"
-                  data-fallback="images/featured/aviation.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/aviation/aviation-02.jpg"
-                  data-fallback="images/featured/aviation.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/aviation/aviation-03.jpg"
-                  data-fallback="images/featured/aviation.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/aviation/aviation-04.jpg"
-                  data-fallback="images/featured/aviation.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/aviation/aviation-05.jpg"
-                  data-fallback="images/featured/aviation.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/aviation/aviation-06.jpg"
-                  data-fallback="images/featured/aviation.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
+
+          <a
+            class="home-portfolio-reels__row"
+            href="portfolio.html"
+            aria-label="View the full photography portfolio"
+            style="
+              --reel-speed:58s;
+              --reel-direction:normal;
+              height:clamp(275px,34vh,340px);
+              width:min(calc(100% - 48px),1600px);
+            "
+          >
+            <div class="portfolio-reel" aria-hidden="true">
+              <div class="portfolio-reel__track">
+
+                <div class="portfolio-reel__group">
+
+                  <figure
+                    class="portfolio-reel__item"
+                    style="width:clamp(220px,18vw,300px);height:clamp(195px,25vh,250px);"
+                  >
+                    <img
+                      src="images/portfolio/aviation/aviation-01.jpg"
+                      data-fallback="images/featured/aviation.jpg"
+                      alt=""
+                      decoding="async"
+                    />
+                  </figure>
+
+                  <figure
+                    class="portfolio-reel__item"
+                    style="width:clamp(190px,15vw,250px);height:clamp(205px,26vh,260px);"
+                  >
+                    <img
+                      src="images/portfolio/cars/cars-01.jpg"
+                      data-fallback="images/featured/cars.jpg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+
+                  <figure
+                    class="portfolio-reel__item"
+                    style="width:clamp(205px,16vw,270px);height:clamp(190px,24vh,245px);"
+                  >
+                    <img
+                      src="images/portfolio/portraits/portraits-01.jpg"
+                      data-fallback="images/featured/portraits.jpg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+
+                  <figure
+                    class="portfolio-reel__item"
+                    style="width:clamp(230px,18vw,310px);height:clamp(200px,25vh,255px);"
+                  >
+                    <img
+                      src="images/portfolio/sports/sports-01.jpg"
+                      data-fallback="images/featured/sports.jpg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+
+                  <figure
+                    class="portfolio-reel__item"
+                    style="width:clamp(200px,16vw,265px);height:clamp(205px,26vh,260px);"
+                  >
+                    <img
+                      src="images/portfolio/wildlife/wildlife-01.jpg"
+                      data-fallback="images/featured/wildlife.jpg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+
+                  <figure
+                    class="portfolio-reel__item"
+                    style="width:clamp(215px,17vw,285px);height:clamp(190px,24vh,245px);"
+                  >
+                    <img
+                      src="images/portfolio/aviation/aviation-02.jpg"
+                      data-fallback="images/featured/aviation.jpg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+
+                  <figure
+                    class="portfolio-reel__item"
+                    style="width:clamp(195px,15vw,255px);height:clamp(205px,26vh,260px);"
+                  >
+                    <img
+                      src="images/portfolio/cars/cars-02.jpg"
+                      data-fallback="images/featured/cars.jpg"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+
+                </div>
+
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="home-portfolio-reels__shade"></div>
+            <div class="home-portfolio-reels__shade"></div>
 
-        <div class="home-portfolio-reels__label">
-          <span class="home-portfolio-reels__number">01</span>
-          <h3>Aviation</h3>
-          <span class="home-portfolio-reels__view">View collection ↗</span>
-        </div>
-      </a>
-      <a
-        class="home-portfolio-reels__row"
-        href="portfolio/cars.html"
-        style="--reel-speed:48s; --reel-direction:reverse;"
-      >
-        <div class="portfolio-reel" aria-hidden="true">
-          <div class="portfolio-reel__track">
-            <div class="portfolio-reel__group">
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/cars/cars-01.jpg"
-                  data-fallback="images/featured/cars.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/cars/cars-02.jpg"
-                  data-fallback="images/featured/cars.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/cars/cars-03.jpg"
-                  data-fallback="images/featured/cars.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/cars/cars-04.jpg"
-                  data-fallback="images/featured/cars.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/cars/cars-05.jpg"
-                  data-fallback="images/featured/cars.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/cars/cars-06.jpg"
-                  data-fallback="images/featured/cars.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
+            <div class="home-portfolio-reels__label">
+              <span class="home-portfolio-reels__number">01 / 05</span>
+              <h3>Photography</h3>
+              <span class="home-portfolio-reels__view">
+                Explore the portfolio ↗
+              </span>
             </div>
-          </div>
-        </div>
+          </a>
 
-        <div class="home-portfolio-reels__shade"></div>
-
-        <div class="home-portfolio-reels__label">
-          <span class="home-portfolio-reels__number">02</span>
-          <h3>Cars</h3>
-          <span class="home-portfolio-reels__view">View collection ↗</span>
-        </div>
-      </a>
-      <a
-        class="home-portfolio-reels__row"
-        href="portfolio/portraits.html"
-        style="--reel-speed:52s; --reel-direction:normal;"
-      >
-        <div class="portfolio-reel" aria-hidden="true">
-          <div class="portfolio-reel__track">
-            <div class="portfolio-reel__group">
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/portraits/portraits-01.jpg"
-                  data-fallback="images/featured/portraits.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/portraits/portraits-02.jpg"
-                  data-fallback="images/featured/portraits.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/portraits/portraits-03.jpg"
-                  data-fallback="images/featured/portraits.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/portraits/portraits-04.jpg"
-                  data-fallback="images/featured/portraits.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/portraits/portraits-05.jpg"
-                  data-fallback="images/featured/portraits.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/portraits/portraits-06.jpg"
-                  data-fallback="images/featured/portraits.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-            </div>
-          </div>
-        </div>
-
-        <div class="home-portfolio-reels__shade"></div>
-
-        <div class="home-portfolio-reels__label">
-          <span class="home-portfolio-reels__number">03</span>
-          <h3>Portraits</h3>
-          <span class="home-portfolio-reels__view">View collection ↗</span>
-        </div>
-      </a>
-      <a
-        class="home-portfolio-reels__row"
-        href="portfolio/sports.html"
-        style="--reel-speed:46s; --reel-direction:reverse;"
-      >
-        <div class="portfolio-reel" aria-hidden="true">
-          <div class="portfolio-reel__track">
-            <div class="portfolio-reel__group">
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/sports/sports-01.jpg"
-                  data-fallback="images/featured/sports.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/sports/sports-02.jpg"
-                  data-fallback="images/featured/sports.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/sports/sports-03.jpg"
-                  data-fallback="images/featured/sports.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/sports/sports-04.jpg"
-                  data-fallback="images/featured/sports.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/sports/sports-05.jpg"
-                  data-fallback="images/featured/sports.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/sports/sports-06.jpg"
-                  data-fallback="images/featured/sports.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-            </div>
-          </div>
-        </div>
-
-        <div class="home-portfolio-reels__shade"></div>
-
-        <div class="home-portfolio-reels__label">
-          <span class="home-portfolio-reels__number">04</span>
-          <h3>Sports</h3>
-          <span class="home-portfolio-reels__view">View collection ↗</span>
-        </div>
-      </a>
-      <a
-        class="home-portfolio-reels__row"
-        href="portfolio/wildlife.html"
-        style="--reel-speed:56s; --reel-direction:normal;"
-      >
-        <div class="portfolio-reel" aria-hidden="true">
-          <div class="portfolio-reel__track">
-            <div class="portfolio-reel__group">
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/wildlife/wildlife-01.jpg"
-                  data-fallback="images/featured/wildlife.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/wildlife/wildlife-02.jpg"
-                  data-fallback="images/featured/wildlife.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/wildlife/wildlife-03.jpg"
-                  data-fallback="images/featured/wildlife.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/wildlife/wildlife-04.jpg"
-                  data-fallback="images/featured/wildlife.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/wildlife/wildlife-05.jpg"
-                  data-fallback="images/featured/wildlife.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <figure class="portfolio-reel__item">
-                <img
-                  src="images/portfolio/wildlife/wildlife-06.jpg"
-                  data-fallback="images/featured/wildlife.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-            </div>
-          </div>
-        </div>
-
-        <div class="home-portfolio-reels__shade"></div>
-
-        <div class="home-portfolio-reels__label">
-          <span class="home-portfolio-reels__number">05</span>
-          <h3>Wildlife</h3>
-          <span class="home-portfolio-reels__view">View collection ↗</span>
-        </div>
-      </a>
         </div>
 
         <div class="container home-portfolio-reels__actions">
@@ -604,7 +357,7 @@
       <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Next image">→</button>
     </dialog>
 
-    <script src="script.js?v=home-reels-1"></script>
+    <script src="script.js?v=home-single-reel-1"></script>
 
     
 
