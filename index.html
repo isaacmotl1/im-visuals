@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=about-fade-finish-7" />
+   <link rel="stylesheet" href="styles.css?v=home-reels-1" />
   </head>
   <body>
     <!-- Skip link makes keyboard navigation faster. -->
@@ -50,86 +50,417 @@
         <p class="photography-bridge__word">Photography</p>
       </section>
 
-      <!-- Cinematic Portfolio Experience -->
-      <!-- Cinematic Portfolio Experience -->
-      <section class="portfolio-experience" id="portfolio" aria-label="Photography portfolio">
-        <div class="portfolio-experience__stage">
-          <div class="portfolio-experience__media" aria-hidden="true">
-            <figure class="portfolio-experience__image is-active" data-portfolio-media="0">
-              <img src="images/featured/aviation.jpg" alt="" />
-            </figure>
-            <figure class="portfolio-experience__image" data-portfolio-media="1">
-              <img src="images/featured/cars.jpg" alt="" loading="lazy" />
-            </figure>
-            <figure class="portfolio-experience__image" data-portfolio-media="2">
-              <img src="images/featured/portraits.jpg" alt="" loading="lazy" />
-            </figure>
-            <figure class="portfolio-experience__image" data-portfolio-media="3">
-              <img src="images/featured/sports.jpg" alt="" loading="lazy" />
-            </figure>
-            <figure class="portfolio-experience__image" data-portfolio-media="4">
-              <img src="images/featured/wildlife.jpg" alt="" loading="lazy" />
-            </figure>
+      <!-- Fast rotating portfolio preview -->
+      <section
+        class="home-portfolio-reels"
+        id="portfolio"
+        aria-labelledby="home-portfolio-title"
+      >
+        <div class="container home-portfolio-reels__heading">
+          <div>
+            <p class="eyebrow">Selected Portfolio</p>
+            <h2 id="home-portfolio-title">
+              Five collections.<br />
+              One quick look.
+            </h2>
           </div>
 
-          <div class="portfolio-experience__shade"></div>
+          <div class="home-portfolio-reels__intro">
+            <p>
+              A fast-moving preview of aviation, automotive, portrait,
+              sports, and wildlife work. Open any collection to see the full set.
+            </p>
 
-          <div class="portfolio-experience__ui">
-            <div class="portfolio-experience__topline">
-              <p class="eyebrow">Selected portfolio</p>
-              <p class="portfolio-experience__counter" aria-live="polite">
-                <span id="portfolio-current">01</span><span>/05</span>
-              </p>
-            </div>
-
-            <div class="portfolio-experience__copy">
-              <article class="portfolio-experience__chapter is-active" data-portfolio-copy="0">
-                <h2>Aviation</h2>
-                <p>Aircraft, airshows, movement, and atmosphere captured in flight.</p>
-                <a href="portfolio/aviation.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
-
-              <article class="portfolio-experience__chapter" data-portfolio-copy="1">
-                <h2>Cars</h2>
-                <p>Automotive details, reflections, motion, and machines with character.</p>
-                <a href="portfolio/cars.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
-
-              <article class="portfolio-experience__chapter" data-portfolio-copy="2">
-                <h2>Portraits</h2>
-                <p>Natural light, honest expression, and clean editorial portraiture.</p>
-                <a href="portfolio/portraits.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
-
-              <article class="portfolio-experience__chapter" data-portfolio-copy="3">
-                <h2>Sports</h2>
-                <p>Movement, pressure, competition, and the energy surrounding every play.</p>
-                <a href="portfolio/sports.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
-
-              <article class="portfolio-experience__chapter" data-portfolio-copy="4">
-                <h2>Wildlife</h2>
-                <p>Patient observations of movement, stillness, and the natural world.</p>
-                <a href="portfolio/wildlife.html">View collection <span aria-hidden="true">↗</span></a>
-              </article>
-            </div>
-
-            <nav class="portfolio-experience__index" aria-label="Portfolio categories">
-              <button class="is-active" type="button" data-portfolio-jump="0"><span>01</span>Aviation</button>
-              <button type="button" data-portfolio-jump="1"><span>02</span>Cars</button>
-              <button type="button" data-portfolio-jump="2"><span>03</span>Portraits</button>
-              <button type="button" data-portfolio-jump="3"><span>04</span>Sports</button>
-              <button type="button" data-portfolio-jump="4"><span>05</span>Wildlife</button>
-            </nav>
+            <a class="text-link" href="portfolio.html">
+              View full portfolio
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
 
-        <div class="portfolio-experience__steps" aria-hidden="true">
-          <div class="portfolio-experience__step" data-portfolio-step="0"></div>
-          <div class="portfolio-experience__step" data-portfolio-step="1"></div>
-          <div class="portfolio-experience__step" data-portfolio-step="2"></div>
-          <div class="portfolio-experience__step" data-portfolio-step="3"></div>
-          <div class="portfolio-experience__step" data-portfolio-step="4"></div>
+        <div class="home-portfolio-reels__list">
+      <a
+        class="home-portfolio-reels__row"
+        href="portfolio/aviation.html"
+        style="--reel-speed:54s; --reel-direction:normal;"
+      >
+        <div class="portfolio-reel" aria-hidden="true">
+          <div class="portfolio-reel__track">
+            <div class="portfolio-reel__group">
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/aviation/aviation-01.jpg"
+                  data-fallback="images/featured/aviation.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/aviation/aviation-02.jpg"
+                  data-fallback="images/featured/aviation.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/aviation/aviation-03.jpg"
+                  data-fallback="images/featured/aviation.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/aviation/aviation-04.jpg"
+                  data-fallback="images/featured/aviation.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/aviation/aviation-05.jpg"
+                  data-fallback="images/featured/aviation.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/aviation/aviation-06.jpg"
+                  data-fallback="images/featured/aviation.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-portfolio-reels__shade"></div>
+
+        <div class="home-portfolio-reels__label">
+          <span class="home-portfolio-reels__number">01</span>
+          <h3>Aviation</h3>
+          <span class="home-portfolio-reels__view">View collection ↗</span>
+        </div>
+      </a>
+      <a
+        class="home-portfolio-reels__row"
+        href="portfolio/cars.html"
+        style="--reel-speed:48s; --reel-direction:reverse;"
+      >
+        <div class="portfolio-reel" aria-hidden="true">
+          <div class="portfolio-reel__track">
+            <div class="portfolio-reel__group">
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/cars/cars-01.jpg"
+                  data-fallback="images/featured/cars.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/cars/cars-02.jpg"
+                  data-fallback="images/featured/cars.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/cars/cars-03.jpg"
+                  data-fallback="images/featured/cars.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/cars/cars-04.jpg"
+                  data-fallback="images/featured/cars.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/cars/cars-05.jpg"
+                  data-fallback="images/featured/cars.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/cars/cars-06.jpg"
+                  data-fallback="images/featured/cars.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-portfolio-reels__shade"></div>
+
+        <div class="home-portfolio-reels__label">
+          <span class="home-portfolio-reels__number">02</span>
+          <h3>Cars</h3>
+          <span class="home-portfolio-reels__view">View collection ↗</span>
+        </div>
+      </a>
+      <a
+        class="home-portfolio-reels__row"
+        href="portfolio/portraits.html"
+        style="--reel-speed:52s; --reel-direction:normal;"
+      >
+        <div class="portfolio-reel" aria-hidden="true">
+          <div class="portfolio-reel__track">
+            <div class="portfolio-reel__group">
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/portraits/portraits-01.jpg"
+                  data-fallback="images/featured/portraits.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/portraits/portraits-02.jpg"
+                  data-fallback="images/featured/portraits.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/portraits/portraits-03.jpg"
+                  data-fallback="images/featured/portraits.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/portraits/portraits-04.jpg"
+                  data-fallback="images/featured/portraits.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/portraits/portraits-05.jpg"
+                  data-fallback="images/featured/portraits.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/portraits/portraits-06.jpg"
+                  data-fallback="images/featured/portraits.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-portfolio-reels__shade"></div>
+
+        <div class="home-portfolio-reels__label">
+          <span class="home-portfolio-reels__number">03</span>
+          <h3>Portraits</h3>
+          <span class="home-portfolio-reels__view">View collection ↗</span>
+        </div>
+      </a>
+      <a
+        class="home-portfolio-reels__row"
+        href="portfolio/sports.html"
+        style="--reel-speed:46s; --reel-direction:reverse;"
+      >
+        <div class="portfolio-reel" aria-hidden="true">
+          <div class="portfolio-reel__track">
+            <div class="portfolio-reel__group">
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/sports/sports-01.jpg"
+                  data-fallback="images/featured/sports.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/sports/sports-02.jpg"
+                  data-fallback="images/featured/sports.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/sports/sports-03.jpg"
+                  data-fallback="images/featured/sports.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/sports/sports-04.jpg"
+                  data-fallback="images/featured/sports.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/sports/sports-05.jpg"
+                  data-fallback="images/featured/sports.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/sports/sports-06.jpg"
+                  data-fallback="images/featured/sports.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-portfolio-reels__shade"></div>
+
+        <div class="home-portfolio-reels__label">
+          <span class="home-portfolio-reels__number">04</span>
+          <h3>Sports</h3>
+          <span class="home-portfolio-reels__view">View collection ↗</span>
+        </div>
+      </a>
+      <a
+        class="home-portfolio-reels__row"
+        href="portfolio/wildlife.html"
+        style="--reel-speed:56s; --reel-direction:normal;"
+      >
+        <div class="portfolio-reel" aria-hidden="true">
+          <div class="portfolio-reel__track">
+            <div class="portfolio-reel__group">
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/wildlife/wildlife-01.jpg"
+                  data-fallback="images/featured/wildlife.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/wildlife/wildlife-02.jpg"
+                  data-fallback="images/featured/wildlife.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/wildlife/wildlife-03.jpg"
+                  data-fallback="images/featured/wildlife.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/wildlife/wildlife-04.jpg"
+                  data-fallback="images/featured/wildlife.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/wildlife/wildlife-05.jpg"
+                  data-fallback="images/featured/wildlife.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="portfolio-reel__item">
+                <img
+                  src="images/portfolio/wildlife/wildlife-06.jpg"
+                  data-fallback="images/featured/wildlife.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-portfolio-reels__shade"></div>
+
+        <div class="home-portfolio-reels__label">
+          <span class="home-portfolio-reels__number">05</span>
+          <h3>Wildlife</h3>
+          <span class="home-portfolio-reels__view">View collection ↗</span>
+        </div>
+      </a>
+        </div>
+
+        <div class="container home-portfolio-reels__actions">
+          <a class="button button--light" href="portfolio.html">
+            Explore All Photography
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="text-link" href="contact.html">
+            Book Photography
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </section>
 
@@ -273,7 +604,7 @@
       <button class="lightbox__arrow lightbox__arrow--next" type="button" aria-label="Next image">→</button>
     </dialog>
 
-    <script src="script.js?v=static-sections-1"></script>
+    <script src="script.js?v=home-reels-1"></script>
 
     
 

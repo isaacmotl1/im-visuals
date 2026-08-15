@@ -6043,3 +6043,313 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 
 }
+/* ==========================================================
+   HOME PAGE — FAST ROTATING PORTFOLIO PREVIEW
+   Paste at the ABSOLUTE BOTTOM of styles.css
+========================================================== */
+
+.home-portfolio-reels {
+  position: relative;
+  overflow: hidden;
+  margin-top: -2px;
+  padding: clamp(70px, 8vh, 105px) 0 clamp(115px, 13vh, 165px);
+  background:
+    radial-gradient(
+      ellipse at 50% 18%,
+      rgba(102,124,138,.065),
+      transparent 36%
+    ),
+    #0B0D10;
+}
+
+/* Intro stays compact so visitors reach the work quickly. */
+.home-portfolio-reels__heading {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .7fr);
+  gap: clamp(48px, 8vw, 130px);
+  align-items: end;
+  margin-bottom: clamp(42px, 6vh, 66px);
+}
+
+.home-portfolio-reels__heading h2 {
+  max-width: 760px;
+  font-size: clamp(3.1rem, 6vw, 6.6rem);
+  line-height: .94;
+  letter-spacing: -.065em;
+}
+
+.home-portfolio-reels__intro {
+  max-width: 470px;
+}
+
+.home-portfolio-reels__intro p {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.8;
+}
+
+/* Five rows, but compact enough that several are visible together. */
+.home-portfolio-reels__list {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  gap: clamp(14px, 1.8vh, 20px);
+}
+
+.home-portfolio-reels__row {
+  position: relative;
+  display: block;
+  width: min(calc(100% - 48px), 1540px);
+  height: clamp(160px, 18vh, 190px);
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+  background: #0B0D10;
+  isolation: isolate;
+}
+
+/* Small photography cards across the row. */
+.home-portfolio-reels__row .portfolio-reel__item,
+.home-portfolio-reels__row .portfolio-reel__item:nth-child(n) {
+  width: clamp(130px, 9.5vw, 178px);
+  height: clamp(108px, 13vh, 132px);
+  border-radius: 6px;
+}
+
+.home-portfolio-reels__row .portfolio-reel__item:nth-child(6n + 1) {
+  width: clamp(150px, 10.8vw, 205px);
+  transform: rotate(-1.3deg) translateY(3px);
+}
+
+.home-portfolio-reels__row .portfolio-reel__item:nth-child(6n + 2) {
+  transform: rotate(.75deg) translateY(-4px);
+}
+
+.home-portfolio-reels__row .portfolio-reel__item:nth-child(6n + 3) {
+  width: clamp(140px, 10vw, 188px);
+  transform: rotate(-.55deg) translateY(2px);
+}
+
+.home-portfolio-reels__row .portfolio-reel__item:nth-child(6n + 4) {
+  transform: rotate(1deg) translateY(4px);
+}
+
+.home-portfolio-reels__row .portfolio-reel__item:nth-child(6n + 5) {
+  width: clamp(152px, 11vw, 208px);
+  transform: rotate(-.8deg) translateY(-3px);
+}
+
+.home-portfolio-reels__row .portfolio-reel__item:nth-child(6n + 6) {
+  transform: rotate(.65deg) translateY(3px);
+}
+
+.home-portfolio-reels__row .portfolio-reel__item img {
+  filter:
+    saturate(.86)
+    brightness(.80)
+    contrast(1.03);
+}
+
+/* Fade photos into the exact site black on both sides. */
+.home-portfolio-reels__shade {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      #0B0D10 0%,
+      rgba(11,13,16,.94) 2.5%,
+      rgba(11,13,16,.52) 8%,
+      rgba(11,13,16,.08) 16%,
+      rgba(11,13,16,0) 27%,
+      rgba(11,13,16,0) 73%,
+      rgba(11,13,16,.08) 84%,
+      rgba(11,13,16,.52) 92%,
+      rgba(11,13,16,.94) 97.5%,
+      #0B0D10 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(11,13,16,.19),
+      rgba(11,13,16,0) 28%,
+      rgba(11,13,16,0) 72%,
+      rgba(11,13,16,.24)
+    );
+}
+
+/* Smaller label than the full Portfolio page. */
+.home-portfolio-reels__label {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  min-width: clamp(175px, 16vw, 245px);
+  padding: 10px 18px 12px;
+  border: 1px solid rgba(255,255,255,.11);
+  background: rgba(11,13,16,.56);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  text-align: center;
+  transform: translate(-50%, -50%);
+  place-items: center;
+}
+
+.home-portfolio-reels__number {
+  color: rgba(255,255,255,.43);
+  font-size: .55rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+}
+
+.home-portfolio-reels__label h3 {
+  margin: 2px 0 0;
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.55rem, 2.3vw, 2.45rem);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.055em;
+}
+
+.home-portfolio-reels__view {
+  margin-top: 5px;
+  color: rgba(255,255,255,.52);
+  font-size: .52rem;
+  font-weight: 600;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.home-portfolio-reels__row:hover .portfolio-reel__track,
+.home-portfolio-reels__row:focus-visible .portfolio-reel__track {
+  animation-play-state: paused;
+}
+
+.home-portfolio-reels__row:hover .portfolio-reel__item img,
+.home-portfolio-reels__row:focus-visible .portfolio-reel__item img {
+  filter:
+    saturate(.96)
+    brightness(.90)
+    contrast(1.02);
+}
+
+.home-portfolio-reels__actions {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: clamp(42px, 6vh, 68px);
+}
+
+/* Keep the transition into Web Design short and clean. */
+.home-portfolio-reels + .transition-chapter {
+  margin-top: -4px !important;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 800px) {
+
+  .home-portfolio-reels {
+    padding: 70px 0 105px;
+  }
+
+  .home-portfolio-reels__heading {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .home-portfolio-reels__intro {
+    max-width: 560px;
+  }
+
+  .home-portfolio-reels__row {
+    width: calc(100% - 28px);
+    height: 175px;
+  }
+
+  .home-portfolio-reels__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 520px) {
+
+  .home-portfolio-reels {
+    padding: 55px 0 90px;
+  }
+
+  .home-portfolio-reels__heading {
+    margin-bottom: 38px;
+  }
+
+  .home-portfolio-reels__heading h2 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .home-portfolio-reels__list {
+    gap: 20px;
+  }
+
+  /*
+    Mobile gets more room, like the Portfolio page:
+    only a couple of photos are visible at once.
+  */
+  .home-portfolio-reels__row {
+    width: calc(100% - 20px);
+    height: 245px;
+    border-radius: 10px;
+  }
+
+  .home-portfolio-reels__row .portfolio-reel__item,
+  .home-portfolio-reels__row .portfolio-reel__item:nth-child(n) {
+    width: 158px;
+    height: 178px;
+  }
+
+  .home-portfolio-reels__row .portfolio-reel__item:nth-child(3n + 1) {
+    width: 184px;
+  }
+
+  .home-portfolio-reels__label {
+    min-width: 180px;
+    padding: 11px 18px 13px;
+  }
+
+  .home-portfolio-reels__label h3 {
+    font-size: clamp(1.9rem, 9vw, 2.55rem);
+  }
+
+  /* Touch devices should keep moving instead of pausing. */
+  .home-portfolio-reels__row:hover .portfolio-reel__track,
+  .home-portfolio-reels__row:focus .portfolio-reel__track,
+  .home-portfolio-reels__row:active .portfolio-reel__track {
+    animation-play-state: running !important;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .home-portfolio-reels__row:hover .portfolio-reel__track,
+  .home-portfolio-reels__row:focus .portfolio-reel__track,
+  .home-portfolio-reels__row:active .portfolio-reel__track {
+    animation-play-state: running !important;
+  }
+}
