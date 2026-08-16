@@ -6353,3 +6353,162 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
     animation-play-state: running !important;
   }
 }
+/* ==========================================================
+   PORTFOLIO GALLERIES — EDITORIAL PHOTO LAYOUT
+   Portraits stay tall, landscapes become wider
+========================================================== */
+
+.masonry-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  columns: unset !important;
+  align-items: start;
+  grid-auto-flow: dense;
+}
+
+
+/* Reset old masonry behavior */
+.masonry-gallery .gallery-photo {
+  display: block;
+  width: 100%;
+  margin: 0 !important;
+  break-inside: auto;
+}
+
+
+/* ----------------------------------------------------------
+   DEFAULT
+
+   Used briefly before JS determines orientation.
+---------------------------------------------------------- */
+
+.masonry-gallery .gallery-photo {
+  grid-column: span 4;
+}
+
+
+/* ----------------------------------------------------------
+   PORTRAIT PHOTOS
+
+   Narrower + taller
+---------------------------------------------------------- */
+
+.masonry-gallery .gallery-photo.is-portrait {
+  grid-column: span 4;
+}
+
+
+/* ----------------------------------------------------------
+   LANDSCAPE PHOTOS
+
+   Wider so horizontal photos get room to breathe.
+---------------------------------------------------------- */
+
+.masonry-gallery .gallery-photo.is-landscape {
+  grid-column: span 6;
+}
+
+
+/* Every few landscapes become a large editorial image */
+.masonry-gallery .gallery-photo.is-landscape:nth-child(7n + 1) {
+  grid-column: span 8;
+}
+
+
+/* ----------------------------------------------------------
+   SQUARE / NEAR-SQUARE
+---------------------------------------------------------- */
+
+.masonry-gallery .gallery-photo.is-square {
+  grid-column: span 4;
+}
+
+
+/* ----------------------------------------------------------
+   IMAGE BEHAVIOR
+
+   IMPORTANT:
+   Don't force every image into the same aspect ratio.
+---------------------------------------------------------- */
+
+.masonry-gallery .gallery-photo button {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.masonry-gallery .gallery-photo img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: initial !important;
+}
+
+
+/* ----------------------------------------------------------
+   SLIGHT EDITORIAL STAGGER
+
+   Very subtle — avoids everything lining up robotically.
+---------------------------------------------------------- */
+
+@media (min-width: 901px) {
+
+  .masonry-gallery .gallery-photo:nth-child(6n + 2) {
+    margin-top: 32px !important;
+  }
+
+  .masonry-gallery .gallery-photo:nth-child(8n + 5) {
+    margin-top: 54px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+  .masonry-gallery {
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .masonry-gallery .gallery-photo.is-portrait,
+  .masonry-gallery .gallery-photo.is-square {
+    grid-column: span 4;
+  }
+
+  .masonry-gallery .gallery-photo.is-landscape,
+  .masonry-gallery .gallery-photo.is-landscape:nth-child(7n + 1) {
+    grid-column: span 8;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+
+  .masonry-gallery {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .masonry-gallery .gallery-photo,
+  .masonry-gallery .gallery-photo.is-portrait,
+  .masonry-gallery .gallery-photo.is-landscape,
+  .masonry-gallery .gallery-photo.is-square,
+  .masonry-gallery .gallery-photo.is-landscape:nth-child(7n + 1) {
+    grid-column: 1 !important;
+    margin-top: 0 !important;
+  }
+
+}
