@@ -6893,3 +6893,275 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 
 }
+/* ==========================================================
+   FINAL PORTFOLIO COLLECTION HERO
+   Uses real <img> in HTML so every page gets the right photo
+========================================================== */
+
+.gallery-hero {
+  position: relative !important;
+  isolation: isolate;
+
+  display: grid !important;
+  align-items: end !important;
+
+  min-height: 90svh !important;
+
+  padding:
+    clamp(150px, 18vh, 210px)
+    0
+    clamp(95px, 12vh, 140px) !important;
+
+  overflow: hidden !important;
+
+  /* KILLS THE OLD home-hero.jpg */
+  background: #0B0D10 !important;
+  background-image: none !important;
+}
+
+
+/* ==========================================================
+   REAL HERO IMAGE
+========================================================== */
+
+.gallery-hero__image {
+  position: absolute;
+
+  z-index: -3;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transform: scale(1.01);
+}
+
+
+/* ==========================================================
+   CINEMATIC DARKNESS + BOTTOM FADE
+========================================================== */
+
+.gallery-hero__overlay {
+  position: absolute;
+
+  z-index: -2;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+
+    /* readability on left */
+    linear-gradient(
+      90deg,
+      rgba(11,13,16,.72) 0%,
+      rgba(11,13,16,.47) 28%,
+      rgba(11,13,16,.16) 57%,
+      rgba(11,13,16,.03) 82%
+    ),
+
+    /* navbar protection */
+    linear-gradient(
+      180deg,
+      rgba(11,13,16,.58) 0%,
+      rgba(11,13,16,.15) 25%,
+      transparent 45%
+    ),
+
+    /* image -> exact site black */
+    linear-gradient(
+      to bottom,
+
+      transparent 44%,
+
+      rgba(11,13,16,.02) 51%,
+      rgba(11,13,16,.06) 58%,
+      rgba(11,13,16,.13) 64%,
+      rgba(11,13,16,.23) 70%,
+      rgba(11,13,16,.36) 76%,
+      rgba(11,13,16,.51) 81%,
+      rgba(11,13,16,.66) 86%,
+      rgba(11,13,16,.78) 90%,
+      rgba(11,13,16,.88) 94%,
+      rgba(11,13,16,.95) 97%,
+      rgba(11,13,16,.985) 99%,
+
+      #0B0D10 100%
+    );
+}
+
+
+/* ==========================================================
+   TEXT POSITION
+========================================================== */
+
+.gallery-hero__content {
+  position: relative;
+
+  z-index: 3;
+
+  /* let your existing .container control the width */
+  width: min(calc(100% - 48px), var(--container)) !important;
+
+  margin-inline: auto !important;
+}
+
+
+.gallery-hero__number {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 17px;
+
+  color: rgba(255,255,255,.48);
+
+  font-size: .61rem;
+  font-weight: 600;
+
+  letter-spacing: .17em;
+
+  text-transform: uppercase;
+}
+
+
+.gallery-hero__number::after {
+  width: 42px;
+  height: 1px;
+
+  margin-left: 3px;
+
+  background: rgba(255,255,255,.28);
+
+  content: "";
+}
+
+
+.gallery-hero__content .eyebrow {
+  margin-bottom: 18px;
+
+  color: rgba(255,255,255,.68);
+}
+
+
+.gallery-hero__content h1 {
+  max-width: none;
+
+  margin: 0;
+
+  color: #fff;
+
+  font-size:
+    clamp(5.5rem, 11vw, 11rem);
+
+  line-height: .80;
+
+  letter-spacing: -.08em;
+}
+
+
+.gallery-hero__content p:not(.eyebrow) {
+  max-width: 520px !important;
+
+  margin:
+    32px
+    0
+    32px !important;
+
+  color:
+    rgba(255,255,255,.72) !important;
+
+  font-size:
+    clamp(.92rem, 1vw, 1.03rem) !important;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   HERO -> GALLERY
+========================================================== */
+
+.gallery-hero + .section {
+  margin-top: -3px;
+
+  background: #0B0D10;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+
+  .gallery-hero {
+    min-height: 78svh !important;
+
+    padding:
+      125px
+      0
+      70px !important;
+  }
+
+
+  .gallery-hero__content {
+    width:
+      calc(100% - 32px) !important;
+  }
+
+
+  .gallery-hero__content h1 {
+    font-size:
+      clamp(4rem, 19vw, 6.3rem);
+  }
+
+
+  .gallery-hero__content p:not(.eyebrow) {
+    max-width:
+      94% !important;
+
+    margin-top:
+      24px !important;
+  }
+
+
+  .gallery-hero__overlay {
+    background:
+
+      linear-gradient(
+        90deg,
+        rgba(11,13,16,.68),
+        rgba(11,13,16,.08)
+      ),
+
+      linear-gradient(
+        180deg,
+        rgba(11,13,16,.55),
+        transparent 40%
+      ),
+
+      linear-gradient(
+        to bottom,
+
+        transparent 40%,
+
+        rgba(11,13,16,.05) 55%,
+        rgba(11,13,16,.16) 65%,
+        rgba(11,13,16,.34) 74%,
+        rgba(11,13,16,.56) 82%,
+        rgba(11,13,16,.76) 89%,
+        rgba(11,13,16,.91) 95%,
+        #0B0D10 100%
+      );
+  }
+
+}
