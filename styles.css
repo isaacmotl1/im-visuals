@@ -7754,3 +7754,139 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 
 }
+/* ==========================================================
+   FINAL PORTFOLIO MASONRY
+   Tight natural layout — no weird grid holes
+========================================================== */
+
+.masonry-gallery {
+  display: block !important;
+
+  columns: 3 320px !important;
+
+  column-gap: 18px !important;
+
+  grid-template-columns: none !important;
+  grid-auto-flow: initial !important;
+
+  width: 100%;
+}
+
+
+/* ==========================================================
+   EACH PHOTO
+========================================================== */
+
+.masonry-gallery .gallery-photo,
+.masonry-gallery .gallery-photo.is-portrait,
+.masonry-gallery .gallery-photo.is-landscape,
+.masonry-gallery .gallery-photo.is-square,
+.masonry-gallery .gallery-photo.is-landscape:nth-child(7n + 1) {
+
+  display: inline-block !important;
+
+  width: 100% !important;
+
+  margin:
+    0
+    0
+    18px !important;
+
+  break-inside: avoid !important;
+
+  grid-column: auto !important;
+  grid-row: auto !important;
+
+  vertical-align: top;
+}
+
+
+/* Remove the old artificial stagger */
+
+.masonry-gallery .gallery-photo:nth-child(6n + 2),
+.masonry-gallery .gallery-photo:nth-child(8n + 5) {
+
+  margin-top: 0 !important;
+}
+
+
+/* ==========================================================
+   KEEP THE ORIGINAL PHOTO SHAPE
+========================================================== */
+
+.masonry-gallery .gallery-photo button {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  padding: 0;
+
+  overflow: hidden;
+}
+
+
+.masonry-gallery .gallery-photo img {
+  display: block !important;
+
+  width: 100% !important;
+  height: auto !important;
+
+  aspect-ratio: auto !important;
+
+  object-fit: initial !important;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+  .masonry-gallery {
+    columns: 2 260px !important;
+
+    column-gap: 16px !important;
+  }
+
+
+  .masonry-gallery .gallery-photo,
+  .masonry-gallery .gallery-photo.is-portrait,
+  .masonry-gallery .gallery-photo.is-landscape,
+  .masonry-gallery .gallery-photo.is-square {
+
+    margin-bottom:
+      16px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+
+  .masonry-gallery {
+    columns: 1 !important;
+  }
+
+
+  .masonry-gallery .gallery-photo,
+  .masonry-gallery .gallery-photo.is-portrait,
+  .masonry-gallery .gallery-photo.is-landscape,
+  .masonry-gallery .gallery-photo.is-square {
+
+    display: block !important;
+
+    width: 100% !important;
+
+    margin:
+      0
+      0
+      14px !important;
+  }
+
+}
