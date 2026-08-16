@@ -585,3 +585,91 @@ function initializePortfolioExperience() {
 }
 
 initializePortfolioExperience();
+/* ==========================================================
+   Detect portfolio photo orientation automatically
+========================================================== */
+
+function initializePortfolioPhotoOrientations() {
+
+  const photos =
+    document.querySelectorAll(".masonry-gallery .gallery-photo img");
+
+  if (!photos.length) {
+    return;
+  }
+
+
+  function classifyPhoto(image) {
+
+    const figure = image.closest(".gallery-photo");
+
+    if (!figure) {
+      return;
+    }
+
+
+    figure.classList.remove(
+      "is-portrait",
+      "is-landscape",
+      "is-square"
+    );
+
+
+    const width = image.naturalWidth;
+    const height = image.naturalHeight;
+
+
+    if (!width || !height) {
+      return;
+    }
+
+
+    const ratio = width / height;
+
+
+    /* Tall image */
+    if (ratio < 0.9) {
+
+      figure.classList.add("is-portrait");
+
+    }
+
+    /* Wide image */
+    else if (ratio > 1.1) {
+
+      figure.classList.add("is-landscape");
+
+    }
+
+    /* Nearly square */
+    else {
+
+      figure.classList.add("is-square");
+
+    }
+
+  }
+
+
+  photos.forEach((image) => {
+
+    if (image.complete) {
+
+      classifyPhoto(image);
+
+    } else {
+
+      image.addEventListener(
+        "load",
+        () => classifyPhoto(image),
+        { once: true }
+      );
+
+    }
+
+  });
+
+}
+
+
+initializePortfolioPhotoOrientations();
