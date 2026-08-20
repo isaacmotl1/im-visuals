@@ -10095,3 +10095,286 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 
 }
+/* ==========================================================
+   WEBSITE DEMO STEPS — SMALLER EVEN STAIRCASE
+========================================================== */
+
+
+/* Four equal-size cards across the screen */
+
+.web-case-study__steps {
+  position: relative;
+
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 230px)) !important;
+
+  gap:
+    clamp(18px, 2.2vw, 32px) !important;
+
+  justify-content: center !important;
+
+  align-items: start !important;
+}
+
+
+/* Remove the old connecting line */
+
+.web-case-study__steps::before {
+  display: none !important;
+}
+
+
+/* ==========================================================
+   EVERY DEMO STEP = EXACT SAME SIZE
+========================================================== */
+
+.web-case-step {
+  width: 100% !important;
+  max-width: 230px !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+
+/* STEP EFFECT
+
+   Same card size.
+   Only vertical position changes.
+*/
+
+.web-case-step:nth-child(1) {
+  margin-top: 0 !important;
+}
+
+.web-case-step:nth-child(2) {
+  margin-top: 38px !important;
+}
+
+.web-case-step:nth-child(3) {
+  margin-top: 76px !important;
+}
+
+.web-case-step:nth-child(4) {
+  margin-top: 114px !important;
+}
+
+
+/* ==========================================================
+   BROWSER FRAME
+========================================================== */
+
+.web-case-step__browser {
+  width: 100% !important;
+
+  border-radius: 6px !important;
+
+  box-shadow:
+    0 20px 45px
+    rgba(0,0,0,.25) !important;
+}
+
+
+/* ==========================================================
+   SCREENSHOT
+
+   ALL FOUR EXACT SAME DIMENSIONS
+========================================================== */
+
+.web-case-step__browser img {
+  display: block !important;
+
+  width: 100% !important;
+
+  height: auto !important;
+
+  aspect-ratio: 4 / 5 !important;
+
+  object-fit: cover !important;
+
+  object-position: top center !important;
+}
+
+
+/* ==========================================================
+   SMALLER BROWSER BAR
+========================================================== */
+
+.web-case-step__bar {
+  min-height: 29px !important;
+
+  padding:
+    0
+    9px !important;
+}
+
+
+.web-case-step__bar > div span {
+  width: 4px !important;
+  height: 4px !important;
+}
+
+
+.web-case-step__bar small {
+  font-size: .43rem !important;
+}
+
+
+/* ==========================================================
+   SMALLER CAPTIONS
+========================================================== */
+
+.web-case-step figcaption {
+  grid-template-columns:
+    22px
+    1fr !important;
+
+  gap: 9px !important;
+
+  margin-top: 14px !important;
+}
+
+
+.web-case-step figcaption > span {
+  font-size: .52rem !important;
+}
+
+
+.web-case-step figcaption strong {
+  margin-bottom: 5px !important;
+
+  font-size: .75rem !important;
+}
+
+
+.web-case-step figcaption p {
+  font-size: .62rem !important;
+
+  line-height: 1.6 !important;
+}
+
+
+/* ==========================================================
+   REDUCE SPACE BETWEEN EACH WEBSITE DEMO
+========================================================== */
+
+.web-case-study {
+  padding:
+    clamp(60px, 7vh, 90px)
+    0
+    clamp(95px, 11vh, 145px) !important;
+}
+
+
+.web-case-study__header {
+  margin-bottom:
+    clamp(48px, 6vh, 70px) !important;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 950px) {
+
+  .web-case-study__steps {
+    grid-template-columns:
+      repeat(2, minmax(0, 220px)) !important;
+
+    gap:
+      30px
+      35px !important;
+  }
+
+
+  .web-case-step {
+    max-width:
+      220px !important;
+  }
+
+
+  .web-case-step:nth-child(1) {
+    margin-top:
+      0 !important;
+  }
+
+  .web-case-step:nth-child(2) {
+    margin-top:
+      36px !important;
+  }
+
+  .web-case-step:nth-child(3) {
+    margin-top:
+      0 !important;
+  }
+
+  .web-case-step:nth-child(4) {
+    margin-top:
+      36px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+  .web-case-study__steps {
+    grid-template-columns:
+      repeat(2, minmax(0, 145px)) !important;
+
+    gap:
+      24px
+      16px !important;
+  }
+
+
+  .web-case-step {
+    max-width:
+      145px !important;
+  }
+
+
+  .web-case-step:nth-child(1) {
+    margin-top:
+      0 !important;
+  }
+
+  .web-case-step:nth-child(2) {
+    margin-top:
+      28px !important;
+  }
+
+  .web-case-step:nth-child(3) {
+    margin-top:
+      0 !important;
+  }
+
+  .web-case-step:nth-child(4) {
+    margin-top:
+      28px !important;
+  }
+
+
+  .web-case-step figcaption {
+    grid-template-columns:
+      18px
+      1fr !important;
+
+    gap:
+      6px !important;
+  }
+
+
+  .web-case-step figcaption p {
+    font-size:
+      .58rem !important;
+  }
+
+}
