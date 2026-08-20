@@ -9520,3 +9520,578 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 
 }
+/* ==========================================================
+   WEB DESIGN — 4 STEP DEMO CASE STUDIES
+========================================================== */
+
+
+/* ==========================================================
+   CASE STUDY
+========================================================== */
+
+.web-case-study {
+  position: relative;
+
+  padding:
+    clamp(70px, 9vh, 115px)
+    0
+    clamp(125px, 17vh, 220px);
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.075);
+}
+
+
+.web-case-study:last-child {
+  padding-bottom: 0;
+}
+
+
+
+/* ==========================================================
+   CASE STUDY HEADER
+========================================================== */
+
+.web-case-study__header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(300px, 430px);
+
+  gap:
+    50px
+    clamp(70px, 11vw, 170px);
+
+  align-items: end;
+
+  margin-bottom:
+    clamp(65px, 9vh, 110px);
+}
+
+
+.web-case-study__number {
+  display: block;
+
+  margin-bottom:
+    22px;
+
+  color:
+    rgba(244,246,248,.32);
+
+  font-size: .61rem;
+
+  font-weight: 600;
+
+  letter-spacing:
+    .16em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.web-case-study__header h3 {
+  max-width:
+    650px;
+
+  color: #fff;
+
+  font-size:
+    clamp(3.2rem, 6vw, 6.3rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    .91;
+
+  letter-spacing:
+    -.07em;
+}
+
+
+.web-case-study__header h3 span {
+  display: block;
+
+  color:
+    rgba(244,246,248,.43);
+}
+
+
+.web-case-study__summary > p {
+  margin-bottom:
+    28px;
+
+  color:
+    rgba(244,246,248,.53);
+
+  line-height:
+    1.8;
+}
+
+
+
+/* ==========================================================
+   FOUR STEP GRID
+========================================================== */
+
+.web-case-study__steps {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap:
+    clamp(14px, 1.6vw, 24px);
+
+  align-items: start;
+}
+
+
+/* horizontal connection line */
+
+.web-case-study__steps::before {
+  position: absolute;
+
+  z-index: 0;
+
+  top:
+    calc(50% + 28px);
+
+  right: 5%;
+  left: 5%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(143,163,176,.20) 8%,
+      rgba(143,163,176,.20) 92%,
+      transparent
+    );
+
+  content: "";
+}
+
+
+
+/* ==========================================================
+   INDIVIDUAL STEP
+========================================================== */
+
+.web-case-step {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 0;
+}
+
+
+/* creates the stepped rhythm */
+
+.web-case-step:nth-child(2) {
+  margin-top: 38px;
+}
+
+
+.web-case-step:nth-child(3) {
+  margin-top: 76px;
+}
+
+
+.web-case-step:nth-child(4) {
+  margin-top: 114px;
+}
+
+
+
+/* ==========================================================
+   BROWSER FRAME
+========================================================== */
+
+.web-case-step__browser {
+  position: relative;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255,255,255,.085);
+
+  border-radius:
+    7px;
+
+  background:
+    #11151A;
+
+  box-shadow:
+    0
+    25px
+    65px
+    rgba(0,0,0,.24);
+
+  transition:
+    transform .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease;
+}
+
+
+.web-case-step:hover .web-case-step__browser {
+  border-color:
+    rgba(143,163,176,.28);
+
+  box-shadow:
+    0
+    32px
+    80px
+    rgba(0,0,0,.36);
+
+  transform:
+    translateY(-7px);
+}
+
+
+
+/* browser top */
+
+.web-case-step__bar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  min-height:
+    34px;
+
+  padding:
+    0
+    11px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.055);
+
+  background:
+    #15191E;
+}
+
+
+.web-case-step__bar > div {
+  display: flex;
+
+  gap: 5px;
+}
+
+
+.web-case-step__bar > div span {
+  width: 5px;
+  height: 5px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255,255,255,.22);
+}
+
+
+.web-case-step__bar small {
+  color:
+    rgba(244,246,248,.28);
+
+  font-size:
+    .48rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    .1em;
+
+  text-transform:
+    uppercase;
+}
+
+
+
+/* screenshot */
+
+.web-case-step__browser img {
+  display: block;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    4 / 5;
+
+  object-fit:
+    cover;
+
+  object-position:
+    top center;
+
+  filter:
+    saturate(.88)
+    brightness(.92);
+
+  transition:
+    transform .65s
+    cubic-bezier(.2,.7,.2,1);
+}
+
+
+.web-case-step:hover img {
+  transform:
+    scale(1.018);
+}
+
+
+
+/* ==========================================================
+   CAPTION
+========================================================== */
+
+.web-case-step figcaption {
+  display: grid;
+
+  grid-template-columns:
+    28px
+    1fr;
+
+  gap:
+    13px;
+
+  margin-top:
+    20px;
+}
+
+
+.web-case-step figcaption > span {
+  padding-top:
+    2px;
+
+  color:
+    rgba(143,163,176,.60);
+
+  font-size:
+    .57rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    .1em;
+}
+
+
+.web-case-step figcaption strong {
+  display: block;
+
+  margin-bottom:
+    7px;
+
+  color:
+    rgba(244,246,248,.88);
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size:
+    .84rem;
+
+  font-weight:
+    500;
+}
+
+
+.web-case-step figcaption p {
+  color:
+    rgba(244,246,248,.40);
+
+  font-size:
+    .68rem;
+
+  line-height:
+    1.7;
+}
+
+
+
+/* ==========================================================
+   FADE BETWEEN CASE STUDIES
+========================================================== */
+
+.web-case-study + .web-case-study::before {
+  position: absolute;
+
+  top: -80px;
+  right: -10%;
+  left: -10%;
+
+  height:
+    170px;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(102,124,138,.045),
+      transparent 60%
+    );
+
+  pointer-events:
+    none;
+
+  content: "";
+}
+
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1050px) {
+
+  .web-case-study__steps {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      55px
+      20px;
+  }
+
+
+  .web-case-study__steps::before {
+    display:
+      none;
+  }
+
+
+  .web-case-step:nth-child(n) {
+    margin-top:
+      0;
+  }
+
+
+  .web-case-step:nth-child(even) {
+    margin-top:
+      45px;
+  }
+
+
+  .web-case-step__browser img {
+    aspect-ratio:
+      16 / 12;
+  }
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .web-case-study {
+    padding:
+      65px
+      0
+      120px;
+  }
+
+
+  .web-case-study__header {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      30px;
+
+    margin-bottom:
+      60px;
+  }
+
+
+  .web-case-study__header h3 {
+    font-size:
+      clamp(3rem, 14vw, 4.8rem);
+  }
+
+
+  .web-case-study__summary {
+    max-width:
+      95%;
+  }
+
+
+  .web-case-study__steps {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      58px;
+  }
+
+
+  .web-case-step:nth-child(n),
+  .web-case-step:nth-child(even) {
+    margin-top:
+      0;
+  }
+
+
+  .web-case-step__browser img {
+    aspect-ratio:
+      16 / 11;
+  }
+
+
+  .web-case-step figcaption {
+    grid-template-columns:
+      26px
+      1fr;
+
+    margin-top:
+      16px;
+  }
+
+
+  .web-case-step figcaption p {
+    max-width:
+      430px;
+
+    font-size:
+      .72rem;
+  }
+
+}
+
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .web-case-step__browser,
+  .web-case-step__browser img {
+    transition:
+      none !important;
+  }
+
+}
