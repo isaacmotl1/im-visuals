@@ -673,3 +673,180 @@ function initializePortfolioPhotoOrientations() {
 
 
 initializePortfolioPhotoOrientations();
+/* ==========================================================
+   WEB DESIGN PAGE — ROTATING DEMO PREVIEW
+========================================================== */
+
+function initializeWebDemoRotator() {
+
+  const rotators =
+    document.querySelectorAll("[data-demo-rotator]");
+
+
+  if (!rotators.length) {
+    return;
+  }
+
+
+  const reducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+
+  rotators.forEach((rotator) => {
+
+    const slides =
+      Array.from(
+        rotator.querySelectorAll(
+          "[data-demo-slide]"
+        )
+      );
+
+
+    const counter =
+      rotator.querySelector(
+        "[data-demo-counter]"
+      );
+
+
+    if (slides.length < 2) {
+      return;
+    }
+
+
+    let currentIndex = 0;
+
+    let timer = null;
+
+
+    function showSlide(index) {
+
+      slides.forEach(
+        (slide, slideIndex) => {
+
+          slide.classList.toggle(
+            "is-active",
+            slideIndex === index
+          );
+
+        }
+      );
+
+
+      if (counter) {
+
+        const current =
+          String(index + 1)
+            .padStart(2, "0");
+
+
+        const total =
+          String(slides.length)
+            .padStart(2, "0");
+
+
+        counter.textContent =
+          `${current} / ${total}`;
+
+      }
+
+    }
+
+
+    function nextSlide() {
+
+      currentIndex =
+        (currentIndex + 1)
+        % slides.length;
+
+
+      showSlide(currentIndex);
+
+    }
+
+
+    function startRotation() {
+
+      if (
+        reducedMotion.matches ||
+        document.hidden
+      ) {
+        return;
+      }
+
+
+      clearInterval(timer);
+
+
+      timer =
+        setInterval(
+          nextSlide,
+          4200
+        );
+
+    }
+
+
+    function stopRotation() {
+
+      clearInterval(timer);
+
+      timer = null;
+
+    }
+
+
+    showSlide(0);
+
+
+    if (!reducedMotion.matches) {
+      startRotation();
+    }
+
+
+    rotator.addEventListener(
+      "mouseenter",
+      stopRotation
+    );
+
+
+    rotator.addEventListener(
+      "mouseleave",
+      startRotation
+    );
+
+
+    document.addEventListener(
+      "visibilitychange",
+      () => {
+
+        if (document.hidden) {
+          stopRotation();
+        } else {
+          startRotation();
+        }
+
+      }
+    );
+
+
+    reducedMotion.addEventListener?.(
+      "change",
+      () => {
+
+        stopRotation();
+
+        if (!reducedMotion.matches) {
+          startRotation();
+        }
+
+      }
+    );
+
+  });
+
+}
+
+
+initializeWebDemoRotator();
