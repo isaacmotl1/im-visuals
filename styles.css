@@ -5777,3 +5777,1007 @@ h2 {
   z-index: 3 !important;
 }
 
+/* ==========================================================
+   SERVICES PAGE — CINEMATIC REDESIGN
+========================================================== */
+
+.services-page {
+  background:
+    #0B0D10;
+}
+
+.services-page main {
+  overflow:
+    hidden;
+}
+
+
+
+/* ==========================================================
+   SECTION TRANSITIONS / GRADIENTS
+========================================================== */
+
+.services-transition {
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  width:
+    100%;
+
+  pointer-events:
+    none;
+}
+
+
+/* HERO TO SERVICES */
+
+.services-transition--hero {
+  height:
+    clamp(150px, 20vh, 260px);
+
+  margin-top:
+    -2px;
+
+  background:
+
+    radial-gradient(
+      ellipse at 68% 20%,
+      rgba(102,124,138,.10),
+      transparent 40%
+    ),
+
+    linear-gradient(
+      to bottom,
+      #0B0D10 0%,
+      #0B0E12 24%,
+      #0C1015 52%,
+      #0D1116 75%,
+      #0E1217 100%
+    );
+}
+
+
+/* SERVICES TO PROCESS */
+
+.services-transition--middle {
+  height:
+    clamp(170px, 23vh, 300px);
+
+  background:
+
+    radial-gradient(
+      ellipse at 34% 55%,
+      rgba(102,124,138,.075),
+      transparent 43%
+    ),
+
+    linear-gradient(
+      to bottom,
+      #0E1217 0%,
+      #0D1116 25%,
+      #0D1014 60%,
+      #0C0F13 100%
+    );
+}
+
+
+/* PROCESS TO CTA */
+
+.services-transition--final {
+  height:
+    clamp(170px, 22vh, 285px);
+
+  background:
+
+    radial-gradient(
+      ellipse at 72% 45%,
+      rgba(102,124,138,.08),
+      transparent 42%
+    ),
+
+    linear-gradient(
+      to bottom,
+      #0C0F13 0%,
+      #0B0E12 48%,
+      #0B0D10 100%
+    );
+}
+
+
+
+/* ==========================================================
+   SERVICES SHOWCASE
+========================================================== */
+
+.services-showcase {
+  position:
+    relative;
+
+  padding:
+    clamp(60px, 8vh, 100px)
+    0
+    clamp(150px, 19vh, 240px);
+
+  overflow:
+    hidden;
+
+  background:
+
+    radial-gradient(
+      ellipse at 78% 24%,
+      rgba(102,124,138,.08),
+      transparent 36%
+    ),
+
+    radial-gradient(
+      ellipse at 20% 76%,
+      rgba(102,124,138,.035),
+      transparent 33%
+    ),
+
+    linear-gradient(
+      180deg,
+      #0E1217 0%,
+      #0D1116 45%,
+      #0E1217 100%
+    );
+}
+
+
+
+/* BIG BACKGROUND WORD */
+
+.services-showcase__ghost {
+  position:
+    absolute;
+
+  z-index:
+    0;
+
+  top:
+    45%;
+
+  left:
+    50%;
+
+  color:
+    transparent;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size:
+    clamp(10rem, 22vw, 24rem);
+
+  font-weight:
+    600;
+
+  line-height:
+    .7;
+
+  letter-spacing:
+    -.09em;
+
+  white-space:
+    nowrap;
+
+  -webkit-text-stroke:
+    1px rgba(255,255,255,.022);
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events:
+    none;
+}
+
+
+
+.services-showcase .container {
+  position:
+    relative;
+
+  z-index:
+    2;
+}
+
+
+
+/* ==========================================================
+   SERVICES HEADING
+========================================================== */
+
+.services-showcase__header {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(280px, .6fr);
+
+  gap:
+    50px
+    clamp(70px, 11vw, 170px);
+
+  align-items:
+    end;
+
+  margin-bottom:
+    clamp(75px, 10vh, 125px);
+}
+
+
+.services-showcase__header h2 {
+  max-width:
+    820px;
+
+  color:
+    #fff;
+
+  font-size:
+    clamp(3.2rem, 6vw, 6.3rem);
+
+  line-height:
+    .92;
+
+  letter-spacing:
+    -.075em;
+}
+
+
+.services-showcase__header h2 span {
+  display:
+    block;
+
+  color:
+    rgba(244,246,248,.43);
+}
+
+
+.services-showcase__intro {
+  max-width:
+    410px;
+
+  color:
+    rgba(244,246,248,.49);
+
+  line-height:
+    1.8;
+}
+
+
+
+/* ==========================================================
+   SIX SERVICE STEPS
+========================================================== */
+
+.services-step-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap:
+    clamp(11px, 1.3vw, 19px);
+
+  align-items:
+    start;
+
+  padding-bottom:
+    145px;
+}
+
+
+
+/* ==========================================================
+   EACH SERVICE CARD
+
+   All cards stay exactly the same size.
+   --step only moves them downward.
+========================================================== */
+
+.service-step {
+  position:
+    relative;
+
+  display:
+    flex;
+
+  min-width:
+    0;
+
+  height:
+    310px;
+
+  padding:
+    20px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.075);
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.032),
+      rgba(255,255,255,.006)
+    );
+
+  box-shadow:
+    0
+    22px
+    60px
+    rgba(0,0,0,.14);
+
+  flex-direction:
+    column;
+
+  transform:
+    translateY(
+      calc(var(--step) * 27px)
+    );
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    background .35s ease;
+}
+
+
+.service-step:hover {
+  border-color:
+    rgba(143,163,176,.28);
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(102,124,138,.10),
+      rgba(255,255,255,.01)
+    );
+
+  transform:
+    translateY(
+      calc((var(--step) * 27px) - 6px)
+    );
+}
+
+
+
+/* ==========================================================
+   CARD TOP
+========================================================== */
+
+.service-step__top {
+  display:
+    flex;
+
+  gap:
+    12px;
+
+  align-items:
+    center;
+}
+
+
+.service-step__number {
+  color:
+    rgba(244,246,248,.33);
+
+  font-size:
+    .55rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    .14em;
+}
+
+
+.service-step__line {
+  width:
+    31px;
+
+  height:
+    1px;
+
+  background:
+    rgba(143,163,176,.30);
+}
+
+
+
+/* ==========================================================
+   CARD CONTENT
+========================================================== */
+
+.service-step__content {
+  margin-top:
+    auto;
+}
+
+
+.service-step__type {
+  margin-bottom:
+    10px;
+
+  color:
+    rgba(143,163,176,.58);
+
+  font-size:
+    .52rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    .14em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.service-step h3 {
+  margin-bottom:
+    12px;
+
+  color:
+    #fff;
+
+  font-size:
+    clamp(.98rem, 1.2vw, 1.22rem);
+
+  line-height:
+    1.1;
+}
+
+
+.service-step__content > p:last-child {
+  color:
+    rgba(244,246,248,.43);
+
+  font-size:
+    .68rem;
+
+  line-height:
+    1.65;
+}
+
+
+
+/* ==========================================================
+   PROCESS
+========================================================== */
+
+.services-process {
+  position:
+    relative;
+
+  padding:
+    clamp(80px, 11vh, 140px)
+    0
+    clamp(105px, 14vh, 175px);
+
+  background:
+
+    radial-gradient(
+      ellipse at 74% 55%,
+      rgba(102,124,138,.06),
+      transparent 38%
+    ),
+
+    #0C0F13;
+}
+
+
+
+.services-process__heading {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(250px, 390px);
+
+  gap:
+    45px
+    clamp(70px, 11vw, 170px);
+
+  align-items:
+    end;
+
+  margin-bottom:
+    clamp(65px, 9vh, 100px);
+}
+
+
+.services-process__heading h2 {
+  max-width:
+    760px;
+
+  font-size:
+    clamp(3rem, 5.8vw, 6rem);
+
+  line-height:
+    .93;
+
+  letter-spacing:
+    -.07em;
+}
+
+
+.services-process__heading h2 span {
+  display:
+    block;
+
+  color:
+    rgba(244,246,248,.40);
+}
+
+
+.services-process__heading > p {
+  color:
+    rgba(244,246,248,.45);
+
+  line-height:
+    1.8;
+}
+
+
+
+/* PROCESS RAIL */
+
+.services-process__rail {
+  position:
+    relative;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    clamp(28px, 5vw, 75px);
+
+  padding-top:
+    38px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.10);
+}
+
+
+.services-process__rail article {
+  position:
+    relative;
+}
+
+
+.services-process__rail article::before {
+  position:
+    absolute;
+
+  top:
+    -43px;
+
+  left:
+    0;
+
+  width:
+    9px;
+
+  height:
+    9px;
+
+  border:
+    2px solid
+    #0C0F13;
+
+  border-radius:
+    50%;
+
+  background:
+    #8FA3B0;
+
+  box-shadow:
+    0 0 0 1px
+    rgba(143,163,176,.28);
+
+  content:
+    "";
+}
+
+
+.services-process__rail article > span {
+  display:
+    block;
+
+  margin-bottom:
+    42px;
+
+  color:
+    rgba(244,246,248,.27);
+
+  font-size:
+    .58rem;
+
+  letter-spacing:
+    .14em;
+}
+
+
+.services-process__rail h3 {
+  margin-bottom:
+    11px;
+
+  color:
+    #fff;
+
+  font-size:
+    clamp(1.1rem, 1.6vw, 1.45rem);
+}
+
+
+.services-process__rail p {
+  max-width:
+    285px;
+
+  color:
+    rgba(244,246,248,.42);
+
+  font-size:
+    .74rem;
+
+  line-height:
+    1.75;
+}
+
+
+
+/* ==========================================================
+   FINAL CTA
+========================================================== */
+
+.services-final {
+  padding:
+    clamp(90px, 13vh, 170px)
+    0
+    clamp(110px, 15vh, 190px);
+
+  background:
+
+    radial-gradient(
+      ellipse at 72% 45%,
+      rgba(102,124,138,.095),
+      transparent 38%
+    ),
+
+    #0B0D10;
+}
+
+
+.services-final__grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(280px, .65fr);
+
+  gap:
+    clamp(65px, 11vw, 180px);
+
+  align-items:
+    end;
+}
+
+
+.services-final h2 {
+  max-width:
+    820px;
+
+  font-size:
+    clamp(3.5rem, 6.5vw, 6.8rem);
+
+  line-height:
+    .91;
+
+  letter-spacing:
+    -.075em;
+}
+
+
+.services-final h2 span {
+  display:
+    block;
+
+  color:
+    rgba(244,246,248,.40);
+}
+
+
+.services-final__content > p {
+  max-width:
+    420px;
+
+  margin-bottom:
+    31px;
+
+  color:
+    rgba(244,246,248,.49);
+
+  line-height:
+    1.8;
+}
+
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1050px) {
+
+  .services-step-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap:
+      25px
+      18px;
+
+    padding-bottom:
+      65px;
+  }
+
+
+  .service-step {
+    height:
+      280px;
+  }
+
+
+  .service-step:nth-child(1),
+  .service-step:nth-child(4) {
+    transform:
+      translateY(0);
+  }
+
+
+  .service-step:nth-child(2),
+  .service-step:nth-child(5) {
+    transform:
+      translateY(25px);
+  }
+
+
+  .service-step:nth-child(3),
+  .service-step:nth-child(6) {
+    transform:
+      translateY(50px);
+  }
+
+
+  .service-step:nth-child(1):hover,
+  .service-step:nth-child(4):hover {
+    transform:
+      translateY(-6px);
+  }
+
+
+  .service-step:nth-child(2):hover,
+  .service-step:nth-child(5):hover {
+    transform:
+      translateY(19px);
+  }
+
+
+  .service-step:nth-child(3):hover,
+  .service-step:nth-child(6):hover {
+    transform:
+      translateY(44px);
+  }
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .services-transition--hero,
+  .services-transition--middle,
+  .services-transition--final {
+    height:
+      120px;
+  }
+
+
+  .services-showcase {
+    padding:
+      45px
+      0
+      110px;
+  }
+
+
+  .services-showcase__header {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      28px;
+
+    margin-bottom:
+      60px;
+  }
+
+
+  .services-showcase__header h2 {
+    font-size:
+      clamp(3rem, 13vw, 4.6rem);
+  }
+
+
+  .services-step-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap:
+      18px
+      12px;
+
+    padding-bottom:
+      42px;
+  }
+
+
+  .service-step {
+    height:
+      245px;
+
+    padding:
+      16px;
+
+    transform:
+      none !important;
+  }
+
+
+  .service-step:nth-child(even) {
+    transform:
+      translateY(24px) !important;
+  }
+
+
+  .service-step:hover {
+    transform:
+      none !important;
+  }
+
+
+  .service-step:nth-child(even):hover {
+    transform:
+      translateY(24px) !important;
+  }
+
+
+  .service-step h3 {
+    font-size:
+      .95rem;
+  }
+
+
+  .service-step__content > p:last-child {
+    font-size:
+      .62rem;
+  }
+
+
+  .services-process {
+    padding:
+      80px
+      0
+      100px;
+  }
+
+
+  .services-process__heading {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      28px;
+  }
+
+
+  .services-process__heading h2 {
+    font-size:
+      clamp(3rem, 13vw, 4.6rem);
+  }
+
+
+  .services-process__rail {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      58px;
+
+    padding-top:
+      0;
+
+    border-top:
+      0;
+
+    border-left:
+      1px solid
+      rgba(255,255,255,.09);
+  }
+
+
+  .services-process__rail article {
+    padding-left:
+      27px;
+  }
+
+
+  .services-process__rail article::before {
+    top:
+      3px;
+
+    left:
+      -5px;
+  }
+
+
+  .services-process__rail article > span {
+    margin-bottom:
+      17px;
+  }
+
+
+  .services-final__grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      42px;
+  }
+
+
+  .services-final h2 {
+    font-size:
+      clamp(3.1rem, 14vw, 4.9rem);
+  }
+
+}
+
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .service-step {
+    transition:
+      none !important;
+  }
+
+}
+

@@ -39,13 +39,15 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="styles.css?v=photo-site-1">
+  <link
+    rel="stylesheet"
+    href="styles.css?v=services-redesign-1"
+  >
 
 </head>
 
 
 <body class="services-page">
-
 
   <a
     class="skip-link"
@@ -56,9 +58,9 @@
 
 
 
-  <!-- =========================
+  <!-- ======================================================
        NAVIGATION
-  ========================== -->
+  ======================================================= -->
 
   <header
     class="site-header"
@@ -66,7 +68,6 @@
   >
 
     <div class="nav-shell">
-
 
       <a
         class="wordmark"
@@ -101,7 +102,9 @@
           Portfolio
         </a>
 
-       <a href="services.html">Services</a>
+        <a href="services.html">
+          Services
+        </a>
 
         <a href="about.html">
           About
@@ -113,7 +116,6 @@
 
       </nav>
 
-
     </div>
 
   </header>
@@ -123,125 +125,175 @@
   <main id="main-content">
 
 
-     <!-- ======================================================
-     SERVICES HERO
-======================================================= -->
-
-<section
-  class="site-hero site-hero--services"
-  aria-labelledby="services-title"
->
-
-  <div class="site-hero__content">
-
-    <p class="eyebrow">
-      Photography / Visual Content
-    </p>
-
-
-    <h1 id="services-title">
-      Made to
-      <span>be seen.</span>
-    </h1>
-
-
-    <p class="site-hero__copy">
-
-      Photography and visual content for
-      people, athletes, businesses, machines,
-      events, and creative projects.
-
-    </p>
-
-
-    <a
-      class="button button--light"
-      href="#services"
-    >
-      Explore Services
-
-      <span aria-hidden="true">
-        ↓
-      </span>
-
-    </a>
-
-  </div>
-
-
-  <div
-    class="site-hero__meta"
-    aria-hidden="true"
-  >
-
-    <span>
-      Photography
-    </span>
-
-    <span>
-      Visual Content
-    </span>
-
-  </div>
-
-</section>
-
-
-
-
-
-    <!-- =========================
-         SERVICES
-    ========================== -->
+    <!-- ======================================================
+         HERO
+    ======================================================= -->
 
     <section
-      class="services-clean-list"
-      id="services"
+      class="site-hero site-hero--services"
+      aria-labelledby="services-title"
     >
+
+      <div class="site-hero__content">
+
+        <p class="eyebrow">
+          Photography / Visual Content
+        </p>
+
+
+        <h1 id="services-title">
+          Made to
+          <span>be seen.</span>
+        </h1>
+
+
+        <p class="site-hero__copy">
+
+          Photography and visual content for
+          people, athletes, businesses, machines,
+          events, and creative projects.
+
+        </p>
+
+
+        <a
+          class="button button--light"
+          href="#services"
+        >
+          Explore Services
+
+          <span aria-hidden="true">
+            ↓
+          </span>
+        </a>
+
+      </div>
+
+
+      <div
+        class="site-hero__meta"
+        aria-hidden="true"
+      >
+
+        <span>
+          Photography
+        </span>
+
+        <span>
+          Visual Content
+        </span>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         HERO → SERVICES GRADIENT
+    ======================================================= -->
+
+    <div
+      class="services-transition services-transition--hero"
+      aria-hidden="true"
+    ></div>
+
+
+
+    <!-- ======================================================
+         SERVICES / STEP SECTION
+    ======================================================= -->
+
+    <section
+      class="services-showcase"
+      id="services"
+      aria-labelledby="services-showcase-title"
+    >
+
+      <div
+        class="services-showcase__ghost"
+        aria-hidden="true"
+      >
+        SERVICES
+      </div>
+
 
       <div class="container">
 
 
-        <div class="section-heading">
+        <!-- SECTION HEADER -->
 
-          <p class="eyebrow">
-            Services
+        <div class="services-showcase__header reveal">
+
+          <div>
+
+            <p class="eyebrow">
+              What I Photograph
+            </p>
+
+
+            <h2 id="services-showcase-title">
+              Different subjects.
+              <span>One visual approach.</span>
+            </h2>
+
+          </div>
+
+
+          <p class="services-showcase__intro">
+
+            Every project is different, but the goal stays
+            the same — create images that feel intentional,
+            useful, and worth keeping.
+
           </p>
-
-
-          <h2>
-            Photography built around
-            people, motion &amp; story.
-          </h2>
 
         </div>
 
 
 
-        <div class="services-clean-grid">
+        <!-- 6 STEP SERVICES -->
+
+        <div class="services-step-grid">
 
 
           <!-- 01 -->
 
-          <article class="services-clean-card">
+          <article
+            class="service-step reveal"
+            style="--step: 0;"
+          >
 
-            <span>
-              01
-            </span>
+            <div class="service-step__top">
+
+              <span class="service-step__number">
+                01
+              </span>
+
+              <span class="service-step__line"></span>
+
+            </div>
 
 
-            <h3>
-              Portraits
-            </h3>
+            <div class="service-step__content">
 
+              <p class="service-step__type">
+                People
+              </p>
 
-            <p>
+              <h3>
+                Portraits
+              </h3>
 
-              Individual portraits, senior photos,
-              couples, lifestyle sessions, and creative
-              portrait work.
+              <p>
 
-            </p>
+                Seniors, individuals, couples,
+                lifestyle sessions, and creative
+                portrait work.
+
+              </p>
+
+            </div>
 
           </article>
 
@@ -249,25 +301,41 @@
 
           <!-- 02 -->
 
-          <article class="services-clean-card">
+          <article
+            class="service-step reveal"
+            style="--step: 1;"
+          >
 
-            <span>
-              02
-            </span>
+            <div class="service-step__top">
+
+              <span class="service-step__number">
+                02
+              </span>
+
+              <span class="service-step__line"></span>
+
+            </div>
 
 
-            <h3>
-              Sports
-            </h3>
+            <div class="service-step__content">
 
+              <p class="service-step__type">
+                Action
+              </p>
 
-            <p>
+              <h3>
+                Sports
+              </h3>
 
-              Athletes, games, teams, tournaments,
-              practices, media-day content, and
-              action-focused coverage.
+              <p>
 
-            </p>
+                Athletes, games, teams,
+                tournaments, practices,
+                and media-day content.
+
+              </p>
+
+            </div>
 
           </article>
 
@@ -275,25 +343,41 @@
 
           <!-- 03 -->
 
-          <article class="services-clean-card">
+          <article
+            class="service-step reveal"
+            style="--step: 2;"
+          >
 
-            <span>
-              03
-            </span>
+            <div class="service-step__top">
+
+              <span class="service-step__number">
+                03
+              </span>
+
+              <span class="service-step__line"></span>
+
+            </div>
 
 
-            <h3>
-              Automotive
-            </h3>
+            <div class="service-step__content">
 
+              <p class="service-step__type">
+                Machines
+              </p>
 
-            <p>
+              <h3>
+                Automotive
+              </h3>
 
-              Individual vehicles, dealerships,
-              meets, events, detail shots, and
-              rolling or location-based photography.
+              <p>
 
-            </p>
+                Individual vehicles, meets,
+                dealerships, details, and
+                location-based shoots.
+
+              </p>
+
+            </div>
 
           </article>
 
@@ -301,25 +385,41 @@
 
           <!-- 04 -->
 
-          <article class="services-clean-card">
+          <article
+            class="service-step reveal"
+            style="--step: 3;"
+          >
 
-            <span>
-              04
-            </span>
+            <div class="service-step__top">
+
+              <span class="service-step__number">
+                04
+              </span>
+
+              <span class="service-step__line"></span>
+
+            </div>
 
 
-            <h3>
-              Business Content
-            </h3>
+            <div class="service-step__content">
 
+              <p class="service-step__type">
+                Commercial
+              </p>
 
-            <p>
+              <h3>
+                Business Content
+              </h3>
 
-              Original photography for businesses,
-              social media, advertising, staff,
-              locations, products, and digital use.
+              <p>
 
-            </p>
+                Staff, locations, products,
+                services, social media,
+                advertising, and digital use.
+
+              </p>
+
+            </div>
 
           </article>
 
@@ -327,25 +427,41 @@
 
           <!-- 05 -->
 
-          <article class="services-clean-card">
+          <article
+            class="service-step reveal"
+            style="--step: 4;"
+          >
 
-            <span>
-              05
-            </span>
+            <div class="service-step__top">
+
+              <span class="service-step__number">
+                05
+              </span>
+
+              <span class="service-step__line"></span>
+
+            </div>
 
 
-            <h3>
-              Events
-            </h3>
+            <div class="service-step__content">
 
+              <p class="service-step__type">
+                Coverage
+              </p>
 
-            <p>
+              <h3>
+                Events
+              </h3>
 
-              Community events, businesses,
-              sports events, gatherings, and
-              other moments that need coverage.
+              <p>
 
-            </p>
+                Sports events, gatherings,
+                businesses, community events,
+                and moments worth documenting.
+
+              </p>
+
+            </div>
 
           </article>
 
@@ -353,25 +469,41 @@
 
           <!-- 06 -->
 
-          <article class="services-clean-card">
+          <article
+            class="service-step reveal"
+            style="--step: 5;"
+          >
 
-            <span>
-              06
-            </span>
+            <div class="service-step__top">
+
+              <span class="service-step__number">
+                06
+              </span>
+
+              <span class="service-step__line"></span>
+
+            </div>
 
 
-            <h3>
-              Creative Projects
-            </h3>
+            <div class="service-step__content">
 
+              <p class="service-step__type">
+                Something Different
+              </p>
 
-            <p>
+              <h3>
+                Creative Projects
+              </h3>
 
-              Have something that doesn't fit neatly
-              into a category? Reach out with the
-              idea and we can build around it.
+              <p>
 
-            </p>
+                Have an idea that doesn't fit
+                into a category? Start with the
+                concept and build from there.
+
+              </p>
+
+            </div>
 
           </article>
 
@@ -384,35 +516,58 @@
 
 
 
-    <!-- =========================
-         PROCESS
-    ========================== -->
+    <!-- ======================================================
+         SERVICES → PROCESS GRADIENT
+    ======================================================= -->
 
-    <section class="services-clean-process">
+    <div
+      class="services-transition services-transition--middle"
+      aria-hidden="true"
+    ></div>
+
+
+
+    <!-- ======================================================
+         PROCESS
+    ======================================================= -->
+
+    <section class="services-process">
 
       <div class="container">
 
 
-        <div class="section-heading">
+        <div class="services-process__heading reveal">
 
-          <p class="eyebrow">
-            The Process
+          <div>
+
+            <p class="eyebrow">
+              The Process
+            </p>
+
+
+            <h2>
+              From the idea
+              <span>to the final frame.</span>
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            The process stays simple so the focus
+            stays on creating the right images.
+
           </p>
-
-
-          <h2>
-            Simple from idea
-            to final images.
-          </h2>
 
         </div>
 
 
 
-        <div class="services-process-grid">
+        <div class="services-process__rail">
 
 
-          <article>
+          <article class="reveal">
 
             <span>
               01
@@ -423,14 +578,17 @@
             </h3>
 
             <p>
-              Tell me what you're looking for.
+
+              Tell me what you want photographed
+              and what you're hoping to create.
+
             </p>
 
           </article>
 
 
 
-          <article>
+          <article class="reveal">
 
             <span>
               02
@@ -441,15 +599,17 @@
             </h3>
 
             <p>
+
               We figure out the location,
-              timing, style, and goals.
+              timing, style, and direction.
+
             </p>
 
           </article>
 
 
 
-          <article>
+          <article class="reveal">
 
             <span>
               03
@@ -460,14 +620,17 @@
             </h3>
 
             <p>
-              We create the images.
+
+              We create the images and adjust
+              as the session develops.
+
             </p>
 
           </article>
 
 
 
-          <article>
+          <article class="reveal">
 
             <span>
               04
@@ -478,8 +641,10 @@
             </h3>
 
             <p>
-              Final images are edited
+
+              Final selections are edited
               and prepared for delivery.
+
             </p>
 
           </article>
@@ -493,16 +658,27 @@
 
 
 
-    <!-- =========================
+    <!-- ======================================================
+         PROCESS → CTA GRADIENT
+    ======================================================= -->
+
+    <div
+      class="services-transition services-transition--final"
+      aria-hidden="true"
+    ></div>
+
+
+
+    <!-- ======================================================
          CTA
-    ========================== -->
+    ======================================================= -->
 
-    <section class="services-clean-cta">
+    <section class="services-final">
 
-      <div class="container services-clean-cta__grid">
+      <div class="container services-final__grid">
 
 
-        <div>
+        <div class="reveal">
 
           <p class="eyebrow">
             Start Something
@@ -510,7 +686,7 @@
 
 
           <h2>
-            Have an idea
+            Have something
             <span>in mind?</span>
           </h2>
 
@@ -518,12 +694,13 @@
 
 
 
-        <div>
+        <div class="services-final__content reveal">
 
           <p>
 
-            Tell me what you're looking for and
-            what you want the finished work to feel like.
+            Tell me what you're looking for,
+            what you want photographed, and
+            what you want the final images to feel like.
 
           </p>
 
@@ -532,12 +709,11 @@
             class="button button--light"
             href="contact.html"
           >
-            Contact Me
+            Start a Project
 
             <span aria-hidden="true">
               ↗
             </span>
-
           </a>
 
         </div>
@@ -552,14 +728,13 @@
 
 
 
-  <!-- =========================
+  <!-- ======================================================
        FOOTER
-  ========================== -->
+  ======================================================= -->
 
   <footer class="site-footer">
 
     <div class="container footer-content">
-
 
       <a
         class="wordmark"
@@ -583,7 +758,6 @@
         <span aria-hidden="true">↑</span>
       </a>
 
-
     </div>
 
   </footer>
@@ -594,3 +768,4 @@
 </body>
 
 </html>
+
