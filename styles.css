@@ -12824,3 +12824,450 @@ background-position: 0% center;}.hero::before { position:absolute; z-index:-1; i
   }
 
 }
+/* ==========================================================
+   IM VISUALS — SHARED MAIN PAGE HERO
+   Home / Portfolio / Services / About / Contact
+
+   Does NOT affect .gallery-hero collection pages.
+========================================================== */
+
+
+/* ==========================================================
+   BASE HERO
+========================================================== */
+
+.site-hero {
+  --hero-image: none;
+  --hero-position: center center;
+
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+
+  min-height: 88svh;
+
+  padding:
+    150px
+    0
+    clamp(85px, 11vh, 125px);
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    #0B0D10;
+}
+
+
+/* ==========================================================
+   ACTUAL BACKGROUND IMAGE
+========================================================== */
+
+.site-hero::before {
+  position: absolute;
+
+  z-index: -3;
+
+  inset: 0;
+
+  background-image:
+    var(--hero-image);
+
+  background-repeat:
+    no-repeat;
+
+  background-size:
+    cover;
+
+  background-position:
+    var(--hero-position);
+
+  transform:
+    scale(1.01);
+
+  content: "";
+}
+
+
+/* ==========================================================
+   CINEMATIC OVERLAY
+========================================================== */
+
+.site-hero::after {
+  position: absolute;
+
+  z-index: -2;
+
+  inset: 0;
+
+  background:
+
+    /* LEFT SIDE — keeps text readable */
+    linear-gradient(
+      90deg,
+      rgba(11,13,16,.83) 0%,
+      rgba(11,13,16,.65) 27%,
+      rgba(11,13,16,.34) 48%,
+      rgba(11,13,16,.08) 72%,
+      rgba(11,13,16,0) 90%
+    ),
+
+    /* TOP — navigation readability */
+    linear-gradient(
+      180deg,
+      rgba(11,13,16,.53) 0%,
+      rgba(11,13,16,.18) 22%,
+      transparent 42%
+    ),
+
+    /* BOTTOM — seamless dark fade */
+    linear-gradient(
+      to bottom,
+      transparent 42%,
+      rgba(11,13,16,.03) 52%,
+      rgba(11,13,16,.09) 61%,
+      rgba(11,13,16,.20) 69%,
+      rgba(11,13,16,.37) 77%,
+      rgba(11,13,16,.56) 84%,
+      rgba(11,13,16,.74) 90%,
+      rgba(11,13,16,.89) 95%,
+      rgba(11,13,16,.97) 98%,
+      #0B0D10 100%
+    );
+
+  content: "";
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.site-hero__content {
+  position: relative;
+
+  z-index: 3;
+
+  width:
+    min(
+      calc(100% - 80px),
+      var(--container)
+    );
+
+  margin:
+    0 auto;
+}
+
+
+.site-hero__content .eyebrow {
+  margin-bottom:
+    19px;
+
+  color:
+    rgba(255,255,255,.63);
+}
+
+
+/* ==========================================================
+   MAIN TITLE
+========================================================== */
+
+.site-hero__content h1 {
+  max-width:
+    1050px;
+
+  margin: 0;
+
+  color:
+    #fff;
+
+  font-size:
+    clamp(5rem, 10vw, 10rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    .82;
+
+  letter-spacing:
+    -.085em;
+}
+
+
+.site-hero__content h1 span {
+  display: block;
+
+  color:
+    rgba(255,255,255,.58);
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.site-hero__copy {
+  max-width:
+    520px;
+
+  margin:
+    30px
+    0
+    31px;
+
+  color:
+    rgba(255,255,255,.69);
+
+  font-size:
+    clamp(.92rem, 1vw, 1.04rem);
+
+  line-height:
+    1.78;
+}
+
+
+/* ==========================================================
+   BOTTOM INFORMATION
+========================================================== */
+
+.site-hero__meta {
+  position: absolute;
+
+  z-index: 4;
+
+  right:
+    max(
+      40px,
+      calc((100vw - var(--container)) / 2)
+    );
+
+  bottom:
+    clamp(31px, 4vh, 45px);
+
+  display: flex;
+
+  gap: 11px;
+
+  align-items: center;
+
+  color:
+    rgba(255,255,255,.38);
+
+  font-size:
+    .57rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    .13em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.site-hero__meta span + span::before {
+  margin-right:
+    11px;
+
+  color:
+    rgba(255,255,255,.22);
+
+  content:
+    "/";
+}
+
+
+/* ==========================================================
+   PAGE IMAGES
+========================================================== */
+
+.site-hero--home {
+  --hero-image:
+    url("images/hero/home-hero.jpg");
+
+  --hero-position:
+    center center;
+}
+
+
+.site-hero--portfolio {
+  --hero-image:
+    url("images/hero/portfolio-main.jpg");
+
+  --hero-position:
+    center center;
+}
+
+
+.site-hero--services {
+  --hero-image:
+    url("images/hero/services-main.jpg");
+
+  --hero-position:
+    center center;
+}
+
+
+.site-hero--about {
+  --hero-image:
+    url("images/hero/about-main.jpg");
+
+  --hero-position:
+    center 40%;
+}
+
+
+.site-hero--contact {
+  --hero-image:
+    url("images/hero/contact-main.jpg");
+
+  --hero-position:
+    center center;
+}
+
+
+/* ==========================================================
+   MAKE FOLLOWING SECTION CONNECT SEAMLESSLY
+========================================================== */
+
+.site-hero + section {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top:
+    -2px;
+
+  background-color:
+    #0B0D10;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+  .site-hero {
+    min-height:
+      82svh;
+
+    padding:
+      130px
+      0
+      80px;
+  }
+
+
+  .site-hero__content h1 {
+    max-width:
+      850px;
+
+    font-size:
+      clamp(4.5rem, 14vw, 7rem);
+  }
+
+
+  .site-hero__meta {
+    right:
+      40px;
+
+    bottom:
+      27px;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .site-hero {
+    min-height:
+      78svh;
+
+    padding:
+      115px
+      0
+      67px;
+  }
+
+
+  .site-hero__content {
+    width:
+      min(
+        calc(100% - 40px),
+        var(--container)
+      );
+  }
+
+
+  .site-hero__content h1 {
+    font-size:
+      clamp(3.8rem, 18vw, 5.7rem);
+
+    line-height:
+      .85;
+  }
+
+
+  .site-hero__copy {
+    max-width:
+      94%;
+
+    margin:
+      23px
+      0
+      27px;
+
+    font-size:
+      .9rem;
+  }
+
+
+  .site-hero::after {
+    background:
+
+      linear-gradient(
+        90deg,
+        rgba(11,13,16,.72),
+        rgba(11,13,16,.13)
+      ),
+
+      linear-gradient(
+        180deg,
+        rgba(11,13,16,.52),
+        transparent 39%
+      ),
+
+      linear-gradient(
+        to bottom,
+        transparent 39%,
+        rgba(11,13,16,.05) 53%,
+        rgba(11,13,16,.16) 65%,
+        rgba(11,13,16,.36) 75%,
+        rgba(11,13,16,.60) 84%,
+        rgba(11,13,16,.81) 91%,
+        rgba(11,13,16,.95) 97%,
+        #0B0D10 100%
+      );
+  }
+
+
+  .site-hero__meta {
+    display:
+      none;
+  }
+
+}
