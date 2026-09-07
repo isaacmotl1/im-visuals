@@ -5539,8 +5539,11 @@ h2 {
 
 /* Main-page hero files */
 .site-hero--home {
-  --hero-image: url("images/hero/home-main.jpg");
-  --hero-position: center center;
+  --hero-image:
+    url("images/hero/home-main.jpg");
+
+  --hero-position:
+    center center;
 }
 
 .site-hero--portfolio {
