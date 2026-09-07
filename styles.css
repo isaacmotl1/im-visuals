@@ -7157,4 +7157,203 @@ h2 {
   }
 
 }
+/* ==========================================================
+   CONTACT PAGE — SMOOTH SECTION FADES
+   No radial glows
+   No bright spots
+========================================================== */
+
+.contact-page {
+  background:
+    #0B0D10;
+}
+
+
+.contact-page main {
+  overflow:
+    hidden;
+}
+
+
+/* ==========================================================
+   HERO → CONTACT FORM
+
+   Hero ends at #0B0D10.
+   Form section slowly shifts slightly lighter.
+========================================================== */
+
+.contact-page .contact-main {
+  position:
+    relative;
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      #0B0D10 0%,
+
+      #0B0D10 8%,
+
+      #0B0E12 22%,
+
+      #0C0F13 45%,
+
+      #0D1014 68%,
+
+      #0D1116 88%,
+
+      #0D1116 100%
+    ) !important;
+}
+
+
+/* Remove anything old sitting over it */
+
+.contact-page .contact-main::before,
+.contact-page .contact-main::after {
+  background-image:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+
+/* ==========================================================
+   CONTACT FORM → SERVICES
+
+   Starts exactly where contact-main ends.
+========================================================== */
+
+.contact-page .contact-services {
+  position:
+    relative;
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      #0D1116 0%,
+
+      #0E1217 18%,
+
+      #0E1217 42%,
+
+      #0D1116 66%,
+
+      #0C1014 84%,
+
+      #0C0F13 100%
+    ) !important;
+}
+
+
+.contact-page .contact-services::before,
+.contact-page .contact-services::after {
+  background-image:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+
+/* ==========================================================
+   SERVICES → FINAL SECTION
+
+   Starts exactly where services ends,
+   then slowly returns to the site's normal black.
+========================================================== */
+
+.contact-page .contact-expectations {
+  position:
+    relative;
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      #0C0F13 0%,
+
+      #0C0F13 12%,
+
+      #0B0E12 32%,
+
+      #0B0D10 58%,
+
+      #0B0D10 100%
+    ) !important;
+}
+
+
+/* Kills the old radial bright spot */
+
+.contact-page .contact-expectations::before,
+.contact-page .contact-expectations::after {
+  background-image:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+
+/* ==========================================================
+   FINAL SECTION → FOOTER
+========================================================== */
+
+.contact-page .site-footer {
+  background:
+    #0B0D10 !important;
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .contact-page .contact-main {
+    background:
+      linear-gradient(
+        to bottom,
+        #0B0D10 0%,
+        #0B0E12 24%,
+        #0C0F13 52%,
+        #0D1014 78%,
+        #0D1116 100%
+      ) !important;
+  }
+
+
+  .contact-page .contact-services {
+    background:
+      linear-gradient(
+        to bottom,
+        #0D1116 0%,
+        #0E1217 35%,
+        #0D1116 65%,
+        #0C0F13 100%
+      ) !important;
+  }
+
+
+  .contact-page .contact-expectations {
+    background:
+      linear-gradient(
+        to bottom,
+        #0C0F13 0%,
+        #0B0E12 38%,
+        #0B0D10 75%,
+        #0B0D10 100%
+      ) !important;
+  }
+
+}
+
 
