@@ -5670,3 +5670,110 @@ h2 {
   cursor: wait;
   opacity: .6;
 }
+
+/* ==========================================================
+   HOME HERO — FORCE NEW IMAGE
+========================================================== */
+
+.site-hero.site-hero--home {
+  --hero-image: url("./images/hero/home-main.jpg") !important;
+  --hero-position: center center !important;
+
+  background:
+    #0B0D10 !important;
+}
+
+
+/* ACTUAL HOME PHOTO */
+
+.site-hero.site-hero--home::before {
+  position: absolute !important;
+
+  z-index: 0 !important;
+
+  inset: 0 !important;
+
+  display: block !important;
+
+  background-image:
+    url("./images/hero/home-main.jpg") !important;
+
+  background-repeat:
+    no-repeat !important;
+
+  background-size:
+    cover !important;
+
+  background-position:
+    center center !important;
+
+  opacity: 1 !important;
+
+  transform:
+    none !important;
+
+  content: "" !important;
+}
+
+
+/* OVERLAY */
+
+.site-hero.site-hero--home::after {
+  position: absolute !important;
+
+  z-index: 1 !important;
+
+  inset: 0 !important;
+
+  content: "" !important;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(11,13,16,.70) 0%,
+      rgba(11,13,16,.48) 28%,
+      rgba(11,13,16,.20) 52%,
+      rgba(11,13,16,.03) 76%,
+      transparent 92%
+    ),
+
+    linear-gradient(
+      180deg,
+      rgba(11,13,16,.42) 0%,
+      transparent 38%
+    ),
+
+    linear-gradient(
+      to bottom,
+      transparent 45%,
+      rgba(11,13,16,.04) 58%,
+      rgba(11,13,16,.15) 70%,
+      rgba(11,13,16,.34) 80%,
+      rgba(11,13,16,.58) 88%,
+      rgba(11,13,16,.80) 94%,
+      rgba(11,13,16,.95) 98%,
+      #0B0D10 100%
+    ) !important;
+
+  pointer-events: none !important;
+}
+
+
+/* TEXT */
+
+.site-hero.site-hero--home
+.site-hero__content {
+  position: relative !important;
+
+  z-index: 3 !important;
+}
+
+
+.site-hero.site-hero--home
+.site-hero__meta {
+  position: absolute !important;
+
+  z-index: 3 !important;
+}
+
