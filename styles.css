@@ -6918,3 +6918,243 @@ h2 {
 }
 
 
+/* ==========================================================
+   SERVICES — FINAL SMOOTH GRADIENT OVERRIDE
+
+   Works with BOTH:
+   - old .services-clean-* classes
+   - new .services-* redesign classes
+
+   No radial gradients.
+   No glowing bright spots.
+========================================================== */
+
+
+/* ==========================================================
+   REMOVE ALL OLD TRANSITION GLOWS
+========================================================== */
+
+.services-page .services-transition,
+.services-page .services-transition--hero,
+.services-page .services-transition--middle,
+.services-page .services-transition--final {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+
+/* ==========================================================
+   HERO → SERVICES TRANSITION
+========================================================== */
+
+.services-page .services-transition--hero {
+  display: block !important;
+
+  height:
+    clamp(150px, 20vh, 240px) !important;
+
+  margin:
+    -2px 0 0 !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0B0D10 0%,
+      #0B0D10 12%,
+      #0B0E12 35%,
+      #0C0F13 60%,
+      #0D1014 82%,
+      #0D1116 100%
+    ) !important;
+}
+
+
+/* ==========================================================
+   SERVICES SECTION
+
+   Supports old and new HTML.
+========================================================== */
+
+.services-page .services-showcase,
+.services-page .services-clean-list {
+  position: relative !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0D1116 0%,
+      #0E1217 18%,
+      #0E1217 52%,
+      #0D1116 78%,
+      #0C0F13 100%
+    ) !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* kill any old pseudo-element glow */
+
+.services-page .services-showcase::before,
+.services-page .services-showcase::after,
+.services-page .services-clean-list::before,
+.services-page .services-clean-list::after {
+  background-image:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* ==========================================================
+   SERVICES → PROCESS
+========================================================== */
+
+.services-page .services-transition--middle {
+  display: block !important;
+
+  height:
+    clamp(150px, 20vh, 250px) !important;
+
+  margin:
+    0 !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0C0F13 0%,
+      #0C0F13 15%,
+      #0D1014 38%,
+      #0D1014 62%,
+      #0C0F13 84%,
+      #0B0E12 100%
+    ) !important;
+}
+
+
+/* ==========================================================
+   PROCESS
+========================================================== */
+
+.services-page .services-process,
+.services-page .services-clean-process {
+  position: relative !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0B0E12 0%,
+      #0C0F13 16%,
+      #0D1014 35%,
+      #0D1014 65%,
+      #0C0F13 84%,
+      #0B0E12 100%
+    ) !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+.services-page .services-process::before,
+.services-page .services-process::after,
+.services-page .services-clean-process::before,
+.services-page .services-clean-process::after {
+  background-image:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* ==========================================================
+   PROCESS → CTA
+========================================================== */
+
+.services-page .services-transition--final {
+  display: block !important;
+
+  height:
+    clamp(150px, 20vh, 250px) !important;
+
+  margin:
+    0 !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0B0E12 0%,
+      #0B0E12 18%,
+      #0B0D10 55%,
+      #0B0D10 100%
+    ) !important;
+}
+
+
+/* ==========================================================
+   FINAL CTA
+========================================================== */
+
+.services-page .services-final,
+.services-page .services-clean-cta {
+  position: relative !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0B0D10 0%,
+      #0B0D10 55%,
+      #0B0E12 82%,
+      #0C0F13 100%
+    ) !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+.services-page .services-final::before,
+.services-page .services-final::after,
+.services-page .services-clean-cta::before,
+.services-page .services-clean-cta::after {
+  background-image:
+    none !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* ==========================================================
+   REMOVE RADIAL BACKGROUNDS FROM SERVICE AREA
+========================================================== */
+
+.services-page .services-showcase,
+.services-page .services-clean-list,
+.services-page .services-process,
+.services-page .services-clean-process,
+.services-page .services-final,
+.services-page .services-clean-cta {
+  background-attachment:
+    scroll !important;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .services-page .services-transition--hero,
+  .services-page .services-transition--middle,
+  .services-page .services-transition--final {
+    height:
+      105px !important;
+  }
+
+}
+
