@@ -7355,5 +7355,33 @@ h2 {
   }
 
 }
+/* ==========================================================
+   CONTACT FORM STATUS
+========================================================== */
+
+.contact-page-form__status {
+  min-height: 24px;
+  margin-top: 18px;
+
+  color:
+    rgba(244,246,248,.55);
+
+  font-size:
+    .72rem;
+
+  line-height:
+    1.6;
+}
+
+.contact-page-form__status.is-success {
+  color:
+    #AFC3B4;
+}
+
+.contact-page-form__status.is-error {
+  color:
+    #D3A5A5;
+}
+
 
 
