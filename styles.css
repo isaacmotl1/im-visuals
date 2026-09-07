@@ -6780,4 +6780,141 @@ h2 {
   }
 
 }
+/* ==========================================================
+   SERVICES — CLEAN SECTION GRADIENTS
+   Removes bright radial spots
+========================================================== */
+
+
+/* ==========================================================
+   HERO → SERVICES
+========================================================== */
+
+.services-transition--hero {
+  height:
+    clamp(150px, 20vh, 250px) !important;
+
+  margin-top:
+    -2px !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0B0D10 0%,
+      #0B0E12 25%,
+      #0C0F13 50%,
+      #0D1116 75%,
+      #0E1217 100%
+    ) !important;
+}
+
+
+
+/* ==========================================================
+   SERVICES SECTION
+========================================================== */
+
+.services-showcase {
+  background:
+    linear-gradient(
+      to bottom,
+      #0E1217 0%,
+      #0E1217 18%,
+      #0D1116 50%,
+      #0C1014 82%,
+      #0C0F13 100%
+    ) !important;
+}
+
+
+
+/* ==========================================================
+   SERVICES → PROCESS
+========================================================== */
+
+.services-transition--middle {
+  height:
+    clamp(160px, 22vh, 280px) !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0C0F13 0%,
+      #0C0F13 15%,
+      #0D1014 45%,
+      #0D1014 75%,
+      #0C0F13 100%
+    ) !important;
+}
+
+
+
+/* ==========================================================
+   PROCESS SECTION
+========================================================== */
+
+.services-process {
+  background:
+    linear-gradient(
+      to bottom,
+      #0C0F13 0%,
+      #0D1014 22%,
+      #0D1014 65%,
+      #0C0F13 100%
+    ) !important;
+}
+
+
+
+/* ==========================================================
+   PROCESS → FINAL CTA
+========================================================== */
+
+.services-transition--final {
+  height:
+    clamp(160px, 22vh, 280px) !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0C0F13 0%,
+      #0C0F13 20%,
+      #0B0E12 55%,
+      #0B0D10 100%
+    ) !important;
+}
+
+
+
+/* ==========================================================
+   FINAL CTA
+========================================================== */
+
+.services-final {
+  background:
+    linear-gradient(
+      to bottom,
+      #0B0D10 0%,
+      #0B0D10 60%,
+      #0C0F13 100%
+    ) !important;
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .services-transition--hero,
+  .services-transition--middle,
+  .services-transition--final {
+    height:
+      110px !important;
+  }
+
+}
+
 
